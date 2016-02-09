@@ -7,8 +7,8 @@ function getEvents(request, response) {
 
   Event.find({ user_id: user_id}, function (error, events) {
       if(error) response.json({ message: "getEvents ERROR:" + error });
-      response.json(events);
-  });
+      response.json({ events: events });
+  }).select('-__v');
 };
 
 // POST api/:id/events/new
@@ -31,8 +31,8 @@ function getEvent(request, response) {
 
   Event.findById({ _id: id }, function (error, event){
     if(error) response.json({ message: "getEvent ERROR:" + error });
-    response.json(event);
-  });
+      response.json({ event: event });
+  }).select('-__v');
 };
 
 // PUT api/:id/events/:id

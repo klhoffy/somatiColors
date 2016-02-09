@@ -1,44 +1,29 @@
 angular.module('SomatiColors')
     .config(MainRouter)
-    .directive('nav-top', nav)
-    .directive('footer-bottom', footer)
         
 function MainRouter ($stateProvider, $urlRouterProvider){
     $stateProvider
         
-        .state('users', {
+        .state('landing', {
             url: '/',
-            templateUrl: 'users.html'
+            templateUrl: '../partials/landing.html'
+        })
+
+        .state('users', {
+            url: '/users',
+            templateUrl: '../partials/users/users.html'
         })
         
         .state('events', {
-            url: '/',
-            templateUrl: 'events.html'
+            url: '/events',
+            templateUrl: '../partials/events/events.html'
         })
 
         .state('about', {
             url: '/about',
-            templateUrl: 'about.html'
+            templateUrl: '../partials/about.html'
         })
     
     $urlRouterProvider.otherwise('/');
     
-}
-
-function nav (){
-  var directive = {};
-  //'A' == attribute, 'E' == element, 'C' == class
-  directive.restrict = 'E';
-  directive.replace = true;
-  directive.templateUrl =  "_nav.html";
-  return directive;
-}
-
-function footer (){
-  var directive = {};
-  //'A' == attribute, 'E' == element, 'C' == class
-  directive.restrict = 'E';
-  directive.replace = true;
-  directive.templateUrl =  "_footer.html";
-  return directive; 
 }
