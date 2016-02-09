@@ -18,8 +18,6 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 
 * Angular.js
 
-* Amazon Web Server
-
 * Node Mailer
 
 * Bootstrap (+Custom CSS)
