@@ -1,6 +1,6 @@
 angular.module('SomatiColors')
-    .directive('nav-top', nav)
-    .directive('footer-bottom', footer)
+    .directive('navTop', navTop)
+    .directive('footerBottom', footerBottom)
     
     .directive('users', allUsers)
     .directive('user', oneUser)
@@ -13,7 +13,7 @@ angular.module('SomatiColors')
     .directive('edit-event', editEventForm)
     
 // Index Directives //'A' == attribute, 'E' == element, 'C' == class
-function nav (){
+function navTop (){
   var directive = {
   restrict: 'E',
   replace: true,
@@ -22,11 +22,11 @@ function nav (){
   return directive;
 }
 
-function footer (){
+function footerBottom (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/_footer.html"
   };
   return directive;
 }
@@ -36,7 +36,7 @@ function allUsers (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/users/users.html"
   };
   return directive;
 }
@@ -45,7 +45,7 @@ function oneUser (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/users/user.html"
   };
   return directive;
 }
@@ -54,7 +54,7 @@ function newUserForm (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/users/new.html"
   };
   return directive;
 }
@@ -63,7 +63,7 @@ function editUserForm (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/users/edit.html"
   };
   return directive;
 }
@@ -73,7 +73,7 @@ function allEvents (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/events/events.html"
   };
   return directive;
 }
@@ -82,7 +82,7 @@ function oneEvent (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/events/event.html"
   };
   return directive;
 }
@@ -91,7 +91,7 @@ function newEventForm (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/events/new.html"
   };
   return directive;
 }
@@ -100,7 +100,7 @@ function editEventForm (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "_footer.html"
+  templateUrl:  "../partials/events/edit.html"
   };
   return directive;
 }
