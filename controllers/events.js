@@ -3,9 +3,9 @@ var Event = require('../models/event.js');
 
 // GET api/:id/events
 function getEvents(request, response) {
-  var id = request.params.id;
+  var user_id = request.params.user_id;
 
-  Event.find({ user_id: id}, function (error, events) {
+  Event.find({ user_id: user_id}, function (error, events) {
       if(error) response.json({ message: "getEvents ERROR:" + error });
       response.json(events);
   });

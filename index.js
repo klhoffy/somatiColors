@@ -5,8 +5,8 @@ var logger 			= require('morgan');
 var bodyParser 	    = require('body-parser');
 var path		   	= require('path');
 var cors            = require('cors');
-var port 		    = process.env.PORT || 3000;
-var apiRouter		= require('./config/routes/api.js');
+var port 		    = 3000;
+var apiRouter		= require('./routes/api.js');
 
 mongoose.connect('mongodb://localhost/project_four', function(err){
 	if(err) throw err

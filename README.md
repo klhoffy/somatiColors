@@ -16,8 +16,6 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 
 * MongoDB (+Mongoose)
 
-* Passport.js
-
 * Angular.js
 
 * Amazon Web Server
