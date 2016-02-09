@@ -16,9 +16,7 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 
 * MongoDB + Mongoose
 
-* Angular.js
-
-* Node Mailer
+* AngularJS
 
 * Bootstrap + Custom CSS
 
