@@ -14,13 +14,13 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 
 * Express
 
-* MongoDB (+Mongoose)
+* MongoDB + Mongoose
 
 * Angular.js
 
 * Node Mailer
 
-* Bootstrap (+Custom CSS)
+* Bootstrap + Custom CSS
 
 * Adobe Creative Cloud (Photoshop & Illustrator)
 
@@ -39,7 +39,7 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 | (Role) As a .. | (Context) When I.. | (Goal) I want to.. | (Benefit/Purpose) So that I can.. |
 |----------------|--------------------|--------------------|-----------------------------------|
 | User | blah | blah | blah |
-| Mental Health Physician | blah | blah | blah |
+| User | blah | blah | blah |
 
 -
 
