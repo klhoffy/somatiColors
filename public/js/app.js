@@ -1,2 +1,2 @@
 angular
-    .module('SomatiColors', [])
+    .module('SomatiColors', ['ui.router'])

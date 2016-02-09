@@ -4,20 +4,20 @@ var bodyParser = require('body-parser');
 var usersController = require('../controllers/users.js');
 var eventsController = require('../controllers/events.js');
 
-router.route('/api')
+router.route('/api/users/')
 	.get(usersController.getUsers)
 	.post(usersController.postUser)
 
-router.route('/api/:id')
+router.route('/api/users/:id')
 	.get(usersController.getUser)
 	.delete(usersController.deleteUser)
 	.put(usersController.putUser)
     
-router.route('/api/:user_id/events')
+router.route('/api/users/:user_id/events')
 	.get(eventsController.getEvents)
 	.post(eventsController.postEvent)
 
-router.route('/api/:user_id/events/:id')
+router.route('/api/users/:user_id/events/:id')
 	.get(eventsController.getEvent)
 	.delete(eventsController.deleteEvent)
 	.put(eventsController.putEvent)

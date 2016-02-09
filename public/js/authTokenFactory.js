@@ -1,5 +1,6 @@
-angular.module('authApp')
-.factory('authTokenFactory', authTokenFactory)
+angular.module('SomatiColors')
+    .factory('authTokenFactory', authTokenFactory)
+
 authTokenFactory.$inject = ['$window']
 function authTokenFactory($window){
 

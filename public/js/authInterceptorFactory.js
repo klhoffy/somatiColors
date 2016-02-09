@@ -1,5 +1,7 @@
-angular.module('authApp')
-.factory('authInterceptorFactory', authInterceptorFactory)
+angular
+    .module('SomatiColors')
+    .factory('authInterceptorFactory', authInterceptorFactory)
+
 authInterceptorFactory.$inject = ['$q', '$location', 'authTokenFactory']
 function authInterceptorFactory($q, $location, authTokenFactory){
 
