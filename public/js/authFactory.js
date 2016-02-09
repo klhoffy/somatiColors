@@ -1,5 +1,4 @@
-angular
-    .module('SomatiColors')
+angular.module('SomatiColors')
     .factory('authFactory', authFactory)
 
 authFactory.$inject = ['$http', '$q', 'authTokenFactory']

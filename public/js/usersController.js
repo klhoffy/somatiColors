@@ -1,77 +1,58 @@
-angular
-    .module('SomatiColors')
-    .controller('UsersController', UsersController);
+angular.module('SomatiColors')
+	.controller('usersController', usersController)
+	.controller('usersProfileController', usersProfileController)
 
-UsersController.$inject = ['$http'];
+usersController.$inject = ['userFactory', '$window']
+usersProfileController.$inject = ['userFactory','$stateParams','$location']
 
-function UsersController($http){
-  var self = this;
+function usersController(userFactory, $window, $timeout){
+	var self = this
+	self.name = 'Car List'
+	self.api = userFactory
+	self.cars = []
+	self.newCar = {}
 
+	self.api.list().success(function(response){
+		self.cars = response
+	})
 
-  // New User
-  self.newUser = newUser;
-  self.addUser = {};
+	self.addCar = function(make,model,year){
+		var data = {make: make, model: model, year: year}
+		self.api.addCar(data).then(function success(response){
+			self.cars.push(response.data.car)
+			self.newCar = {}
+			$window.document.querySelectorAll('#new-car-form input')[0].focus()
+		})
+	}
+}
 
-  function newUser(){
-    $http
-      .post('http://localhost:3000/api/', self.addUser)
-      .then(function(response){
-        getUsers();
-    });
-    self.addUser = {};
-  }
-  
-  
-  // Get Users
-  self.getUsers = getUsers;
-  self.users = [];
-  
-  function getUsers(){
-    $http
-      .get('http://localhost:3000/api')
-      .then(function(response){
-        self.users = response.data.users;
-    });
-  }
-  getUsers();
-  
-  
-  // Get User
-  self.getUser = getUser;
-  self.showUser = {};
+function usersProfileController(carsFactory,$stateParams,$location){
+	var self = this
+	self.name = 'Car Detail'
+	self.api = carsFactory
+	self.car = null
+	self.editing = false
+	self.showCar = function(carId){
+		self.api.show(carId).success(function(response){
+			self.car = response
+			console.log(response)
+		})
+	}
+	self.showCar($stateParams.carId)
 
-  function getUser(user_id){
-    $http
-      .get('http://localhost:3000/api/' + user_id)
-      .then(function(response){
-        self.showUser = response.data.user;
-    });
-  }
-  
-  // Update User
-  self.putUser = putUser;
-  self.updateUser = {};
-  
-  function putUser(user_id){
-    $http
-      .put('http://localhost:3000/api/' + user_id)
-      .then(function(response){
-        getUsers();
-    });
-    self.updateUser = {};
-  }
-  
+	self.updateCar = function(carId, make, model, year){
+		var data = {make: make, model: model, year: year}
+		self.api.updateCar(carId,data).success(function(response){
+			console.log(response)
+			self.car = response
+			self.editing = false
+		})
+	}
 
-  // Delete User
-  self.deleteUser = deleteUser;
-  
-  function deleteUser(user){
-    $http
-      .delete("http://localhost:3000/api/" + user._id)
-      .then(function(response){
-        var index = self.all.indexOf(user);
-        self.all.splice(index, 1);
-      });
-  }
-
+	self.removeCar = function(carId){
+		self.api.removeCar(carId).success(function(response){
+			console.log(response)
+			$location.path('/cars')
+		})
+	}
 }

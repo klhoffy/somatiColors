@@ -1,2 +1,1 @@
-angular
-    .module('SomatiColors', ['ui.router'])
+angular.module('SomatiColors', ['ui.router'])

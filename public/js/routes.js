@@ -1,5 +1,4 @@
-angular
-    .module('SomatiColors')
+angular.module('SomatiColors')
     .config(MainRouter)
     
 function MainRouter ($stateProvider, $urlRouterProvider){
