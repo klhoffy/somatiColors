@@ -7,7 +7,7 @@ var User = mongoose.Schema({
     password_confirmation: { type: String, required: true },
 	first_name: String,
 	last_name: String, 
-	user_email: String,
+	email: String,
 	mental_health_physician: String, 
 	physician_email: String,
     
