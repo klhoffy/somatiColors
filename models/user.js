@@ -4,9 +4,22 @@ var bcrypt = require('bcrypt-nodejs')
 var User = mongoose.Schema({
 	username: { type: String, required: true, unique: true },
 	password: { type: String, required: true, select: false },
+    password_confirmation: { type: String, required: true },
 	first_name: String,
 	last_name: String, 
-	email: String
+	user_email: String,
+	mental_health_physician: String, 
+	physician_email: String,
+    
+    contempt_color: String, 
+    happiness_color: String, 
+	sadness_color: String, 
+    angry_color: String,
+    fear_color: String, 
+    anxious_color: String, 
+    acceptance_color: String,
+    love_color: String, 
+    disgust_color: String     
 });
 
 // hash the password of a user before he/she is saved
