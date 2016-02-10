@@ -1,7 +1,7 @@
 var express 		= require('express');
 var app			    = express();
 var mongoose		= require('mongoose');
-var logger 			= require('morgan');
+var morgan 			= require('morgan');
 var bodyParser 	    = require('body-parser');
 var path		   	= require('path');
 var cors            = require('cors');
@@ -13,20 +13,15 @@ mongoose.connect('mongodb://localhost/project_four', function(err){
 	console.log('Connected to MongoDB')
 })
 
-//enable cors
+// set up middleware
 app.use(cors());
-
 app.use( bodyParser.json() )
 app.use(bodyParser.urlencoded({extended: true}))
-app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', function(req,res){
-	console.log('getting index?')
-	res.render('index')
-})
+app.use(morgan('dev'))
 
-app.use('/', apiRouter);
+app.use('/api', apiRouter);
 
 app.listen(port);
 console.log('Magic is happening on port' + port);

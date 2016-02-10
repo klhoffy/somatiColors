@@ -2,15 +2,15 @@ angular.module('SomatiColors')
     .directive('navTop', navTop)
     .directive('footerBottom', footerBottom)
     
-    .directive('users', allUsers)
-    .directive('user', oneUser)
-    .directive('new-user', newUserForm)
-    .directive('edit-user', editUserForm)
+    .directive('allUsers', allUsers)
+    .directive('oneUser', oneUser)
+    .directive('newUserForm', newUserForm)
+    .directive('editUserForm', editUserForm)
 
-    .directive('events', allEvents)
-    .directive('event', oneEvent)
-    .directive('new-event', newEventForm)
-    .directive('edit-event', editEventForm)
+    .directive('allEvents', allEvents)
+    .directive('oneEvent', oneEvent)
+    .directive('newEventForm', newEventForm)
+    .directive('editEventForm', editEventForm)
     
 // Index Directives //'A' == attribute, 'E' == element, 'C' == class
 function navTop (){

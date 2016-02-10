@@ -11,12 +11,14 @@ function MainRouter ($stateProvider, $urlRouterProvider){
 
         .state('users', {
             url: '/users',
-            templateUrl: '../partials/users/users.html'
+            templateUrl: '../partials/users.html',
+            controller: 'usersController as usersCtrl'
         })
         
         .state('events', {
-            url: '/events',
-            templateUrl: '../partials/events/events.html'
+            url: '/users/:user_id/events',
+            templateUrl: '../partials/events.html',
+            controller: 'eventsController as eventsCtrl'
         })
 
         .state('about', {
