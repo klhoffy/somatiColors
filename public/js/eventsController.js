@@ -3,4 +3,11 @@ angular.module('SomatiColors')
 
 EventsController.$inject=['eventsFactory']
 
-function EventsController()
+function EventsController(eventsFactory){
+	var self = this;
+	self.api = eventsFactory
+	
+
+
+
+}
