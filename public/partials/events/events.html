@@ -1,9 +1,2 @@
-<h1>Events</h1>
+<h3>All Events Directive Linked</h3>
 
-<ul id="users">
-    <li ng-repeat="user in users.users" data-id="{{user._id}}">
-    <p><strong><a ui-sref="user({ user_id: user._id })">{{user.username}}</a></strong> - {{user.first_name}} {{user.last_name}}<p>
-    <button ui-sref="editUser({ user_id: user._id })">Edit</button>
-    <button ng-click="users.deleteUser(user)">Delete User</button>
-    </li>
-</ul>
