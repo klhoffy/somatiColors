@@ -7,6 +7,10 @@ function userFactory($http){
 	var usersUrl = 'http://localhost:3000/api/users'
 	var users = {}
 
+	users.list = function(){
+		return $http.get(usersUrl)
+	}
+
 	users.users = function(){
 		return $http.get(usersUrl)
 	}
@@ -15,7 +19,7 @@ function userFactory($http){
 		return $http.get(usersUrl + '/' + user_id)
 	}
 
-	users.newUser = function(data){
+	users.addUser = function(data){
 		return $http.post(usersUrl, data)
 	}
 
