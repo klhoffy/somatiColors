@@ -6,7 +6,7 @@ var bodyParser 	    = require('body-parser');
 var path		   	= require('path');
 var cors            = require('cors');
 var port 		    = 3000;
-var apiRouter		= require('./routes/api.js');
+var apiRouter		= require('./api/routes/api.js');
 
 mongoose.connect('mongodb://localhost/project_four', function(err){
 	if(err) throw err
