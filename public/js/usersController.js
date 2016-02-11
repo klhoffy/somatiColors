@@ -7,7 +7,7 @@ usersProfileController.$inject = ['userFactory','$stateParams','$location']
 
 function usersController(userFactory, $window, $timeout){
 	var self = this
-	self.name = 'Car List'
+	self.name = 'User List'
 	self.api = userFactory
 	self.users = []
 	self.newUser = {}
