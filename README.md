@@ -2,7 +2,7 @@
 
 SomatiColors helps users get a better understanding of their mind and body connection.
 
-If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in order for the API to function properly. You must also run `http-server` inside the `public` directory in order for the front end to function properly.
+If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in order for for this app to function properly.
 
 [ Visit SomatiColors on Heroku ](http://somaticolors.herokuapp.com/)
 
