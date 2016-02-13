@@ -1,6 +1,6 @@
 # SomatiColors 
 
-SomatiColors is a platform that allows its users to plot the every-day somatic symptoms,that produce pain/fatigue, on their very own timeline. With the ability to visualize, filter, and sort through their personalized timelines, users can find better connections between their emotions and phsyical symptoms, leading them to discover the emotional causes behind their phsyical symptoms. 
+SomatiColors enables users with Somatoform symptomatology to plot events and situations in which they experience pain/fatigue onto their own customized timelines. With the ability to visualize, filter, and sort through their timelines, users are better able to find connections between their emotions and phsyical symptoms, leading them to discover the emotions behind their phsyical symptoms. 
 
 > "Somatoform disorders are mental illnesses that cause bodily symptoms, including pain. The symptoms can't be traced back to any physical cause. And they are not the result of substance abuse or another mental illness. People with somatoform disorders are not faking their symptoms." - WebMD
 
@@ -33,10 +33,18 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 #### User Stories
 
-| (Role) As a .. | (Context) When I.. | (Goal) I want to.. | (Benefit/Purpose) So that I can.. |
-|----------------|--------------------|--------------------|-----------------------------------|
-| User | blah | blah | blah |
-| User | blah | blah | blah |
+| (Role) As a .. | (Goal) I want to.. |
+|----------------|--------------------|
+| User | Log In |
+| User | Create an account |
+| User | Update my account settings |
+| User | Delete my account and timeline events |
+| User | Add my mental health psychian's email address so I can emails events straight to their inbox |
+| User | Customize my emotional color pallete |
+| User | Create/Edit/Delete an event | Track emotions/bodily sensations |
+| User | Visualize event/situation emotions by creating a color stripe to the left of each timeline entry |
+| User | Visualize event/situation bodily sensations by marking an image of a body based on checkbox values |
+| Visitor | Learn more about SomatiColors on the about page |
 
 -
 
