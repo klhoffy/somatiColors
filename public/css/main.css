@@ -1,11 +1,16 @@
 body{
-    background-color: #F57E20;
+    background-color: #fff;
 }
 
 section {
+    border: 2px solid gray;
     padding: 30px;
 }
 
-.white {
-    background-color: #fff;
+nav {
+    
+}
+
+footer {
+
 }

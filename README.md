@@ -1,8 +1,10 @@
 # SomatiColors 
 
-SomatiColors helps users get a better understanding of their mind and body connection.
+SomatiColors is a platform that allows its users to plot the every-day somatic symptoms,that produce pain/fatigue, on their very own timeline. With the ability to visualize, filter, and sort through their personalized timelines, users can find better connections between their emotions and phsyical symptoms, leading them to discover the emotional causes behind their phsyical symptoms. 
 
-If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in order for for this app to function properly.
+> "Somatoform disorders are mental illnesses that cause bodily symptoms, including pain. The symptoms can't be traced back to any physical cause. And they are not the result of substance abuse or another mental illness. People with somatoform disorders are not faking their symptoms." - WebMD
+
+If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp` in order for this app to function properly.
 
 [ Visit SomatiColors on Heroku ](http://somaticolors.herokuapp.com/)
 
@@ -11,15 +13,12 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 ### Technologies Used
 
 * Node.js
-
 * Express
-
 * MongoDB + Mongoose
-
 * AngularJS
-
-* Bootstrap + Custom CSS
-
+* NodeMailer
+* Gulp
+* Bootstrap + Angular UI + Custom CSS/Sass
 * Adobe Creative Cloud (Photoshop & Illustrator)
 
 -
@@ -46,10 +45,10 @@ If you fork this repo, you must run `npm install`, `mongod` and `nodemon` in ord
 ![ SomatiColors ERD ](readme/erd.jpg)
 
 ##### User Model
-``` email, password, first_name, last_name ```
+``` username, password, first_name, last_name, email, mental_health_physician, physician_email```
 
-##### Entry Model
-``` email, password, first_name, last_name ```
+##### Event Model
+``` title, date, location, people_involved, situation, triggers, bodily_sensations, emotion, automatic_thoughts, rational_response, behaviors, consequences, challenged_beliefs, lesson, old_perspective, new_perspective, coping_strategies, user_id ```
 
 -
 
