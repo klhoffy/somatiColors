@@ -15,7 +15,7 @@ function userFactory($http){
 		return $http.get(usersUrl)
 	}
 
-	users.user = function(carId){
+	users.user = function(user_id){
 		return $http.get(usersUrl + '/' + user_id)
 	}
 
@@ -23,11 +23,11 @@ function userFactory($http){
 		return $http.post(usersUrl, data)
 	}
 
-	users.editUser = function(carId,data){
+	users.editUser = function(user_id,data){
 		return $http.put(usersUrl + '/' + user_id, data)
 	}
 
-	users.deleteUser = function(carId){
+	users.deleteUser = function(user_id){
 		return $http.delete(usersUrl + '/' + user_id)
 	}
 	

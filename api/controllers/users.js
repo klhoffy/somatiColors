@@ -16,11 +16,7 @@ function postUser(request, response) {
 
   user.username  = request.body.username;
   user.password  = request.body.password;
-  user.first_name = request.body.first_name;
-  user.last_name = request.body.last_name;
-  user.email  = request.body.email;
-  user.mental_health_physician  = request.body.mental_health_physician; 
-  user.physician_email  = request.body.physician_email;
+
     
   user.save(function (error) {
     if(error) response.json({ message: "postUsers ERROR:" + error });
@@ -77,7 +73,7 @@ function authenticateUser(req, res) {
   // 1 - find the user in our db
   User.findOne({
     username: req.body.username
-  }).select('name username password').exec(function(err, user){
+  }).select('username password').exec(function(err, user){
     if(err) throw err
     if(!user){
       res.json({success: false, message: "No such user"})
@@ -89,7 +85,7 @@ function authenticateUser(req, res) {
       } else {
         // password is good!
         var token = jwt.sign({
-          name: user.name,
+        //   name: user.name,
           username: user.username
         }, mySpecialSecret, {
           expiresInMinutes: 1440
