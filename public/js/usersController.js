@@ -18,9 +18,9 @@ function usersController(userFactory, $window, $state, authFactory, $rootScope){
 	self.logout = logout;
 	self.getUser = getUser;
 	self.error = null;
-	self.api.list().success(function(response){
-		self.users = response
-	})
+	// self.api.list().success(function(response){
+	// 	self.users = response
+	// })
 
 ///////////// authentication stuff ///////////
 	$rootScope.$on('$stateChangeStart', function() {
@@ -43,7 +43,7 @@ function usersController(userFactory, $window, $state, authFactory, $rootScope){
 	}
 
 	function signup(){
-		authFactory.signup(self.user.username, self.user.password)
+		authFactory.signup(self.user.username, self.user.password, self.user.first_name, self.user.last_name, self.user.mental_health_physician, self.user.physician_email)
 		.then(function(response){
 			if(response.data.success){
 				self.login()

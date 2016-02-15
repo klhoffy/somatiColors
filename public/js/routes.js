@@ -33,17 +33,19 @@ function MainRouter ($stateProvider, $urlRouterProvider){
 			controller: 'EventsController as eventsCtrl'
 		})
 
+        .state('login', {
+            url: '/login',
+            templateUrl: '../partials/login.html',
+            controller: 'usersController as usersCtrl'
+        })
+
         .state("signup", {
             url: '/signup',
             templateUrl: '../partials/signup.html',
             controller: "usersController as usersCtrl"
         })
 
-        .state('login', {
-            url: '/login',
-            templateUrl: '../partials/login.html',
-            controller: 'usersController as usersCtrl'
-        })
+        
 
         .state('loggedOut', {
             url: '/loggedOut',
