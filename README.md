@@ -65,3 +65,8 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 ![ SomatiColors Wireframe ](readme/wf01.png)
 ![ SomatiColors Wireframe ](readme/wf02.png)
 ![ SomatiColors Wireframe ](readme/wf03.png)
+![ SomatiColors Wireframe ](assets/SomatiColors_Home.png)
+![ SomatiColors Wireframe ](assets/SomatiColors_SignUp.png)
+![ SomatiColors Wireframe ](assets/SomatiColors_Login.png)
+![ SomatiColors Wireframe ](assets/SomatiColors_UserHome.png)
+![ SomatiColors Wireframe ](assets/SomatiColors_UserProfile.png)
