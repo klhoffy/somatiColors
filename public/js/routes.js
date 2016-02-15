@@ -7,12 +7,12 @@ function interceptor($httpProvider){
 }
         
 function MainRouter ($stateProvider, $urlRouterProvider){
+    $urlRouterProvider.otherwise('/login')
 
     $stateProvider    
         .state('landing', {
             url: '/',
-            templateUrl: '../partials/landing.html',
-            controller: 'usersController as usersCtrl'
+            templateUrl: '../partials/landing.html'
         })
 
         .state('login', {
@@ -39,19 +39,18 @@ function MainRouter ($stateProvider, $urlRouterProvider){
             templateUrl: '../partials/users.html',
             controller: 'UsersController as usersCtrl'
         })
-
+        
         .state('events', {
             url: '/users/:user_id/events',
             templateUrl: '../partials/events.html',
-            controller: 'eventsController as eventsCtrl'
+            controller: 'EventsController as eventsCtrl'
         })
-
+        
         .state('event', {
-			url: '/users/:user_id/events/:event_id',
-			templateUrl: 'partials/events/event.html',
-			controller: 'eventsController as eventsCtrl'
-		})
-
-    $urlRouterProvider.otherwise('/') 
+            url: '/users/:user_id/events/:eventId',
+            templateUrl: 'partials/events/event.html',
+            controller: 'EventsController as eventsCtrl'
+        })
+  
     
 }
