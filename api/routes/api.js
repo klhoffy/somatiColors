@@ -4,10 +4,33 @@ var bodyParser = require('body-parser');
 var usersController = require('../controllers/users.js');
 var eventsController = require('../controllers/events.js');
 
-router.route('/users/')
-	.get(usersController.getUsers)
+var User = require('../models/user.js');
+
+// Non-Authenticated routes ===========
+
+//make a user
+router.route('/users')
 	.post(usersController.postUser)
 
+//login
+router.route('/authenticate')
+	.post(usersController.authenticate)
+
+// Authenticated routes  ==============
+//config middleware for auth
+router.use(usersController.checkUser)
+
+//logged in user detail
+router.route('/me')
+	.get(function(req, res){
+		res.send(req.decoded)
+	})
+
+router.route('/users/')
+	.get(usersController.getUsers)
+
+
+//user CRUD
 router.route('/users/:id')
 	.get(usersController.getUser)
 	.delete(usersController.deleteUser)

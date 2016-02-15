@@ -1,9 +1,15 @@
 angular.module('SomatiColors')
     .config(MainRouter)
+    .config(interceptor)
+
+function interceptor($httpProvider){
+ $httpProvider.interceptors.push('authInterceptorFactory')
+}
         
 function MainRouter ($stateProvider, $urlRouterProvider){
-    $stateProvider
-        
+    $urlRouterProvider.otherwise('/login')
+
+    $stateProvider    
         .state('landing', {
             url: '/',
             templateUrl: '../partials/landing.html'
@@ -26,7 +32,26 @@ function MainRouter ($stateProvider, $urlRouterProvider){
 			templateUrl: 'partials/events/event.html',
 			controller: 'EventsController as eventsCtrl'
 		})
+
+        .state("signup", {
+            url: '/signup',
+            templateUrl: '../partials/signup.html',
+            controller: "usersController as usersCtrl"
+        })
+
+        .state('login', {
+            url: '/login',
+            templateUrl: '../partials/login.html',
+            controller: 'usersController as usersCtrl'
+        })
+
+        .state('loggedOut', {
+            url: '/loggedOut',
+            templateUrl: '../partials/landing.html',
+            controller: "usersController as usersCtrl"
+        })
+
     
-    $urlRouterProvider.otherwise('/');
+  
     
 }
