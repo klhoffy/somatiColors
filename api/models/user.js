@@ -7,7 +7,15 @@ var User = mongoose.Schema({
 	first_name: String,
 	last_name: String,
 	mental_health_physician: String, 
-	physician_email: String
+	physician_email: String,
+    joy: String,    
+    acceptance: String,    
+    fear: String,    
+    surprise: String,    
+    sadness: String,    
+    disgust: String,    
+    anger: String,    
+    anticipation: String   
 });
 
 // hash the password of a user before he/she is saved

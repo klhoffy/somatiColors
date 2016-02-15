@@ -20,7 +20,15 @@ function postUser(request, response) {
   user.last_name = request.body.last_name;
   user.email  = request.body.email;
   user.mental_health_physician  = request.body.mental_health_physician; 
-  user.physician_email  = request.body.physician_email;
+  user.physician_email  = request.body.physician_email;  
+  user.joy = request.body.joy;
+  user.acceptance = request.body.acceptance;
+  user.fear = request.body.thing;
+  user.surprise = request.body.fear;
+  user.sadness = request.body.sadness;
+  user.disgust = request.body.disgust;
+  user.anger = request.body.anger;
+  user.anticipation = request.body.anticipation; 
     
   user.save(function (error) {
     if(error) response.json({ message: "postUsers ERROR:" + error });
@@ -52,6 +60,14 @@ function putUser(request, response) {
     if(request.body.email) user.email  = request.body.email;
     if(request.body.mental_health_physician) user.mental_health_physician  = request.body.mental_health_physician; 
     if(request.body.physician_email) user.physician_email  = request.body.physician_email;
+    if(request.body.joy) user.joy = request.body.joy;
+    if(request.body.acceptance) user.acceptance = request.body.acceptance;
+    if(request.body.fear) user.fear = request.body.thing;
+    if(request.body.surprise) user.surprise = request.body.fear;
+    if(request.body.sadness) user.sadness = request.body.sadness;
+    if(request.body.disgust) user.disgust = request.body.disgust;
+    if(request.body.anger) user.anger = request.body.anger;
+    if(request.body.anticipation) user.anticipation = request.body.anticipation; 
 
     user.save( function (error, user){
       if (error) response.json({ message: "putUser SAVE ERROR:" + error });
