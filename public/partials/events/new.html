@@ -6,11 +6,12 @@
     <div class="cbp_tmlabel">
         
         <form id="new-event-form" ng-submit="eventsCtrl.addEvent(eventsCtrl.newEvent.title,eventssCtrl.newEvent.date,eventsCtrl.newEvent.location,eventsCtrl.newEvent.people_involved,eventssCtrl.newEvent.situation,eventsCtrl.newEvent.triggers,eventsCtrl.newEvent.bodily_sensations,eventssCtrl.newEvent.emotion,eventsCtrl.newEvent.automatic_thoughts,eventsCtrl.newEvent.rational_thoughts,eventssCtrl.newEvent.rational_response,eventsCtrl.newEvent.behaviors,eventsCtrl.newEvent.consequences,eventssCtrl.newEvent.challenged_beliefs,eventsCtrl.newEvent.lesson,eventsCtrl.newEvent.old_perspective,eventsCtrl.newEvent.new_perspective,eventssCtrl.newEvent.coping_strategies,eventsCtrl.newEvent.user_id)">
+        
         <label for="title">Title</label>
         <input type="text" name="title" placeholder="title">
 
         <label for="date">Date</label>
-        <input type="text" name="date" placeholder="date">
+        <input type="datetime" name="date" id="date" >
 
         <label for="location">Location</label>
         <input type="text" name="location" placeholder="location">
@@ -29,7 +30,6 @@
 
         <label for="bodily_sensations">Bodily Sensations Involved</label>
         <input type="text" name="bodily_sensations" placeholder="bodily sensations">
-
 
         <label for="emotion">Emotion Involved</label>
         <input type="text" name="emotion" placeholder="emotion">
@@ -81,7 +81,6 @@
         <input id="exit-time" name="exit-time" type="time"><br>
         <input id="expiry" name="expiry" type="month" required><br>
         <input id="startdate" name="startdate" min="2012-01-01" max="2013-01-01" type="date"><br>
-
 
         <input type="number" id="pinNum" min="0" max="9999" autocomplete="off" />
 
