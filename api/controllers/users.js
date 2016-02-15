@@ -14,6 +14,7 @@ function getUsers(request, response) {
 function postUser(request, response) {
   var user = new User();
 
+  user.name  = request.body.name;
   user.username  = request.body.username;
   user.password  = request.body.password;
   user.first_name = request.body.first_name;
@@ -52,6 +53,7 @@ function putUser(request, response) {
   User.findOne({ _id: id }, function (error, user){
     if(error) response.json({ message: "putUser ERROR:" + error });
 
+    if(request.body.name) user.username  = request.body.name;
     if(request.body.username) user.username  = request.body.username;
     if(request.body.password) user.password  = request.body.password;
     if(request.body.first_name) user.first_name = request.body.first_name;
@@ -83,7 +85,6 @@ function deleteUser(request, response) {
     response.json({ message: "deleteUser confirmation" });
   });
 };
-
 
 //code for apiRouter.route('/authenticate')
 function authenticateUser(req, res) {
@@ -143,6 +144,6 @@ module.exports = {
   getUser: getUser,
   putUser: putUser,
   deleteUser: deleteUser,
-  authenticate: authenticateUser,
+  authenticateUser: authenticateUser,
   checkUser: checkUser
 };

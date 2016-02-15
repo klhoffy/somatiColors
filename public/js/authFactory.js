@@ -23,8 +23,10 @@ function authTokenFactory($window){
 // ================================================
 
 angular.module('SomatiColors')
-.factory('authInterceptorFactory', authInterceptorFactory)
+    .factory('authInterceptorFactory', authInterceptorFactory)
+    
 authInterceptorFactory.$inject = ['$q', '$location', 'authTokenFactory']
+
 function authInterceptorFactory($q, $location, authTokenFactory){
     var authInterceptorFactory = {}
     // attach the token to every request
@@ -48,38 +50,41 @@ function authInterceptorFactory($q, $location, authTokenFactory){
 // ==============================================
 
 angular.module('SomatiColors')
-.factory('authFactory', authFactory)
+    .factory('authFactory', authFactory)
+
 authFactory.$inject = ['$http', '$q', 'authTokenFactory', '$window']
+
 function authFactory($http, $q, authTokenFactory, $window){
     var authFactory = {}
     authFactory.index = function(){
         return $http.get('http://localhost:3000/api/users')
     }
+    
     // handle login
-    authFactory.login = function(email, password){
+    authFactory.login = function(username, password){
         return $http.post('http://localhost:3000/api/authenticate', {
-            email: email,
+            username: username,
             password: password
         }).then(function(response){
             authTokenFactory.setToken(response.data.token)
             return response
         })
     }
-
+    
+    // handle signup
     authFactory.signup = function(username, password, first_name, last_name, mental_health_physician, physician_email){
         return $http.post('http://localhost:3000/api/users', {
-            email: email,
+            username: username,
             password: password,
-            first_name: first_name,
-            last_name: last_name,
-            mental_health_physician: mental_health_physician,
-            physician_email: physician_email
         })
+        console.log("authFactory.signup")
     }
+    
     // handle logout
     authFactory.logout = function(){
         authTokenFactory.setToken()
     }
+    
     // check if a user is logged in
     authFactory.isLoggedIn = function(){
         if(authTokenFactory.getToken()){

@@ -14,7 +14,7 @@ router.route('/users')
 
 //login
 router.route('/authenticate')
-	.post(usersController.authenticate)
+	.post(usersController.authenticateUser)
 
 // Authenticated routes  ==============
 //config middleware for auth
