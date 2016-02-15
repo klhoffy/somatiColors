@@ -20,6 +20,12 @@ function MainRouter ($stateProvider, $urlRouterProvider){
             templateUrl: '../partials/events.html',
             controller: 'eventsController as eventsCtrl'
         })
+        
+        .state('event', {
+			url: '/events/:eventId',
+			templateUrl: 'partials/events/event.html',
+			controller: 'EventsController as eventsCtrl'
+		})
 
         .state('about', {
             url: '/about',
