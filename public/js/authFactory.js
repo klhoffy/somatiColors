@@ -65,10 +65,15 @@ function authFactory($http, $q, authTokenFactory, $window){
             return response
         })
     }
-    authFactory.signup = function(username, password){
+    authFactory.signup = function(username, password, first_name, last_name, mental_health_physician, physician_email){
         return $http.post('http://localhost:3000/api/users', {
             username: username,
-            password: password
+            password: password,
+            first_name: first_name,
+            last_name: last_name,
+            mental_health_physician: mental_health_physician,
+            physician_email: physician_email
+
         })
     }
     // handle logout
