@@ -22,15 +22,10 @@ function MainRouter ($stateProvider, $urlRouterProvider){
         })
         
         .state('event', {
-			url: '/events/:eventId',
+			url: '/users/:user_id/events/:eventId',
 			templateUrl: 'partials/events/event.html',
 			controller: 'EventsController as eventsCtrl'
 		})
-
-        .state('about', {
-            url: '/about',
-            templateUrl: '../partials/about.html'
-        })
     
     $urlRouterProvider.otherwise('/');
     

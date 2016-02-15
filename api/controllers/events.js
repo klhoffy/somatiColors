@@ -11,9 +11,8 @@ function getEvents(request, response) {
   }).select('-__v');
 };
 
-// POST api/:id/events/new
+// POST api/users/:user_id/events/
 function postEvent(request, response) { 
-  var id = request.params.id; 
   var event = new Event();
 
   event.title = request.body.title;
@@ -34,7 +33,7 @@ function postEvent(request, response) {
   event.old_perspective = request.body.old_perspective;
   event.new_perspective = request.body.new_perspective;
   event.coping_strategies = request.body.coping_strategies;
-  event.user_id = id;
+  event.user_id = request.params.user_id;
     
   event.save(function (error) {
     if(error) response.json({ message: "postEvent ERROR:" + error });
