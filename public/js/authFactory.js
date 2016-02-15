@@ -56,24 +56,19 @@ function authFactory($http, $q, authTokenFactory, $window){
         return $http.get('http://localhost:3000/api/users')
     }
     // handle login
-    authFactory.login = function(email, password){
+    authFactory.login = function(username, password){
         return $http.post('http://localhost:3000/api/authenticate', {
-            email: email,
+            username: username,
             password: password
         }).then(function(response){
             authTokenFactory.setToken(response.data.token)
             return response
         })
     }
-
-    authFactory.signup = function(username, password, first_name, last_name, mental_health_physician, physician_email){
+    authFactory.signup = function(username, password){
         return $http.post('http://localhost:3000/api/users', {
-            email: email,
-            password: password,
-            first_name: first_name,
-            last_name: last_name,
-            mental_health_physician: mental_health_physician,
-            physician_email: physician_email
+            username: username,
+            password: password
         })
     }
     // handle logout
@@ -91,7 +86,7 @@ function authFactory($http, $q, authTokenFactory, $window){
     // get that user's info
     authFactory.getUser = function(){
         if(authTokenFactory.getToken()){
-            console.log("user logged in! wahoo")
+            console.log("helloooo")
             return $http.get('http://localhost:3000/api/me?token=' + $window.localStorage.getItem('token') )
         } else {
             return $q.reject({message: 'User has no token'})
