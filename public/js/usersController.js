@@ -53,4 +53,21 @@ function UsersController($state, authFactory, $rootScope, $window) {
 			}
 		})
 	}
+<<<<<<< HEAD
 }
+=======
+    
+	function logout(){
+		$state.go('loggedOut')
+		authFactory.logout();
+		$window.location.reload();
+	}
+}
+
+	function getUser(){
+		authFactory.getUser()
+		.then(function(response){
+			self.user = response.data
+		})
+	}
+>>>>>>> 870770f9239047577d92ab6e9ace078253c45d5f
