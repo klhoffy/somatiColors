@@ -21,13 +21,14 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 * Bootstrap + Angular UI + Custom CSS
 * Adobe Creative Cloud (Photoshop & Illustrator)
 * OmniGraffle 
+s
 -
 
 #### Screenshots
 
-![ SomatiColors Screenshot ](readme/landing.png)
-![ SomatiColors Screenshot ](readme/timeline.png)
-![ SomatiColors Screenshot ](readme/settings.png)
+![ SomatiColors Screenshot ](assets/landing.png)
+![ SomatiColors Screenshot ](assets/timeline.png)
+![ SomatiColors Screenshot ](assets/settings.png)
 
 -
 
@@ -51,7 +52,7 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 #### ERD
 
-![ SomatiColors ERD ](readme/erd.jpg)
+![ SomatiColors ERD ](assets/erd.jpg)
 
 ##### User Model
 ``` username, password, first_name, last_name, email, mental_health_physician, physician_email```
@@ -63,9 +64,6 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 #### Wireframes
 
-![ SomatiColors Wireframe ](readme/wf01.png)
-![ SomatiColors Wireframe ](readme/wf02.png)
-![ SomatiColors Wireframe ](readme/wf03.png)
 ![ SomatiColors Wireframe ](assets/SomatiColors_Home.png)
 ![ SomatiColors Wireframe ](assets/SomatiColors_SignUp.png)
 ![ SomatiColors Wireframe ](assets/SomatiColors_Login.png)
