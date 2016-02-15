@@ -11,12 +11,12 @@
 </datalist>
 
 <ul class="cbp_tmtimeline">
-    <li>
-        <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
+    <li ng-repeat="event in eventsCtrl.events">
+        <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
-            <h2>Ricebean black-eyed pea</h2>
-            <p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape radish bush tomato ricebean black-eyed pea maize eggplant. Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato summer purslane salsify fennel horseradish dulse. Winter purslane garbanzo artichoke broccoli lentil corn okra silver beet celery quandong. Plantain salad beetroot bunya nuts black-eyed pea collard greens radish water spinach gourd chicory prairie turnip avocado sierra leone bologi.</p>
+            <h2>{{ event.title }}</h2>
+            <p>{{ event.location }}, {{ event.people_involved }}, {{ event.situation }}, {{ event.triggers }}, {{ event.bodily_sensations }}, {{ event.emotion }}, {{ event.automatic_thoughts }}, {{ event.rational_thoughts }}, {{ event.behaviors }}, {{ event.consequences }}, {{ event.challenged_beliefs }}, {{ event.lesson }}, {{ event.old_perspective }}, {{ event.new_perspective }}, {{ event.coping_strategies }}</p>
         </div>
     </li>
     <li>
