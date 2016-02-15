@@ -13,7 +13,7 @@
         <input type="text" name="date" placeholder="date">
 
         <label for="location">Location</label>
-        <input type="text" name="location" placeholder="location">
+        <input type="text" name="location" placeholder="location"><br>
 
         <label for="people_involved">People Involved</label>
         <!--<input type="text" name="people_involved" placeholder="people">-->
@@ -28,11 +28,28 @@
         <textarea class="form-control" type="text-area" name="triggers" placeholder="triggers"></textarea>
 
         <label for="bodily_sensations">Bodily Sensations Involved</label>
-        <input type="text" name="bodily_sensations" placeholder="bodily sensations">
+        <select name="bodily_sensations">
+            <option value="chronic_headaches">Chronic Headaches</option>
+            <option value="back_problems">Back Problems</option>
+            <option value="arthritis">Arthritis</option>
+            <option value="muscle_aches_and_cramps">Muscle Aches and Cramps</option>
+            <option value="pelvic_pain">Pelvic Pain</option>
+        </select>
+        <br>
 
 
         <label for="emotion">Emotion Involved</label>
-        <input type="text" name="emotion" placeholder="emotion">
+        <select name="emotion">
+            <option value="joy">Joy</option>
+            <option value="acceptance">Acceptance</option>
+            <option value="fear">Fear</option>
+            <option value="surprise">Surprise</option>
+            <option value="sadness">Sadness</option>
+            <option value="disgust">Disgust</option>
+            <option value="anger">Anger</option>
+            <option value="anticipation">Anticipation</option>
+        </select>
+        <br>
 
         <label for="automatic_thoughts">Automatic Thoughts Involved</label>
         <!--<input type="text" name="automatic_thoughts" placeholder="automatic thoughts">-->
@@ -68,12 +85,12 @@
 
         <label for="coping_strategies">Coping Strategies Involved</label>
         <!--<input type="text" name="coping_strategies" placeholder="coping strategies">-->
-        <textarea class="form-control" type="text-area" name="coping_strategies" placeholder="coping strategies"></textarea>
+        <textarea class="form-control" type="text-area" name="coping_strategies" placeholder="coping strategies"></textarea><br>
 
-        <label for="user_id">user_id Involved</label>
-        <input type="text" name="user_id" placeholder="user_id">
+        <!--<label for="user_id">user_id Involved</label>
+        <input type="text" name="user_id" placeholder="user_id"><br>-->
 
-        <input type="range" min="100" max="500" step="10" />
+        <!--<input type="range" min="100" max="500" step="10" />
 
         <input type="text" id="partNum" pattern="[A-Z]{3}[0-9]{4}" autofocus /><br>
         <input type="text" pattern="[0-9]*" name="shoe-size"><br>
@@ -83,7 +100,7 @@
         <input id="startdate" name="startdate" min="2012-01-01" max="2013-01-01" type="date"><br>
 
 
-        <input type="number" id="pinNum" min="0" max="9999" autocomplete="off" />
+        <input type="number" id="pinNum" min="0" max="9999" autocomplete="off" /><br>-->
 
         <input class="btn btn-primary" id='send' type="submit">
     </div>
