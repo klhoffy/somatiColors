@@ -1,62 +1,74 @@
 <h3>New Event Directive Linked</h3>
 
+<form id="new-event-form" ng-submit="eventsCtrl.addEvent(eventsCtrl.newEvent.title,eventssCtrl.newEvent.date,eventsCtrl.newEvent.location,eventsCtrl.newEvent.people_involved,eventssCtrl.newEvent.situation,eventsCtrl.newEvent.triggers,eventsCtrl.newEvent.bodily_sensations,eventssCtrl.newEvent.emotion,eventsCtrl.newEvent.automatic_thoughts,eventsCtrl.newEvent.rational_thoughts,eventssCtrl.newEvent.rational_response,eventsCtrl.newEvent.behaviors,eventsCtrl.newEvent.consequences,eventssCtrl.newEvent.challenged_beliefs,eventsCtrl.newEvent.lesson,eventsCtrl.newEvent.old_perspective,eventsCtrl.newEvent.new_perspective,eventssCtrl.newEvent.coping_strategies,eventsCtrl.newEvent.user_id)">
 <label for="title">Title</label>
-<input type="text" name="title" placeholder="placeholder">
+<input type="text" name="title" placeholder="title">
 
 <label for="date">Date</label>
-<input type="text" name="date" placeholder="placeholder">
+<input type="text" name="date" placeholder="date">
 
 <label for="location">Location</label>
-<input type="text" name="location" placeholder="placeholder">
+<input type="text" name="location" placeholder="location">
 
-<label for="people_involved">People Invovled</label>
-<input type="text" name="people_involved" placeholder="placeholder">
+<label for="people_involved">People Involved</label>
+<!--<input type="text" name="people_involved" placeholder="people">-->
+<textarea class="form-control" type="text-area" name="people_involved" placeholder="people"></textarea>
 
-<label for="situation">situation</label>
-<input type="text" name="situation" placeholder="placeholder">
+<label for="situation">Situation</label>
+<!--<input type="text" name="situation" placeholder="situation">-->
+<textarea class="form-control" type="text-area" name="situation" placeholder="situation"></textarea>
 
-<label for="triggers">triggers</label>
-<input type="text" name="triggers" placeholder="placeholder">
+<label for="triggers">Triggers</label>
+<!--<input type="text" name="triggers" placeholder="triggers">-->
+<textarea class="form-control" type="text-area" name="triggers" placeholder="triggers"></textarea>
 
-<label for="bodily_sensations">bodily_sensations Invovled</label>
-<input type="text" name="bodily_sensations" placeholder="placeholder">
-
-<label for="emotion">emotion Invovled</label>
-<input type="text" name="emotion" placeholder="placeholder">
-
-<label for="automatic_thoughts">automatic_thoughts Invovled</label>
-<input type="text" name="automatic_thoughts" placeholder="placeholder">
-
-<label for="rational_response">rational_response Invovled</label>
-<input type="text" name="rational_response" placeholder="placeholder">
-
-<label for="behaviors">behaviors Invovled</label>
-<input type="text" name="behaviors" placeholder="placeholder">
-
-<label for="consequences">consequences Invovled</label>
-<input type="text" name="consequences" placeholder="placeholder">
-
-<label for="challenged_beliefs">challenged_beliefs Invovled</label>
-<input type="text" name="challenged_beliefs" placeholder="placeholder">
-
-<label for="lesson">lesson Invovled</label>
-<input type="text" name="lesson" placeholder="placeholder">
-
-<label for="old_perspective">old_perspective Invovled</label>
-<input type="text" name="old_perspective" placeholder="placeholder">
-
-<label for="new_perspective">new_perspective Invovled</label>
-<input type="text" name="new_perspective" placeholder="placeholder">
-
-<label for="coping_strategies">coping_strategies Invovled</label>
-<input type="text" name="coping_strategies" placeholder="placeholder">
-
-<label for="user_id">user_id Invovled</label>
-<input type="text" name="user_id" placeholder="placeholder">
-
-<input type="range" min="100" max="500" step="10" />
+<label for="bodily_sensations">Bodily Sensations Involved</label>
+<input type="text" name="bodily_sensations" placeholder="bodily sensations">
 
 
+<label for="emotion">Emotion Involved</label>
+<input type="text" name="emotion" placeholder="emotion">
+
+<label for="automatic_thoughts">Automatic Thoughts Involved</label>
+<!--<input type="text" name="automatic_thoughts" placeholder="automatic thoughts">-->
+<textarea class="form-control" type="text-area" name="automatic_thoughts" placeholder="automatic thoughts"></textarea>
+
+<label for="rational_response">Rational Response Involved</label>
+<!--<input type="text" name="rational_response" placeholder="rational response">-->
+<textarea class="form-control" type="text-area" name="rational_response" placeholder="rational response"></textarea>
+
+<label for="behaviors">Behaviors Involved</label>
+<!--<input type="text" name="behaviors" placeholder="behaviors">-->
+<textarea class="form-control" type="text-area" name="behaviors" placeholder="behaviors"></textarea>
+
+<label for="consequences">Consequences Involved</label>
+<!--<input type="text" name="consequences" placeholder="consequences">-->
+<textarea class="form-control" type="text-area" name="consequences" placeholder="consequences"></textarea>
+
+<label for="challenged_beliefs">Challenged Beliefs Involved</label>
+<!--<input type="text" name="challenged_beliefs" placeholder="challenged beliefs">-->
+<textarea class="form-control" type="text-area" name="challenged_beliefs" placeholder="challenged beliefs"></textarea>
+
+<label for="lesson">Lesson Involved</label>
+<!--<input type="text" name="lesson" placeholder="lesson">-->
+<textarea class="form-control" type="text-area" name="lesson" placeholder="lesson"></textarea>
+
+<label for="old_perspective">Old Perspective Involved</label>
+<!--<input type="text" name="old_perspective" placeholder="old perspective">-->
+<textarea class="form-control" type="text-area" name="old_perspective" placeholder="old perspective"></textarea>
+
+<label for="new_perspective">New Perspective Involved</label>
+<!--<input type="text" name="new_perspective" placeholder="new perspective">-->
+<textarea class="form-control" type="text-area" name="new_perspective" placeholder="new perspective"></textarea>
+
+<label for="coping_strategies">Coping Strategies Involved</label>
+<!--<input type="text" name="coping_strategies" placeholder="coping strategies">-->
+<textarea class="form-control" type="text-area" name="coping_strategies" placeholder="coping strategies"></textarea>
+
+<label for="user_id">user_id Involved</label>
+<input type="text" name="user_id" placeholder="user_id">
+
+<!--<input type="range" min="100" max="500" step="10" />
 
 <input type="text" id="partNum" pattern="[A-Z]{3}[0-9]{4}" autofocus /><br>
 <input type="text" pattern="[0-9]*" name="shoe-size"><br>
@@ -66,4 +78,6 @@
 <input id="startdate" name="startdate" min="2012-01-01" max="2013-01-01" type="date"><br>
 
 
-<input type="number" id="pinNum" min="0" max="9999" autocomplete="off" />
+<input type="number" id="pinNum" min="0" max="9999" autocomplete="off" />-->
+
+<input class="btn btn-primary" id='send' type="submit">
