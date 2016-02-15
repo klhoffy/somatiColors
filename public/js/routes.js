@@ -28,7 +28,7 @@ function MainRouter ($stateProvider, $urlRouterProvider){
         })
         
         .state('event', {
-			url: '/users/:user_id/events/:eventId',
+			url: '/users/:user_id/events/:event_id',
 			templateUrl: 'partials/events/event.html',
 			controller: 'EventsController as eventsCtrl'
 		})
