@@ -1,108 +1,80 @@
 <ul class="cbp_tmtimeline">
+    <li>
+        <time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
+        <div class="cbp_tmicon cbp_tmicon-screen"></div>
+        <div class="cbp_tmlabel">
+            
+            <form id="new-event-form" ng-submit="eventsCtrl.addEvent(eventsCtrl.newEvent.title,eventssCtrl.newEvent.date,eventsCtrl.newEvent.location,eventsCtrl.newEvent.people_involved,eventssCtrl.newEvent.situation,eventsCtrl.newEvent.triggers,eventsCtrl.newEvent.bodily_sensations,eventssCtrl.newEvent.emotion,eventsCtrl.newEvent.automatic_thoughts,eventsCtrl.newEvent.rational_thoughts,eventssCtrl.newEvent.rational_response,eventsCtrl.newEvent.behaviors,eventsCtrl.newEvent.consequences,eventssCtrl.newEvent.challenged_beliefs,eventsCtrl.newEvent.lesson,eventsCtrl.newEvent.old_perspective,eventsCtrl.newEvent.new_perspective,eventssCtrl.newEvent.coping_strategies,eventsCtrl.newEvent.user_id)">
+            
+            <label for="title">Title</label>
+            <input type="text" name="title" placeholder="title">
 
-<li>
-    <time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
-    <div class="cbp_tmicon cbp_tmicon-screen"></div>
-    <div class="cbp_tmlabel">
-        
-        <form id="new-event-form" ng-submit="eventsCtrl.addEvent(eventsCtrl.newEvent.title,eventssCtrl.newEvent.date,eventsCtrl.newEvent.location,eventsCtrl.newEvent.people_involved,eventssCtrl.newEvent.situation,eventsCtrl.newEvent.triggers,eventsCtrl.newEvent.bodily_sensations,eventssCtrl.newEvent.emotion,eventsCtrl.newEvent.automatic_thoughts,eventsCtrl.newEvent.rational_thoughts,eventssCtrl.newEvent.rational_response,eventsCtrl.newEvent.behaviors,eventsCtrl.newEvent.consequences,eventssCtrl.newEvent.challenged_beliefs,eventsCtrl.newEvent.lesson,eventsCtrl.newEvent.old_perspective,eventsCtrl.newEvent.new_perspective,eventssCtrl.newEvent.coping_strategies,eventsCtrl.newEvent.user_id)">
-        
-        <label for="title">Title</label>
-        <input type="text" name="title" placeholder="title">
+            <label for="date">Date</label>
+            <input type="datetime" name="date" id="date" >
 
-        <label for="date">Date</label>
-        <input type="datetime" name="date" id="date" >
+            <label for="location">Location</label>
+            <input type="text" name="location" placeholder="location"><br>
 
-        <label for="location">Location</label>
-        <input type="text" name="location" placeholder="location"><br>
+            <label for="people_involved">People Involved</label>
+            <textarea class="form-control" type="text-area" name="people_involved" placeholder="people"></textarea>
 
-        <label for="people_involved">People Involved</label>
-        <!--<input type="text" name="people_involved" placeholder="people">-->
-        <textarea class="form-control" type="text-area" name="people_involved" placeholder="people"></textarea>
+            <label for="situation">Situation</label>
+            <textarea class="form-control" type="text-area" name="situation" placeholder="situation"></textarea>
 
-        <label for="situation">Situation</label>
-        <!--<input type="text" name="situation" placeholder="situation">-->
-        <textarea class="form-control" type="text-area" name="situation" placeholder="situation"></textarea>
+            <label for="triggers">Triggers</label>
+            <textarea class="form-control" type="text-area" name="triggers" placeholder="triggers"></textarea>
 
-        <label for="triggers">Triggers</label>
-        <!--<input type="text" name="triggers" placeholder="triggers">-->
-        <textarea class="form-control" type="text-area" name="triggers" placeholder="triggers"></textarea>
+            <label for="bodily_sensations">Bodily Sensations Involved</label>
+            <select name="bodily_sensations">
+                <option value="chronic_headaches">Chronic Headaches</option>
+                <option value="back_problems">Back Problems</option>
+                <option value="arthritis">Arthritis</option>
+                <option value="muscle_aches_and_cramps">Muscle Aches and Cramps</option>
+                <option value="pelvic_pain">Pelvic Pain</option>
+            </select>
+            <br>
 
-        <label for="bodily_sensations">Bodily Sensations Involved</label>
-        <select name="bodily_sensations">
-            <option value="chronic_headaches">Chronic Headaches</option>
-            <option value="back_problems">Back Problems</option>
-            <option value="arthritis">Arthritis</option>
-            <option value="muscle_aches_and_cramps">Muscle Aches and Cramps</option>
-            <option value="pelvic_pain">Pelvic Pain</option>
-        </select>
-        <br>
+            <label for="emotion">Emotion Involved</label>
+            <select name="emotion">
+                <option value="joy">Joy</option>
+                <option value="acceptance">Acceptance</option>
+                <option value="fear">Fear</option>
+                <option value="surprise">Surprise</option>
+                <option value="sadness">Sadness</option>
+                <option value="disgust">Disgust</option>
+                <option value="anger">Anger</option>
+                <option value="anticipation">Anticipation</option>
+            </select>
+            <br>
 
-        <label for="emotion">Emotion Involved</label>
-        <select name="emotion">
-            <option value="joy">Joy</option>
-            <option value="acceptance">Acceptance</option>
-            <option value="fear">Fear</option>
-            <option value="surprise">Surprise</option>
-            <option value="sadness">Sadness</option>
-            <option value="disgust">Disgust</option>
-            <option value="anger">Anger</option>
-            <option value="anticipation">Anticipation</option>
-        </select>
-        <br>
+            <label for="automatic_thoughts">Automatic Thoughts Involved</label>
+            <textarea class="form-control" type="text-area" name="automatic_thoughts" placeholder="automatic thoughts"></textarea>
 
-        <label for="automatic_thoughts">Automatic Thoughts Involved</label>
-        <!--<input type="text" name="automatic_thoughts" placeholder="automatic thoughts">-->
-        <textarea class="form-control" type="text-area" name="automatic_thoughts" placeholder="automatic thoughts"></textarea>
+            <label for="rational_response">Rational Response Involved</label>
+            <textarea class="form-control" type="text-area" name="rational_response" placeholder="rational response"></textarea>
 
-        <label for="rational_response">Rational Response Involved</label>
-        <!--<input type="text" name="rational_response" placeholder="rational response">-->
-        <textarea class="form-control" type="text-area" name="rational_response" placeholder="rational response"></textarea>
+            <label for="behaviors">Behaviors Involved</label>
+            <textarea class="form-control" type="text-area" name="behaviors" placeholder="behaviors"></textarea>
 
-        <label for="behaviors">Behaviors Involved</label>
-        <!--<input type="text" name="behaviors" placeholder="behaviors">-->
-        <textarea class="form-control" type="text-area" name="behaviors" placeholder="behaviors"></textarea>
+            <label for="consequences">Consequences Involved</label>
+            <textarea class="form-control" type="text-area" name="consequences" placeholder="consequences"></textarea>
 
-        <label for="consequences">Consequences Involved</label>
-        <!--<input type="text" name="consequences" placeholder="consequences">-->
-        <textarea class="form-control" type="text-area" name="consequences" placeholder="consequences"></textarea>
+            <label for="challenged_beliefs">Challenged Beliefs Involved</label>
+            <textarea class="form-control" type="text-area" name="challenged_beliefs" placeholder="challenged beliefs"></textarea>
 
-        <label for="challenged_beliefs">Challenged Beliefs Involved</label>
-        <!--<input type="text" name="challenged_beliefs" placeholder="challenged beliefs">-->
-        <textarea class="form-control" type="text-area" name="challenged_beliefs" placeholder="challenged beliefs"></textarea>
+            <label for="lesson">Lesson Involved</label>
+            <textarea class="form-control" type="text-area" name="lesson" placeholder="lesson"></textarea>
 
-        <label for="lesson">Lesson Involved</label>
-        <!--<input type="text" name="lesson" placeholder="lesson">-->
-        <textarea class="form-control" type="text-area" name="lesson" placeholder="lesson"></textarea>
+            <label for="old_perspective">Old Perspective Involved</label>
+            <textarea class="form-control" type="text-area" name="old_perspective" placeholder="old perspective"></textarea>
 
-        <label for="old_perspective">Old Perspective Involved</label>
-        <!--<input type="text" name="old_perspective" placeholder="old perspective">-->
-        <textarea class="form-control" type="text-area" name="old_perspective" placeholder="old perspective"></textarea>
+            <label for="new_perspective">New Perspective Involved</label>
+            <textarea class="form-control" type="text-area" name="new_perspective" placeholder="new perspective"></textarea>
 
-        <label for="new_perspective">New Perspective Involved</label>
-        <!--<input type="text" name="new_perspective" placeholder="new perspective">-->
-        <textarea class="form-control" type="text-area" name="new_perspective" placeholder="new perspective"></textarea>
+            <label for="coping_strategies">Coping Strategies Involved</label>
+            <textarea class="form-control" type="text-area" name="coping_strategies" placeholder="coping strategies"></textarea>
 
-        <label for="coping_strategies">Coping Strategies Involved</label>
-        <!--<input type="text" name="coping_strategies" placeholder="coping strategies">-->
-        <textarea class="form-control" type="text-area" name="coping_strategies" placeholder="coping strategies"></textarea><br>
-
-        <!--<label for="user_id">user_id Involved</label>
-        <input type="text" name="user_id" placeholder="user_id"><br>-->
-
-        <!--<input type="range" min="100" max="500" step="10" />
-
-        <input type="text" id="partNum" pattern="[A-Z]{3}[0-9]{4}" autofocus /><br>
-        <input type="text" pattern="[0-9]*" name="shoe-size"><br>
-        <input id="arrival-time" name="arrival-time " type="datetime-local"><br>
-        <input id="exit-time" name="exit-time" type="time"><br>
-        <input id="expiry" name="expiry" type="month" required><br>
-        <input id="startdate" name="startdate" min="2012-01-01" max="2013-01-01" type="date"><br>
-
-        <input type="number" id="pinNum" min="0" max="9999" autocomplete="off" /><br>-->
-
-        <input class="btn btn-primary" id='send' type="submit">
-    </div>
-</li>
-
+            <input class="btn btn-primary" id='send' type="submit">
+        </div>
+    </li>
 </ul>

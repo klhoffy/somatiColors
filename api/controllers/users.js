@@ -18,7 +18,6 @@ function postUser(request, response) {
   user.password  = request.body.password;
   user.first_name = request.body.first_name;
   user.last_name = request.body.last_name;
-  user.email  = request.body.email;
   user.mental_health_physician  = request.body.mental_health_physician; 
   user.physician_email  = request.body.physician_email;  
   user.joy = request.body.joy;
@@ -57,7 +56,6 @@ function putUser(request, response) {
     if(request.body.password) user.password  = request.body.password;
     if(request.body.first_name) user.first_name = request.body.first_name;
     if(request.body.last_name) user.last_name = request.body.last_name;
-    if(request.body.email) user.email  = request.body.email;
     if(request.body.mental_health_physician) user.mental_health_physician  = request.body.mental_health_physician; 
     if(request.body.physician_email) user.physician_email  = request.body.physician_email;
     if(request.body.joy) user.joy = request.body.joy;

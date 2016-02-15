@@ -43,7 +43,7 @@ function usersController(userFactory, $window, $state, authFactory, $rootScope){
 	}
 
 	function signup(){
-		authFactory.signup(self.user.username, self.user.password, self.user.first_name, self.user.last_name, self.user.mental_health_physician, self.user.physician_email)
+		authFactory.signup(self.user.username, self.user.password )
 		.then(function(response){
 			if(response.data.success){
 				self.login()
