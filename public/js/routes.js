@@ -15,10 +15,29 @@ function MainRouter ($stateProvider, $urlRouterProvider){
             templateUrl: '../partials/landing.html'
         })
 
+        .state('login', {
+        url: '/login',
+        templateUrl: '../partials/login.html',
+        controller: 'UsersController as usersCtrl'
+        })
+
+        .state("signup", {
+            url: '/signup',
+            templateUrl: '../partials/signup.html',
+            controller: "UsersController as usersCtrl"
+        })
+
+         .state('loggedOut', {
+        url: '/loggedOut',
+        templateUrl: '../partials/landing.html',
+        controller: "UsersController as usersCtrl"
+        })
+
+
         .state('users', {
             url: '/users',
             templateUrl: '../partials/users.html',
-            controller: 'usersController as usersCtrl'
+            controller: 'UsersController as usersCtrl'
         })
         
         .state('events', {
@@ -32,28 +51,6 @@ function MainRouter ($stateProvider, $urlRouterProvider){
 			templateUrl: 'partials/events/event.html',
 			controller: 'EventsController as eventsCtrl'
 		})
-
-        .state('login', {
-            url: '/login',
-            templateUrl: '../partials/login.html',
-            controller: 'usersController as usersCtrl'
-        })
-
-        .state("signup", {
-            url: '/signup',
-            templateUrl: '../partials/signup.html',
-            controller: "usersController as usersCtrl"
-        })
-
-        
-
-        .state('loggedOut', {
-            url: '/loggedOut',
-            templateUrl: '../partials/landing.html',
-            controller: "usersController as usersCtrl"
-        })
-
-    
   
     
 }

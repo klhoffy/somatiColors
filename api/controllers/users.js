@@ -1,74 +1,72 @@
-var User = require('../models/user.js'),
-      jwt = require('jsonwebtoken'),
-      mySpecialSecret = "pizza";
+// USERS CONTROLLER - HERE BE FOUND USER CRUD AND AUTH
 
-// GET /api
-function getUsers(request, response) {
- User.find( function (error, users) {
-    if(error) response.json({ message: "getUsers ERROR:" + error });
-    response.json({ users: users });
-  }).select('-__v');
-};
+var User = require('../models/User'),
+  jwt = require('jsonwebtoken'),
+  mySpecialSecret = "pizza";
 
-// POST /api/
-function postUser(request, response) {
-  var user = new User();
 
-  user.username  = request.body.username;
-  user.password  = request.body.password;
-  user.first_name = request.body.first_name;
-  user.last_name = request.body.last_name;
-  user.email  = request.body.email;
-  user.mental_health_physician  = request.body.mental_health_physician; 
-  user.physician_email  = request.body.physician_email;
-    
-  user.save(function (error) {
-    if(error) response.json({ message: "postUsers ERROR:" + error });
-    response.json({ message: "postUser confirmation" });
-  });
-};
+function index(req, res){
+  // get all the users -- index
+  User.find(function(err, users){
+    if(err) res.send(err)
+    res.json(users)
+  })
+}
 
-// GET /api/:id
-function getUser(request, response) {
-  var id = request.params.id;
+function create(req, res){
+  // make a single user -- create
+  console.log("Creating a user")
+  var user = new User()
 
-  User.findOne({ _id: id }, function (error, user){
-    if(error) response.json({ message: "getUser ERROR:" + error });
-    response.json({ user: user });
-  }).select('-__v');
-};
+  user.name = req.body.name
+  user.username = req.body.username
+  user.password = req.body.password
 
-// PUT /api/:id
-function putUser(request, response) {
-  var id = request.params.id;
+  user.save(function(err){
+    if(err){
+      if(err.code == 11000){
+        return res.json({success: false, message: "username already exists" })
+      } else {
+        res.send(err)
+      }
+    }
+    res.json({success: true, message: "User created, Wahey!"})
+  })
+}
 
-  User.findOne({ _id: id }, function (error, user){
-    if(error) response.json({ message: "putUser ERROR:" + error });
+function show(req, res){
+  //get a single user -- show
+  User.findById(req.params.user_id, function(err, user){
+    if(err) res.send(err)
+    res.json(user)
+  })
+}
 
-    if(request.body.username) user.username  = request.body.username;
-    if(request.body.password) user.password  = request.body.password;
-    if(request.body.first_name) user.first_name = request.body.first_name;
-    if(request.body.last_name) user.last_name = request.body.last_name;
-    if(request.body.email) user.email  = request.body.email;
-    if(request.body.mental_health_physician) user.mental_health_physician  = request.body.mental_health_physician; 
-    if(request.body.physician_email) user.physician_email  = request.body.physician_email;
+function update(req, res){
+  // update a single user -- update
+  User.findById(req.params.user_id, function(err, user){
+    if(err) res.send(err)
 
-    user.save( function (error, user){
-      if (error) response.json({ message: "putUser SAVE ERROR:" + error });
-      response.json({ message: "putUser confirmation" });
-    });
-  });
-};
+    if(req.body.name) user.name = req.body.name
+    if(req.body.username) user.username = req.body.username
+    if(req.body.password) user.password = req.body.password
 
-// DELETE /api/:id
-function deleteUser(request, response) {
-  var id = request.params.id;
+    user.save(function(err){
+      if(err) res.send(err)
+      res.json({success: true, message: "you have been updated!"})
+    })
+  })
+}
 
-  User.remove({ _id: id }, function (error) {
-    if(error) response.json({ message: "deleteUser ERROR:" + error });
-    response.json({ message: "deleteUser confirmation" });
-  });
-};
+function destroy(req, res){
+  // delete a single user -- destroy
+  User.remove({
+    _id: req.params.user_id
+  }, function(err, user){
+    if(err) res.send(err)
+    res.json({success: true, message: "YOU HAVE BEEN TERMINATED!"})
+  })
+}
 
 
 //code for apiRouter.route('/authenticate')
@@ -124,11 +122,15 @@ function checkUser(req, res, next){
 }
 
 module.exports = {
-  getUsers: getUsers,
-  postUser: postUser,
-  getUser: getUser,
-  putUser: putUser,
-  deleteUser: deleteUser,
+  index: index,
+  create: create,
+  show: show,
+  update: update,
+  destroy: destroy,
   authenticate: authenticateUser,
   checkUser: checkUser
-};
+}
+
+
+
+
