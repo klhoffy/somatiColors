@@ -10,12 +10,22 @@ function eventsFactory($http){
 	events.list = function(){
 		return $http.get(eventsUrl)
 	}
+    
+    events.addEvent = function(data){
+		return $http.post(eventsUrl, data)
+	}
 
-	events.show = 
+	events.show = function(eventId){
+		return $http.get(eventsUrl + '/' + eventId)
+	}
 
+    events.updateEvent = function(eventId,data){
+		return $http.patch(eventsUrl + '/' + eventId, data)
+	}
 
-
-
+	events.removeEvent = function(eventId){
+		return $http.delete(eventsUrl + '/' + eventId)
+	}
 
 	return events
 }
