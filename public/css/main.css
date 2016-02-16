@@ -16,11 +16,42 @@ footer {
     text-align: center;
 }
 
+/* Landing */
+.hero {
+    background-image: url("../assets/hero.jpeg");
+    background-position: center center;
+    background-size: 100% auto;
+    height: 400px;
+}
+
+.red, .yellow, .green, .blue{
+    color: #fff;
+    padding: 5%;
+    height: 300px;
+}
+
+.red {
+    background-color: #e55c4c;
+}
+.yellow {
+    background-color: #ffc548;
+}
+
+.green {
+    background-color: #22a57b;
+}
+
+.blue {
+    background-color: #41b1bf;
+}
+
+
+/* Color Palette */
 .colors {
     width: 100%;
     padding: 15px;
     margin: 15px 0;
-    background: gray;
+    background: #ffff00;
     border-radius: 5px;
     text-align: center;
 }
