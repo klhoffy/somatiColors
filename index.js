@@ -25,4 +25,3 @@ app.use('/api', apiRouter);
 
 app.listen(port);
 console.log('Magic is happening on port' + port);
-
