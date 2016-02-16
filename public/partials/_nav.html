@@ -6,10 +6,13 @@
     </div>
         <ul class="nav navbar-nav navbar-right">
             <li ng-if="usersCtrl.loggedIn"><a>Hi {{usersCtrl.user.username}}</a></li>
-            <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: dog})">Events</a></li> 
+            <li ng-if="usersCtrl.loggedIn"><a ui-sref="events">Events</a></li> 
             <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Login</a></li>
             <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign up </a></li>
-            <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log out</a></li>  
+            <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log out</a></li> 
+            
+            <li><a ui-sref="events({ user_id: 123455 })">eventsss</a></li>
+ 
         </ul>
         </div>
     </nav>
