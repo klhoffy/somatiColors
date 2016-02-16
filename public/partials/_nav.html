@@ -1,3 +1,4 @@
+
 <section class="row">
     <div class="col-md-12">
         <div ng-controller="UsersController as usersCtrl">
@@ -6,15 +7,42 @@
             <div class="navbar-header">
                 <a class="navbar-brand" ui-sref="landing">SomatiColors</a>
             </div>
-                <ul class="nav navbar-nav navbar-right">
-                    <li ng-if="usersCtrl.loggedIn"><a>Hi {{usersCtrl.user.user_id}}</a></li>
-                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account Settings</a></li> 
-                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li> 
-                    <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log Out</a></li>
-                    
-                    <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Login</a></li>
-                    <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign up </a></li>
-                </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+            <li ng-if="usersCtrl.loggedIn"><a>Hi {{usersCtrl.user.username}}</a></li>
+            <li ng-if="usersCtrl.loggedIn"><a ui-sref="about">About!</a></li> 
+            <li ng-if="usersCtrl.loggedIn"><a ui-sref="events">Events!</a></li> 
+
+            <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Login</a></li>
+            <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign up </a></li>
+            
+            <li ng-if="!usersCtrl.loggedIn">
+                <div id="navbar" class="navbar-collapse collapse">
+                <form ng-submit="usersCtrl.login()" class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" ng-model="usersCtrl.user.username">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" ng-model="usersCtrl.user.password">
+                    </div>
+
+                    <div class="alert alert-danger" ng-if="usersCtrl.error">
+                        {{ usersCtrl.error }}
+                    </div>
+
+                    <button type="submit" class="btn btn-success">
+                        <span>Login</span>
+                    </button>
+                 </form>
+                 </div>
+            </li>
+
+            <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log out</a></li>  
+        </ul>
+
                 </div>
             </nav>
         </div>
