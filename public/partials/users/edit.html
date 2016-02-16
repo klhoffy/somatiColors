@@ -1,70 +1,75 @@
-<form ng-submit="usersCtrl.signup()">
-    
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" ng-model="usersCtrl.user.username">
+<section class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <form ng-submit="usersCtrl.signup()">
+            <h2>Account Settings</h2>
+            
+            <hr>
+            
+            <h3>Basic</h3>
+                        
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" ng-model="usersCtrl.user.username">
+            </div>
+
+            <div class="form-group">
+                <label>email</label>
+                <input type="text" class="form-control" ng-model="usersCtrl.user.email">
+            </div>
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" class="form-control" ng-model="usersCtrl.user.first_name">
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" class="form-control" ng-model="usersCtrl.user.last_name">
+            </div>
+
+            <hr>
+            
+            <h3>Health</h3>
+            
+            <div class="form-group">
+                <label>Mental Health Physician</label>
+                <input type="text" class="form-control" ng-model="usersCtrl.user.mental_health_physician">
+            </div>
+
+            <div class="form-group">
+                <label>Physician Email</label>
+                <input type="text" class="form-control" ng-model="usersCtrl.user.physician_email">
+            </div>
+            
+            <hr>
+            
+            <h3>Color Palette</h3>
+
+            <label for="joy">Joy</label>
+            <input type="color" ng-model="usersCtrl.user.joy">
+            
+            <label for="acceptance">Acceptance</label>
+            <input type="color" ng-model="usersCtrl.user.acceptance">
+            
+            <label for="fear">Fear</label>
+            <input type="color" ng-model="usersCtrl.user.fear">
+            
+            <label for="surprise">Surprise</label>
+            <input type="color" ng-model="usersCtrl.user.surprise">
+            
+            <label for="sadness">Sadness</label>
+            <input type="color" ng-model="usersCtrl.user.sadness">
+            
+            <label for="disgust">Disgust</label>
+            <input type="color" ng-model="usersCtrl.user.disgust">
+            
+            <label for="anger">Anger</label>
+            <input type="color" ng-model="usersCtrl.user.anger">
+            
+            <label for="anticipation">Anticipation</label>
+            <input type="color" ng-model="usersCtrl.user.anticipation">
+
+            <button type="submit">Update</button>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label>email</label>
-        <input type="text" class="form-control" ng-model="usersCtrl.user.email">
-    </div>
-
-    <div class="form-group">
-        <label>First Name</label>
-        <input type="text" class="form-control" ng-model="usersCtrl.user.first_name">
-    </div>
-
-    <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" class="form-control" ng-model="usersCtrl.user.last_name">
-    </div>
-
-    <div class="form-group">
-        <label>Mental Health Physician</label>
-        <input type="text" class="form-control" ng-model="usersCtrl.user.mental_health_physician">
-    </div>
-
-    <div class="form-group">
-        <label>Physician Email</label>
-        <input type="text" class="form-control" ng-model="usersCtrl.user.physician_email">
-    </div>
-
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" ng-model="usersCtrl.user.password">
-    </div>
-
-    <div class="alert alert-danger" ng-if="usersCtrl.error">
-        {{ usersCtrl.error }}
-    </div>
-    
-    <label for="joy">Joy</label>
-    <input type="color" name="joy">
-    
-    <label for="acceptance">Acceptance</label>
-    <input type="color" name="acceptance">
-    
-    <label for="fear">Fear</label>
-    <input type="color" name="fear">
-    
-    <label for="surprise">Surprise</label>
-    <input type="color" name="surprise">
-    
-    <label for="sadness">Sadness</label>
-    <input type="color" name="sadness">
-    
-    <label for="disgust">Disgust</label>
-    <input type="color" name="disgust">
-    
-    <label for="anger">Anger</label>
-    <input type="color" name="anger">
-    
-    <label for="anticipation">Anticipation</label>
-    <input type="color" name="anticipation">
-
-    <button type="submit" class="btn btn-block btn-primary">Sign up</button>
-
-</form>
-
-
+</section>

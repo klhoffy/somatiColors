@@ -9,8 +9,8 @@ function EventsController(eventsFactory,$stateParams,$location){
     self.newEvent = {}
     self.event = null
 	self.editing = false
-	self.showEvent = function(eventId){
-		self.api.show(eventId).success(function(response){
+	self.showEvent = function(event_id){
+		self.api.show(event_id).success(function(response){
 			self.event = response
 			console.log(response)
 		})
@@ -28,19 +28,19 @@ function EventsController(eventsFactory,$stateParams,$location){
                 })
         }
 
-	self.showEvents($stateParams.eventsId)
+	self.showEvent($stateParams.event_id)
 
-	self.updateEvents = function(eventsId, title, date, location, people_involved, situation, triggers, bodily_sensations, emotion, automatic_thoughts, rational_thoughts, behaviors, consequences, challenged_beliefs, lesson, old_perspective, new_perspective, coping_strategies, user_id){
+	self.updateEvents = function(event_id, title, date, location, people_involved, situation, triggers, bodily_sensations, emotion, automatic_thoughts, rational_thoughts, behaviors, consequences, challenged_beliefs, lesson, old_perspective, new_perspective, coping_strategies, user_id){
 		var data = {title:title, date:date, location:location, people_involved:people_involved, situation:situation, triggers:triggers, bodily_sensations:bodily_sensations, emotion:emotion, automatic_thoughts:automatic_thoughts, rational_thoughts:rational_thoughts, behaviors:behaviors, consequences:consequences, challenged_beliefs:challenged_beliefs, lesson:lesson, old_perspective:old_perspective, new_perspective:new_perspective, coping_strategies:coping_strategies, user_id:user_id}
-		self.api.updateEvents(eventsId,data).success(function(response){
+		self.api.updateEvents(event_id,data).success(function(response){
 			console.log(response)
 			self.events = response
 			self.editing = false
 		})
 	}
 
-	self.removeEvents = function(eventsId){
-		self.api.removeEvents(eventsId).success(function(response){
+	self.removeEvents = function(event_id){
+		self.api.removeEvents(event_id).success(function(response){
 			console.log(response)
 			$location.path('/events')
 		})
