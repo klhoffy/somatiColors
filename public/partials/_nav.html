@@ -7,7 +7,6 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" ui-sref="landing">SomatiColors</a>
                 </div>
-
                 <ul class="nav navbar-nav navbar-right">
                     <li ng-if="usersCtrl.loggedIn"><a>Hi {{usersCtrl.user.username}}</a></li>
                     <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account Settings</a></li> 
@@ -17,7 +16,6 @@
                     <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Login</a></li>
                     <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign up </a></li> 
                 </ul>
-
             </div>
             </nav>
         </div>
