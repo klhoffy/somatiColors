@@ -1,12 +1,9 @@
-<div class="row col-md-6 col-md-offset-3">
-	
-	<div class="jumbotron">
+<section class="row">
+    <div class="col-md-8 col-md-offset-2">
 		<h1>Login</h1>		
-
 		<form ng-submit="usersCtrl.login()">
-			
 			<div class="form-group">
-				<label>Username</label>
+				<label>Email</label>
 				<input type="text" class="form-control" ng-model="usersCtrl.user.username">
 			</div>
 
@@ -22,8 +19,7 @@
 			<button type="submit" class="btn btn-block btn-primary">
 				<span>Login</span>
 			</button>
+        </form>
+    </div>
+</section>
 
-		</form>
-	</div>
-	
-</div>

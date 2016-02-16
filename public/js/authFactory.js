@@ -65,10 +65,11 @@ function authFactory($http, $q, authTokenFactory, $window){
             return response
         })
     }
-    authFactory.signup = function(username, password){
+    authFactory.signup = function(username, password, user_id){
         return $http.post('http://localhost:3000/api/users', {
             username: username,
-            password: password
+            password: password, 
+            user_id: user_id
         })
     }
     // handle logout
@@ -86,7 +87,7 @@ function authFactory($http, $q, authTokenFactory, $window){
     // get that user's info
     authFactory.getUser = function(){
         if(authTokenFactory.getToken()){
-            console.log("helloooo")
+            console.log($window.localStorage.getItem('token'))
             return $http.get('http://localhost:3000/api/me?token=' + $window.localStorage.getItem('token') )
         } else {
             return $q.reject({message: 'User has no token'})

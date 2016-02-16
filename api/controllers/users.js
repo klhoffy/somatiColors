@@ -109,7 +109,8 @@ function authenticateUser(req, res) {
         // password is good!
         var token = jwt.sign({
           name: user.name,
-          username: user.username
+          username: user.username,
+          user_id: user._id
         }, mySpecialSecret, {
           expiresInMinutes: 1440
         })
