@@ -1,54 +1,44 @@
 var express = require('express')
-var apiRouter = express.Router() //get an instance of express router
+var apiRouter = express.Router()
 var usersController = require('../controllers/users.js')
+var eventsController = require('../controllers/events.js')
 
-// var User = require('../models/user')
 
-
-// Non-Authenticated routes ===========
-
-//make a user
+// Non-Authenticated
+// make a user
 apiRouter.route('/users')
 	.post(usersController.create)
-
-//login
+// login
 apiRouter.route('/authenticate')
 	.post(usersController.authenticate)
 
-// Authenticated routes  ==============
-//config middleware for auth
+
+// Authenticated
+// config middleware for auth
 apiRouter.use(usersController.checkUser)
-
-//users index
-apiRouter.route('/users')
-	.get(usersController.index)
-
-//logged in user detail
+// logged in user detail
 apiRouter.route('/me')
 	.get(function(req, res){
 		res.send(req.decoded)
 	})
 
-//user CRUD
+
+// CRUD
+apiRouter.route('/users')
+	.get(usersController.index)
+    
 apiRouter.route('/users/:user_id')
 	.get(usersController.show)
 	.put(usersController.update)
 	.delete(usersController.destroy)
-
-
-// //user CRUD
-// apiRouter.route('/users/:id')
-// 	.get(usersController.getUser)
-// 	.delete(usersController.deleteUser)
-// 	.put(usersController.putUser)
     
-// apiRouter.route('/users/:user_id/events')
-// 	.get(eventsController.getEvents)
-// 	.post(eventsController.postEvent)
+apiRouter.route('/users/:user_id/events')
+	.get(eventsController.index)
+	.post(eventsController.create)
 
-// apiRouter.route('/users/:user_id/events/:id')
-// 	.get(eventsController.getEvent)
-// 	.delete(eventsController.deleteEvent)
-// 	.put(eventsController.putEvent)
+apiRouter.route('/users/:user_id/events/:id')
+	.get(eventsController.show)
+	.delete(eventsController.destroy)
+	.put(eventsController.update)
 
 module.exports = apiRouter

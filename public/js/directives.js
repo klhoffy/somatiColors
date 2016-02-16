@@ -17,7 +17,7 @@ function navTop (){
   var directive = {
   restrict: 'E',
   replace: true,
-  templateUrl:  "../partials/nav.html"
+  templateUrl:  "../partials/_nav.html"
   };
   return directive;
 }

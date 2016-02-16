@@ -1,8 +1,7 @@
-var User = require('../models/user.js');
 var Event = require('../models/event.js');
 
 // GET api/:id/events
-function getEvents(request, response) {
+function index(request, response) {
   var user_id = request.params.user_id;
 
   Event.find({ user_id: user_id}, function (error, events) {
@@ -12,7 +11,7 @@ function getEvents(request, response) {
 };
 
 // POST api/users/:user_id/events/
-function postEvent(request, response) { 
+function create(request, response) { 
   var event = new Event();
 
   event.title = request.body.title;
@@ -42,7 +41,7 @@ function postEvent(request, response) {
 };
 
 // GET api/:id/events/:id
-function getEvent(request, response) {
+function show(request, response) {
   var id = request.params.id;
 
   Event.findById({ _id: id }, function (error, event){
@@ -52,7 +51,7 @@ function getEvent(request, response) {
 };
 
 // PUT api/:id/events/:id
-function putEvent(request, response) {
+function update(request, response) {
   var id = request.params.id;
 
   Event.findById({ _id: id }, function (error, event){
@@ -85,7 +84,7 @@ function putEvent(request, response) {
 };
 
 // DELETE api/:id/events/:id
-function deleteEvent(request, response) {
+function destroy(request, response) {
   var id = request.params.id;
 
   Event.remove({ _id: id }, function (error) {
@@ -95,9 +94,9 @@ function deleteEvent(request, response) {
 };
 
 module.exports = {
-  getEvents: getEvents,
-  postEvent: postEvent,
-  getEvent: getEvent,
-  putEvent: putEvent,
-  deleteEvent: deleteEvent
+  index: index,
+  create: create,
+  show: show,
+  update: update,
+  destroy: destroy
 };

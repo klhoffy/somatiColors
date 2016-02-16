@@ -1,9 +1,6 @@
-// USERS CONTROLLER - HERE BE FOUND USER CRUD AND AUTH
-
-var User = require('../models/User'),
-  jwt = require('jsonwebtoken'),
-  mySpecialSecret = "pizza";
-
+var User = require('../models/User');
+var jwt = require('jsonwebtoken');
+var mySpecialSecret = "pizza";
 
 function index(req, res){
   // get all the users -- index
@@ -18,9 +15,21 @@ function create(req, res){
   console.log("Creating a user")
   var user = new User()
 
-  user.name = req.body.name
-  user.username = req.body.username
-  user.password = req.body.password
+  user.name = req.body.name;
+  user.username = req.body.username;
+  user.password = req.body.password;
+  user.first_name = req.body.first_name;
+  user.last_name = req.body.last_name;
+  user.mental_health_physician = req.body.mental_health_physician;
+  user.physician_email = req.body.physician_email;
+  user.joy = req.body.joy;   
+  user.acceptance = req.body.acceptance;
+  user.fear = req.body.fear;
+  user.surprise = req.body.surprise;
+  user.sadness = req.body.sadness; 
+  user.disgust = req.body.disgust;   
+  user.anger = req.body.anger; 
+  user.anticipation = req.body.anticipation;
 
   user.save(function(err){
     if(err){
@@ -47,9 +56,21 @@ function update(req, res){
   User.findById(req.params.user_id, function(err, user){
     if(err) res.send(err)
 
-    if(req.body.name) user.name = req.body.name
-    if(req.body.username) user.username = req.body.username
-    if(req.body.password) user.password = req.body.password
+    if(req.body.name) user.name = req.body.name;
+    if(req.body.username) user.username = req.body.username;
+    if(req.body.password) user.password = req.body.password;
+    if(req.body.first_name) user.first_name = req.body.first_name;
+    if(req.body.last_name) user.last_name = req.body.last_name;
+    if(req.body.mental_health_physician) user.mental_health_physician = req.body.mental_health_physician;
+    if(req.body.physician_email) user.physician_email = req.body.physician_email;
+    if(req.body.joy) user.joy = req.body.joy;   
+    if(req.body.acceptance) user.acceptance = req.body.acceptance;
+    if(req.body.fear) user.fear = req.body.fear;
+    if(req.body.surprise) user.surprise = req.body.surprise;
+    if(req.body.sadness) user.sadness = req.body.sadness; 
+    if(req.body.disgust) user.disgust = req.body.disgust;   
+    if(req.body.anger) user.anger = req.body.anger; 
+    if(req.body.anticipation) user.anticipation = req.body.anticipation;
 
     user.save(function(err){
       if(err) res.send(err)
