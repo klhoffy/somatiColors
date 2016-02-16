@@ -42,7 +42,7 @@ function MainRouter ($stateProvider, $urlRouterProvider){
         
         .state('user', {
             url: '/users/:user_id',
-            templateUrl: '../partials/user.html',
+            templateUrl: '../partials/users/user.html',
             controller: 'UsersController as usersCtrl'
         })
         
