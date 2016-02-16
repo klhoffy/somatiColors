@@ -9,7 +9,7 @@ function eventsFactory($http, $stateParams){
     var user_id = $stateParams.user_id
 
 	events.list = function(){
-		return $http.get(eventsUrl + user_id +'/events')
+		return $http.get(eventsUrl + user_id + '/events')
 	}
     
     events.addEvent = function(data){
