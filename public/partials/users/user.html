@@ -1,2 +1,32 @@
-<h2>One User directive</h2>
+<section class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <form ng-submit="usersCtrl.signup()">
+            <h2>Account Information</h2>
+            
+            <hr>
+            
+            <p><strong>name:</strong> {{ user.first_name }} {{ user.last_name }} </p>
+            <p><strong>email:</strong>{{ user.username }} </p>
+            
+            <hr>
+            
+            <p><strong>mental health physcian:</strong> {{ user.mental_health_physician }} </p>
+            <p><strong>physician's email:</strong> {{ user.physician_email }} </p>
+            
+            <hr>
+            
+            <div class="colors" ng-class="" ><strong>joy</strong> {{ user.joy }} </div>
+            <div class="colors" ng-class="" ><strong>acceptance</strong> {{ user.acceptance }} </div>
+            <div class="colors" ng-class="" ><strong>fear</strong> {{ user.fear }} </div>
+            <div class="colors" ng-class="" ><strong>surprise</strong> {{ user.surprise }} </div>
+            <div class="colors" ng-class="" ><strong>sadness</strong> {{ user.sadness }} </div>
+            <div class="colors" ng-class="" ><strong>disgust</strong> {{ user.disgust }} </div>
+            <div class="colors" ng-class="" ><strong>anger</strong> {{ user.anger }} </div>
+            <div class="colors" ng-class="" ><strong>anticipation</strong> {{ user.anticipation }} </div>
+            
+            <button>Edit</button>
+            <button>Delete</button>
 
+        </form>
+    </div>
+</section>
