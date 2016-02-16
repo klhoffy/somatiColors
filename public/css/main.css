@@ -1,9 +1,10 @@
 body{
     background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
 }
 
 section {
-    border: 2px solid gray;
+    border: 1px solid gray;
     padding: 30px;
 }
 
