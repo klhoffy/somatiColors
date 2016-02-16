@@ -1,6 +1,7 @@
 body{
     background-color: #fff;
     font-family: 'Open Sans', sans-serif;
+    line-height: 1.25;
 }
 
 section {
@@ -25,7 +26,6 @@ p {
 }
 
 strong {
-    font-family: 'Kalam', cursive;
     font-weight: 700;
 }
 
