@@ -32,8 +32,9 @@ function create(request, response) {
   event.old_perspective = request.body.old_perspective;
   event.new_perspective = request.body.new_perspective;
   event.coping_strategies = request.body.coping_strategies;
-  event.user_id = request.decoded.user_id;
 
+  event.user_id = request.decoded.user_id;
+    
   event.save(function (error) {
     if(error) response.json({ message: "postEvent ERROR:" + error });
     response.json({ message: "postEvent confirmation" });

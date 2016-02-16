@@ -1,26 +1,15 @@
 angular.module('SomatiColors')
 	.factory('userFactory', userFactory)
 
-userFactory.$inject = ['$http']
+userFactory.$inject = ['$http', '$window']
 
-function userFactory($http){
-	var usersUrl = 'http://localhost:3000/api/users'
+function userFactory($http, $window){
+	var usersUrl = 'http://localhost:3000/api/users/me'
 	var users = {}
+    var user_id = $window.localStorage.getItem('token')._id
 
-	users.list = function(){
-		return $http.get(usersUrl)
-	}
-
-	users.users = function(){
-		return $http.get(usersUrl)
-	}
-
-	users.user = function(carId){
+	users.user = function(user_id){
 		return $http.get(usersUrl + '/' + user_id)
-	}
-
-	users.addUser = function(data){
-		return $http.post(usersUrl, data)
 	}
 
 	users.editUser = function(carId,data){

@@ -12,6 +12,8 @@ function UsersController($state, authFactory, $rootScope, $window) {
 	vm.logout = logout
 	vm.getUser = getUser
 	vm.error = null
+    vm.currentUser = currentUser;
+    vm.user_id = $window.localStorage.getItem('token.data._id')
 
 	$rootScope.$on('$stateChangeStart', function() {
 		vm.loggedIn = authFactory.isLoggedIn();	
@@ -53,4 +55,13 @@ function UsersController($state, authFactory, $rootScope, $window) {
 			}
 		})
 	}
+    
+    function currentUser() {
+        if (authFactory.isLoggedIn === true) {
+            vm.user = vm.user._id
+            console.log('this user is authorized')
+        } else {
+            console.log('not authorized')
+        }
+    }
 }
