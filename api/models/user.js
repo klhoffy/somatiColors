@@ -18,7 +18,7 @@ UserSchema.pre('save', function(next){
 	if(!user.isModified('password')) return next()
 
 	bcrypt.hash(user.password, null, null, function(err, hash){
-		// if error, just move on, with the error
+		//if error, just move on, with the error
 		if(err) return next(err)
 
 		// if no error, set the user.password to the hash, then move on to saving.

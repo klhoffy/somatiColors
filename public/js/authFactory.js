@@ -23,10 +23,8 @@ function authTokenFactory($window){
 // ================================================
 
 angular.module('SomatiColors')
-    .factory('authInterceptorFactory', authInterceptorFactory)
-    
+.factory('authInterceptorFactory', authInterceptorFactory)
 authInterceptorFactory.$inject = ['$q', '$location', 'authTokenFactory']
-
 function authInterceptorFactory($q, $location, authTokenFactory){
     var authInterceptorFactory = {}
     // attach the token to every request
@@ -50,16 +48,13 @@ function authInterceptorFactory($q, $location, authTokenFactory){
 // ==============================================
 
 angular.module('SomatiColors')
-    .factory('authFactory', authFactory)
-
+.factory('authFactory', authFactory)
 authFactory.$inject = ['$http', '$q', 'authTokenFactory', '$window']
-
 function authFactory($http, $q, authTokenFactory, $window){
     var authFactory = {}
     authFactory.index = function(){
         return $http.get('http://localhost:3000/api/users')
     }
-    
     // handle login
     authFactory.login = function(username, password){
         return $http.post('http://localhost:3000/api/authenticate', {
@@ -70,20 +65,16 @@ function authFactory($http, $q, authTokenFactory, $window){
             return response
         })
     }
-
     authFactory.signup = function(username, password){
         return $http.post('http://localhost:3000/api/users', {
             username: username,
             password: password
         })
-        console.log("authFactory.signup")
     }
-    
     // handle logout
     authFactory.logout = function(){
         authTokenFactory.setToken()
     }
-    
     // check if a user is logged in
     authFactory.isLoggedIn = function(){
         if(authTokenFactory.getToken()){
