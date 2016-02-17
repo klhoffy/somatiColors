@@ -1,30 +1,27 @@
 <section class="row">
     <div class="col-md-8 col-md-offset-2">
-        <form ng-submit="usersCtrl.update()">
-            <h2>Account Settings</h2>
-            
+        <form ng-submit="usersCtrl.putUserAPI(usersCtrl.params)">
+            <h2>Edit Account</h2>
+            <p>{{ usersCtrl.params }}</p>
+            <div ng-if="!usersCtrl.info.username">{{ usersCtrl.getUserApi(usersCtrl.params) }}</div>
+                     
             <hr>
             
             <h3>Basic</h3>
-                        
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" class="form-control" ng-model="usersCtrl.user.username">
-            </div>
-
-            <div class="form-group">
-                <label>email</label>
-                <input type="text" class="form-control" ng-model="usersCtrl.user.email">
-            </div>
 
             <div class="form-group">
                 <label>First Name</label>
-                <input type="text" class="form-control" ng-model="usersCtrl.user.first_name">
+                <input type="text" class="form-control" value="{{ usersCtrl.info.first_name }}" ng-model="usersCtrl.updatedInfo.first_name">
             </div>
 
             <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" class="form-control" ng-model="usersCtrl.user.last_name">
+                <input type="text" class="form-control" value="{{ usersCtrl.info.last_name }}" ng-model="usersCtrl.updatedInfo.last_name">
+            </div>
+            
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" ng-model="usersCtrl.updatedInfo.username">
             </div>
 
             <hr>
@@ -33,12 +30,12 @@
             
             <div class="form-group">
                 <label>Mental Health Physician</label>
-                <input type="text" class="form-control" ng-model="usersCtrl.user.mental_health_physician">
+                <input type="text" class="form-control" value="{{ usersCtrl.info.mental_health_physician }}" ng-model="usersCtrl.updatedInfo.mental_health_physician">
             </div>
 
             <div class="form-group">
                 <label>Physician Email</label>
-                <input type="text" class="form-control" ng-model="usersCtrl.user.physician_email">
+                <input type="email" class="form-control" value="{{ usersCtrl.info.physician_email }}" ng-model="usersCtrl.updatedInfo.physician_email">
             </div>
             
             <hr>
@@ -46,30 +43,30 @@
             <h3>Color Palette</h3>
 
             <label for="joy">Joy</label>
-            <input type="color" ng-model="usersCtrl.user.joy">
+            <input type="color" value="{{ usersCtrl.info.joy }}" ng-model="usersCtrl.updatedInfo.joy">
             
             <label for="acceptance">Acceptance</label>
-            <input type="color" ng-model="usersCtrl.user.acceptance">
+            <input type="color" value="{{ usersCtrl.info.acceptance }}" ng-model="usersCtrl.updatedInfo.acceptance">
             
             <label for="fear">Fear</label>
-            <input type="color" ng-model="usersCtrl.user.fear">
+            <input type="color" value="{{ usersCtrl.info.fear }}" ng-model="usersCtrl.updatedInfo.fear">
             
             <label for="surprise">Surprise</label>
-            <input type="color" ng-model="usersCtrl.user.surprise">
+            <input type="color" value="{{ usersCtrl.info.surprise }}" ng-model="usersCtrl.updatedInfo.surprise">
             
             <label for="sadness">Sadness</label>
-            <input type="color" ng-model="usersCtrl.user.sadness">
+            <input type="color" value="{{ usersCtrl.info.sadness }}" ng-model="usersCtrl.updatedInfo.sadness">
             
             <label for="disgust">Disgust</label>
-            <input type="color" ng-model="usersCtrl.user.disgust">
+            <input type="color" value="{{ usersCtrl.info.disgust }}" ng-model="usersCtrl.updatedInfo.disgust">
             
             <label for="anger">Anger</label>
-            <input type="color" ng-model="usersCtrl.user.anger">
+            <input type="color" value="{{ usersCtrl.info.anger }}" ng-model="usersCtrl.updatedInfo.anger">
             
             <label for="anticipation">Anticipation</label>
-            <input type="color" ng-model="usersCtrl.user.anticipation">
-
-            <button type="submit">Update</button>
+            <input type="color" value="{{ usersCtrl.info.anticipation }}" ng-model="usersCtrl.updatedInfo.anticipation">
+            
+            <button type="submit">Update Edits</button>
         </form>
     </div>
 </section>
