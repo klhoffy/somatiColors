@@ -1,14 +1,12 @@
 angular.module('SomatiColors')
 	.controller('UsersController', UsersController)
 
-UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$http',  '$location']
+UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$http', '$location', '$scope', '$stateParams']
 
-function UsersController($state, authFactory, $rootScope, $window, $http, $location) {
+function UsersController($state, authFactory, $rootScope, $window, $http, $location, $scope, $stateParams) {
 	var vm = this
     vm.info = [];
-    vm.user_id = ''
-    
-
+    vm.params = $stateParams.user_id
     
     
     
@@ -70,13 +68,12 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     // Get One User's Info
     vm.info = [];
     vm.getUserApi = getUserApi;
-    getUserApi();
-    function getUserApi(){
+    // getUserApi();
+    function getUserApi(user_id){
     $http
-        .get('http://localhost:3000/api/users/56c26a4712398302780d4b50' )
+        .get('http://localhost:3000/api/users/' +  user_id )
         .then(function(response){
-            vm.info = response.data;
-            console.log( 'getUserApi' + vm.user_id )
+           return vm.info = response.data;
         });
     }
     
