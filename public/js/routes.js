@@ -34,27 +34,15 @@ function MainRouter ($stateProvider, $urlRouterProvider){
             controller: "UsersController as usersCtrl"
         })
 
-        .state('users', {
-            url: '/users',
-            templateUrl: '../partials/users.html',
-            controller: 'UsersController as usersCtrl'
-        })
-        
         .state('user', {
-            url: '/users/:user_id',
-            templateUrl: '../partials/users/user.html',
+            url: '/user/:user_id',
+            templateUrl: '../partials/user.html',
             controller: 'UsersController as usersCtrl'
         })
         
         .state('events', {
-            url: '/users/:user_id/events',
+            url: '/user/:user_id/events',
             templateUrl: '../partials/events.html',
-            controller: 'EventsController as eventsCtrl'
-        })
-        
-        .state('event', {
-            url: '/users/:user_id/events/:event_id',
-            templateUrl: 'partials/events/event.html',
             controller: 'EventsController as eventsCtrl'
         })
  

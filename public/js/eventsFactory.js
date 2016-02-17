@@ -5,26 +5,22 @@ eventsFactory.$inject = ['$http', '$stateParams']
 
 function eventsFactory($http, $stateParams){
 	var eventsUrl = "http://localhost:3000/api/users/"
-	var events = {}
-    var user_id = $stateParams.user_id
-
-	events.list = function(){
-		return $http.get(eventsUrl + user_id + '/events')
-	}
     
-    events.addEvent = function(data){
-		return $http.post(eventsUrl + user_id + '/events', data)
+	var events = {}
+
+    events.showEvents = function(user_id){
+		return $http.get(eventsUrl + user_id + '/events/')
 	}
 
-	events.show = function(event_id){
-		return $http.get(eventsUrl + user_id + '/events/' + event_id)
+    events.postEvent = function(user_id, data){
+		return $http.post(eventsUrl + user_id + '/events/')
 	}
 
-    events.updateEvent = function(event_id,data){
-		return $http.patch(eventsUrl + user_id + '/events/' + event_id, data)
+    events.putEvent = function(user_id, event_id,data){
+		return $http.put(eventsUrl + user_id + '/events/' + event_id, data)
 	}
 
-	events.removeEvent = function(event_id){
+	events.removeEvent = function(user_id, event_id){
 		return $http.delete(eventsUrl + user_id + '/events/' + event_id)
 	}
 
