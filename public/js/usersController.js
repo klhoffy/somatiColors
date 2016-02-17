@@ -13,7 +13,7 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 
     // User Auth Stuff    
 	vm.user = {}
-	vm.loggedIn = null
+	vm.loggedIn = authFactory.isLoggedIn();
 	vm.signup = signup
 	vm.login = login
 	vm.logout = logout
