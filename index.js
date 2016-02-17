@@ -8,7 +8,9 @@ var cors            = require('cors');
 var port 		    = 3000;
 var apiRouter		= require('./api/routes/api.js');
 
-mongoose.connect('mongodb://localhost/project_four', function(err){
+var mongoUri        = process.env.MONGOLAB_URI || 'mongodb://localhost/project_four'
+
+mongoose.connect(mongoUri, function(err){
 	if(err) throw err
 	console.log('Connected to MongoDB')
 })
@@ -23,5 +25,5 @@ app.use(morgan('dev'))
 
 app.use('/api', apiRouter);
 
-app.listen(port);
+app.listen(process.env.PORT || 3000 );
 console.log('Magic is happening on port' + port);
