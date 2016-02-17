@@ -69,17 +69,18 @@ strong {
     text-align: center;
 }
 
-
 /* Forms */
 
 label {
     font-family: 'Open Sans', sans-serif;
+    margin: 15px 0 5px 0;
+    font-weight: 600;
 }
 
-input[type=text], textarea, input[type=textarea], input[type=email] {
+input[type=text], textarea, select, input[type=textarea], input[type=email] {
     font-family: 'Kalam', cursive;
 }
 
-button, input, select, textarea {
+button, textarea {
 
 }

@@ -19,14 +19,14 @@
             
             <hr>
             
-            <div class="colors" ng-class="" ><strong>joy</strong> {{ usersCtrl.info.joy }} </div>
-            <div class="colors" ng-class="" ><strong>acceptance</strong> {{ usersCtrl.info.acceptance }} </div>
-            <div class="colors" ng-class="" ><strong>fear</strong> {{ usersCtrl.info.fear }} </div>
-            <div class="colors" ng-class="" ><strong>surprise</strong> {{ usersCtrl.info.surprise }} </div>
-            <div class="colors" ng-class="" ><strong>sadness</strong> {{ usersCtrl.info.sadness }} </div>
-            <div class="colors" ng-class="" ><strong>disgust</strong> {{ usersCtrl.info.disgust }} </div>
-            <div class="colors" ng-class="" ><strong>anger</strong> {{ usersCtrl.info.anger }} </div>
-            <div class="colors" ng-class="" ><strong>anticipation</strong> {{ usersCtrl.info.anticipation }} </div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.joy }" ><strong>joy</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.acceptance }" ><strong>acceptance</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.fear }" ><strong>fear</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.surprise }" ><strong>surprise</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.sadness }" ><strong>sadness</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.disgust }" ><strong>disgust</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anger }" ><strong>anger</strong></div>
+            <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anticipation }" ><strong>anticipation</strong></div>
             
             <button ng-click="">Edit</button>
             <button ng-click="usersCtrl.deleteUser(usersCtrl.info._id)">Delete</button>

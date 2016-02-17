@@ -2,7 +2,7 @@
     <div class="col-md-8 col-md-offset-2">
         <form ng-submit="usersCtrl.putUserAPI(usersCtrl.params)">
             <h2>Edit Account</h2>
-            <p>{{ usersCtrl.params }}</p>
+            <p>{{ usersCtrl.params }}, {{ usersCtrl.info.username }}</p>
             <div ng-if="!usersCtrl.info.username">{{ usersCtrl.getUserApi(usersCtrl.params) }}</div>
                      
             <hr>
@@ -21,8 +21,11 @@
             
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" value="{{ usersCtrl.info.username }}" ng-model="usersCtrl.updatedInfo.username">
+                <input type="email" class="form-control" ng-model="usersCtrl.updatedInfo.username">
             </div>
+            
+                <!--<input type="email" class="form-control" ng-bind="usersCtrl.updatedInfo.username">-->
+            
 
             <hr>
             

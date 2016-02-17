@@ -63,24 +63,26 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     
     // Get One User's Info
     vm.info = {};
+    vm.updatedInfo = {};
     vm.getUserApi = getUserApi;
     function getUserApi(user_id){
     $http
-        .get('http://localhost:3000/api/users/' +  user_id )
+        .get('http://localhost:3000/api/users/' +  user_id)
         .then(function(response){
             vm.info = response.data;
+            vm.updatedInfo = response.data;
         });
     }
     
     
     // Put One User's Info
-    vm.updatedInfo = {};
     vm.putUserAPI = putUserAPI;
     function putUserAPI(user_id){
     $http
         .put('http://localhost:3000/api/users/' +  user_id, vm.updatedInfo)
         .then(function(response){
-           vm.info = response.data;
+            vm.info = response.data;
+            vm.updatedInfo = response.data;
         });
     }
   
