@@ -1,5 +1,15 @@
 <ul class="cbp_tmtimeline">
-    
+
+    <p>{{ eventsCtrl.params }}</p>
+
+    <p>{{eventsCtrl}}</p>
+
+    <div ng-if="!eventsCtrl.events[0].title">{{ eventsCtrl.getEventsAPI(eventsCtrl.params) }}</div>
+            <button ng-click="eventsCtrl.getEventsAPI(eventsCtrl.params)"></button>
+
+ <!--    <div ng-if="!usersCtrl.info.username">{{ usersCtrl.getUserApi(usersCtrl.params) }}</div> -->
+
+
     <li ng-repeat="event in eventsCtrl.events">
         <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
