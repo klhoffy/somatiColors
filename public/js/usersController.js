@@ -1,10 +1,19 @@
 angular.module('SomatiColors')
 	.controller('UsersController', UsersController)
 
-UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window']
+UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$http',  '$location']
 
-function UsersController($state, authFactory, $rootScope, $window) {
+function UsersController($state, authFactory, $rootScope, $window, $http, $location) {
 	var vm = this
+    vm.info = [];
+    vm.user_id = ''
+    
+
+    
+    
+    
+
+    // User Auth Stuff    
 	vm.user = {}
 	vm.loggedIn = null
 	vm.signup = signup
@@ -12,8 +21,6 @@ function UsersController($state, authFactory, $rootScope, $window) {
 	vm.logout = logout
 	vm.getUser = getUser
 	vm.error = null
-    vm.currentUser = currentUser;
-    vm.user_id = $window.localStorage.getItem('token.data._id')
 
 	$rootScope.$on('$stateChangeStart', function() {
 		vm.loggedIn = authFactory.isLoggedIn();	
@@ -31,6 +38,9 @@ function UsersController($state, authFactory, $rootScope, $window) {
 		authFactory.getUser()
 		.then(function(response){
 			vm.user = response.data
+            vm.user_id = response.data.user_id
+            console.log( response.data )
+            console.log( 'getUser' + vm.user_id )
 		})
 	}
 
@@ -56,12 +66,27 @@ function UsersController($state, authFactory, $rootScope, $window) {
 		})
 	}
     
-    function currentUser() {
-        if (authFactory.isLoggedIn === true) {
-            vm.user = vm.user._id
-            console.log('this user is authorized')
-        } else {
-            console.log('not authorized')
-        }
+    
+    // Get One User's Info
+    vm.info = [];
+    vm.getUserApi = getUserApi;
+    getUserApi();
+    function getUserApi(){
+    $http
+        .get('http://localhost:3000/api/users/56c26a4712398302780d4b50' )
+        .then(function(response){
+            vm.info = response.data;
+            console.log( 'getUserApi' + vm.user_id )
+        });
     }
+    
+    // Delete One User    
+    vm.deleteUserApi = deleteUserApi;   
+    function deleteUserApi(user_id){
+        vm.api.deleteUserApi(user_id).success(function(response){
+            console.log(response)
+            $location.path('/')
+        })
+    }
+
 }

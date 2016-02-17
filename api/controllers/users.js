@@ -152,7 +152,3 @@ module.exports = {
   authenticate: authenticateUser,
   checkUser: checkUser
 }
-
-
-
-
