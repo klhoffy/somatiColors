@@ -8,9 +8,10 @@
                     <a class="navbar-brand" ui-sref="landing">SomatiColors</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li ng-if="usersCtrl.loggedIn"><a>Hi {{usersCtrl.user.username}}</a></li>
-                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account Settings</a></li> 
+                    <!--<li ng-if="usersCtrl.loggedIn"><a>Hi {{usersCtrl.user.username}}</a></li>-->
+
                     <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li> 
+                    <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account Settings</a></li> 
                     <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log Out</a></li>
                     
                     <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Login</a></li>
