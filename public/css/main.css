@@ -64,7 +64,7 @@ strong {
     width: 100%;
     padding: 15px;
     margin: 15px 0;
-    background: #ffff00;
+    background: #eee;
     border-radius: 5px;
     text-align: center;
 }
@@ -84,3 +84,7 @@ input[type=text], textarea, select, input[type=textarea], input[type=email] {
 button, textarea {
 
 }
+
+
+input[type=color] {background-color: pink}
+
