@@ -2,6 +2,13 @@
     <div class="col-md-8 col-md-offset-2">
             <h2>Account Information</h2>
             
+            <!--<p>{{ usersCtrl }}</p>-->
+            <!--<button ng-click="usersCtrl.getUserApi(usersCtrl.params)"></button>-->
+            
+            <p>{{ usersCtrl.params }}</p>
+
+            <div ng-if="!usersCtrl.info.username">{{ usersCtrl.getUserApi(usersCtrl.params) }}</div>
+            
             <hr>
             
             <p><strong>name:</strong> {{ usersCtrl.info.first_name }} {{ usersCtrl.info.last_name }} </p>
