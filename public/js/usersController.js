@@ -5,15 +5,11 @@ UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$h
 
 function UsersController($state, authFactory, $rootScope, $window, $http, $location, $scope, $stateParams) {
 	var vm = this
-    vm.info = [];
     vm.params = $stateParams.user_id
-    
-    
-    
 
     // User Auth Stuff    
 	vm.user = {}
-	vm.loggedIn = null
+	vm.loggedIn = authFactory.isLoggedIn()
 	vm.signup = signup
 	vm.login = login
 	vm.logout = logout
@@ -66,24 +62,38 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     
     
     // Get One User's Info
-    vm.info = [];
+    vm.info = {};
     vm.getUserApi = getUserApi;
-    // getUserApi();
     function getUserApi(user_id){
     $http
         .get('http://localhost:3000/api/users/' +  user_id )
         .then(function(response){
-           return vm.info = response.data;
+            vm.info = response.data;
         });
     }
     
+    
+    // Put One User's Info
+    vm.updatedInfo = {};
+    vm.putUserAPI = putUserAPI;
+    function putUserAPI(user_id){
+    $http
+        .put('http://localhost:3000/api/users/' +  user_id, vm.updatedInfo)
+        .then(function(response){
+           vm.info = response.data;
+        });
+    }
+  
+    
     // Delete One User    
-    vm.deleteUserApi = deleteUserApi;   
+    vm.deleteUserApi = deleteUserApi;
     function deleteUserApi(user_id){
-        vm.api.deleteUserApi(user_id).success(function(response){
-            console.log(response)
-            $location.path('/')
-        })
+    $http
+        .put('http://localhost:3000/api/users/' +  user_id)
+        .then(function(response){
+            var index = vm.all.indexOf(user_id);
+            vm.all.splice(index, 1);
+        });
     }
 
 }

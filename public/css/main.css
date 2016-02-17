@@ -76,7 +76,7 @@ label {
     font-family: 'Open Sans', sans-serif;
 }
 
-input[type=text], input[type=textarea] {
+input[type=text], textarea, input[type=textarea], input[type=email] {
     font-family: 'Kalam', cursive;
 }
 

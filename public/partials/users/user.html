@@ -4,20 +4,18 @@
             
             <!--<p>{{ usersCtrl }}</p>-->
             <!--<button ng-click="usersCtrl.getUserApi(usersCtrl.params)"></button>-->
-            
             <p>{{ usersCtrl.params }}</p>
-
             <div ng-if="!usersCtrl.info.username">{{ usersCtrl.getUserApi(usersCtrl.params) }}</div>
             
             <hr>
             
-            <p><strong>name:</strong> {{ usersCtrl.info.first_name }} {{ usersCtrl.info.last_name }} </p>
-            <p><strong>email:</strong>{{ usersCtrl.info.username }} </p>
+            <p><strong>name:</strong> {{ usersCtrl.info.first_name }} {{ usersCtrl.info.last_name }}</p>
+            <p><strong>email:</strong> {{ usersCtrl.info.username }}</p>
             
             <hr>
             
-            <p><strong>mental health physcian:</strong> {{ usersCtrl.info.mental_health_physician }} </p>
-            <p><strong>physician's email:</strong> {{ usersCtrl.info.physician_email }} </p>
+            <p><strong>mental health physcian:</strong> {{ usersCtrl.info.mental_health_physician }}</p>
+            <p><strong>physician's email:</strong> {{ usersCtrl.info.physician_email }}</p>
             
             <hr>
             
