@@ -1,9 +1,9 @@
 angular.module('SomatiColors')
 	.controller('UsersController', UsersController)
 
-UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$http', '$location', '$scope', '$stateParams']
+UsersController.$inject = ['$state', 'authFactory', 'usersFactory', '$rootScope', '$window', '$http', '$location', '$scope', '$stateParams']
 
-function UsersController($state, authFactory, $rootScope, $window, $http, $location, $scope, $stateParams) {
+function UsersController($state, authFactory, usersFactory, $rootScope, $window, $http, $location, $scope, $stateParams) {
 	var vm = this
     vm.params = $stateParams.user_id
  
@@ -64,41 +64,39 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 	}
     
     
-    // Get One User's Info from API
+    // Get One User's Info from API and show on front end using a Factory
     vm.info = {};
     vm.updatedInfo = {};
     vm.getUserAPI = getUserAPI;
     
     function getUserAPI(user_id){
-    return $http
-        .get('http://localhost:3000/api/users/' +  user_id)
+        usersFactory.showUser(user_id)
         .then(function(response){
             vm.info = response.data;
             vm.updatedInfo = response.data;
+            console.log(user_id)
+            console.log(vm.info)
         });
     }
     
-    // Update One User's Info from front end to API
+    // Update One User's Info from front end to API using a Factory
     vm.editing = false
     vm.putUserAPI = putUserAPI;
     function putUserAPI(user_id){
-    return $http
-        .put('http://localhost:3000/api/users/' +  user_id, vm.updatedInfo)
-        .then(function(response){
+        usersFactory.putUser(user_id, vm.updatedInfo)
+        .then(function(response) {
             vm.info = response.data;
             vm.updatedInfo = response.data;
             vm.editing = false;
         });
     }
  
-    // Delete One User from the front end to the API   
+    // Delete One User from the front end to the API using a Factory 
     vm.deleteUserApi = deleteUserApi;
-    function deleteUserApi(user_id){
+    function deleteUserApi(user_id) {
         window.alert("Are you sure?")
-    return $http
-        .delete('http://localhost:3000/api/users/' +  user_id)
-        .then(function(response){
-            console.log(response);
+    usersFactory.removeUser(user_id)
+        .then(function(response) {
             logout();
             $location.path('/');
         });

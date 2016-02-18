@@ -5,7 +5,7 @@
         <div class="cbp_tmlabel">
             
             <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
-            
+            {{ eventsCtrl.userInfo.joy }}
                 <label for="title">Title</label>
                 <input class="form-control" type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
 
@@ -31,11 +31,11 @@
                     <input type="checkbox" id="arthritis" value="arthritis"><label for="arthritis">Arthritis</label><br>
                     <input type="checkbox" id="muscle_aches_and_cramps" value="muscle_aches_and_cramps"><label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
                     <input type="checkbox" id="pelvic_pain" value="pelvic_pain"><label for="pelvic_pain">Pelvic Pain</label><br>
-                </fieldset>
+                </fieldset>-->
 
                 <label for="emotion">Emotion Involved</label>
                 <select name="emotion">
-                    <option value="joy">Joy</option>
+                    <option value="joy" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }">Joy</option>
                     <option value="acceptance">Acceptance</option>
                     <option value="fear">Fear</option>
                     <option value="surprise">Surprise</option>
@@ -44,7 +44,7 @@
                     <option value="anger">Anger</option>
                     <option value="anticipation">Anticipation</option>
                 </select>
-                <br>
+                <!--<br>
 
                 <label for="automatic_thoughts">Automatic Thoughts Involved</label>
                 <textarea class="form-control" type="text-area" id="automatic_thoughts" placeholder="automatic thoughts" ng-model="eventsCtrl.event.automatic_thoughts"></textarea>

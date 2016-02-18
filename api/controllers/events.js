@@ -5,8 +5,11 @@ function index(request, response) {
   var user_id = request.params.user_id;
 
   Event.find({ user_id: user_id}, function (error, events) {
-      if(error) response.json({ message: "getEvents ERROR:" + error });
-      response.json({ events: events });
+      if(error) {
+          response.json({ message: "getEvents ERROR:" + error });
+      } else {
+          response.json({ events: events });
+      }
   }).select('-__v');
 };
 
@@ -35,8 +38,11 @@ function create(request, response) {
   event.user_id = request.params.user_id;
     
   event.save(function (error) {
-    if(error) response.json({ message: "postEvent ERROR:" + error });
-    response.json({ message: "postEvent confirmation" });
+    if(error) {
+        response.json({ message: "postEvent ERROR:" + error });
+    } else {
+        response.json({ message: "postEvent confirmation" });
+    }
   });
 };
 
@@ -45,8 +51,11 @@ function show(request, response) {
   var id = request.params.id;
 
   Event.findById({ _id: id }, function (error, event){
-    if(error) response.json({ message: "getEvent ERROR:" + error });
-      response.json({ event: event });
+    if(error) {
+        response.json({ message: "getEvent ERROR:" + error });
+    } else {
+        response.json({ event: event });
+    }
   }).select('-__v');
 };
 
@@ -77,8 +86,11 @@ function update(request, response) {
     if(request.body.coping_strategies) event.coping_strategies = request.body.coping_strategies;
         
     event.save( function (error, event){
-      if (error) response.json({ message: "putEvent SAVE ERROR:" + error });
-      response.json({ message: "putEvent confirmation" });
+      if (error) {
+          response.json({ message: "putEvent SAVE ERROR:" + error });
+      } else {
+        response.json({ message: "putEvent confirmation" });
+      }
     });
   });
 };
@@ -88,8 +100,11 @@ function destroy(request, response) {
   var id = request.params.id;
 
   Event.remove({ _id: id }, function (error) {
-    if(error) response.json({ message: "deleteEvent ERROR:" + error });
-    response.json({ message: "deleteEvent confirmation" });
+    if(error) {
+        response.json({ message: "deleteEvent ERROR:" + error });
+    } else {
+            response.json({ message: "deleteEvent confirmation" });
+    }
   });
 };
 
