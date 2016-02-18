@@ -20,7 +20,6 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 		vm.loggedIn = authFactory.isLoggedIn();	
 		vm.getUser()
 		vm.error = null
-        console.log('State changing!')
 	});	
 
 	function logout(){
@@ -35,8 +34,6 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 		.then(function(response){
 			vm.user = response.data
             vm.user_id = response.data.user_id
-            console.log( response.data )
-            console.log( 'getUser' + vm.user_id )
             getUserAPI(vm.user_id)
 		})
 	}
@@ -90,7 +87,6 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
             vm.info = response.data;
             vm.updatedInfo = response.data;
             vm.editing = false;
-            console.log(response)
         });
     }
  
