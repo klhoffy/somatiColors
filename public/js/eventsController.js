@@ -28,15 +28,16 @@ function EventsController(eventsFactory,$stateParams,$location,$http){
    // Get One Event Info
     vm.eventInfo = {};
     vm.updatedEventInfo = {};
+    vm.event_id = event._id
     
     function getEventApi(user_id, event_id){
-    return $http
-        .get('http://localhost:3000/api/users/' +  user_id + '/events/' + event_id)
+     $http
+        .get('http://localhost:3000/api/users/' + user_id + '/events/' + event_id)
         .then(function(response){
-            vm.eventInfo = response.data.events;
-            vm.updatedEventInfo = response.data.events;
+            vm.eventInfo = response.data.event;
+            vm.updatedEventInfo = response.data.event;
+            console.log(user_id)
             console.log(vm.eventInfo)
-            console.log(event_id)
             console.log('heelo')
         });
     }

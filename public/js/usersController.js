@@ -70,6 +70,7 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     vm.info = {};
     vm.updatedInfo = {};
     vm.getUserApi = getUserApi;
+    
     function getUserApi(user_id){
     return $http
         .get('http://localhost:3000/api/users/' +  user_id)

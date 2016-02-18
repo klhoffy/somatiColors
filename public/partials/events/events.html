@@ -4,8 +4,10 @@
         <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
-            <h2>{{ event.title }}</h2>
+            <button ng-click="eventsCtrl.getEventApi(eventsCtrl.params, event._id)"><h2>{{ event.title }}</h2></button>
+            <!--<button><a ui-sref="event({id: eventsCtrl.event.event_id})"><h2>{{ event.title }}</h2></a></button>-->
             <p>{{ event.user_id }}</p>
+            <p>{{ event._id }}</p>
             <p>{{ event.location }}<br>
             <!--{{ event.people_involved }}<br>
             {{ event.situation }}<br>
@@ -22,7 +24,7 @@
             {{ event.new_perspective }}<br>
             {{ event.coping_strategies }}</p>-->
             
-            <button>edit</button>
+            <button>Edit</button>
             <button>delete</button>
         </div>
     </li>
