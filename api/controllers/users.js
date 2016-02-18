@@ -74,7 +74,7 @@ function update(req, res){
 
     user.save(function(err){
       if(err) res.send(err)
-      res.json({success: true, message: "you have been updated!"})
+      res.json(user)
     })
   })
 }
