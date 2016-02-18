@@ -1,5 +1,5 @@
 <ul class="cbp_tmtimeline">
-    
+    <!--<div ng-if="!eventsCtrl.events[0].title">{{ eventsCtrl.getEventsAPI(eventsCtrl.params) }}</div>-->
     <li ng-repeat="event in eventsCtrl.events">
         <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
@@ -7,7 +7,7 @@
             <h2>{{ event.title }}</h2>
             <p>{{ event.user_id }}</p>
             <p>{{ event.location }}<br>
-            {{ event.people_involved }}<br>
+            <!--{{ event.people_involved }}<br>
             {{ event.situation }}<br>
             {{ event.triggers }}<br>
             {{ event.bodily_sensations }}<br>
@@ -20,7 +20,7 @@
             {{ event.lesson }}<br>
             {{ event.old_perspective }}<br>
             {{ event.new_perspective }}<br>
-            {{ event.coping_strategies }}</p>
+            {{ event.coping_strategies }}</p>-->
             
             <button>edit</button>
             <button>delete</button>
