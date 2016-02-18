@@ -75,16 +75,22 @@ orange {
 
 .left {
     float: left;
-    width: 40%;
+    width: 60%;
+    padding-right: 5%;
 }
 
 .right {
     float: right;
-    width: 50%;
+    width: 40%;
+    padding-left: 5%;
+    text-align: center;
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: #d1d1d1;
 }
 
 .right img {
-    width: 100% auto;
+    width: 100%;
 }
 
 label {
