@@ -7,11 +7,12 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
 	var vm = this
     vm.params = $stateParams.user_id
     vm.events = [];
-    vm.getEventsApi = getEventsApi;
-    vm.getEventApi = getEventApi;
+    vm.getEventsAPI = getEventsAPI;
+    vm.getEventAPI = getEventAPI;
+    vm.addEventAPI = addEventAPI;
 
     // Get the list of all events for that user from the API
-    function getEventsApi(user_id){
+    function getEventsAPI(user_id){
        $http
         .get
         ('http://localhost:3000/api/users/' + user_id + '/events')
@@ -23,13 +24,25 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
    }
    
    // Call the function of getting the events for that particular user
-   getEventsApi(vm.params);
+   getEventsAPI(vm.params);
+   
+   vm.addEventInfo = {};
+   
+   function addEventAPI(user_id){
+    return $http
+        .post('http://localhost:3000/api/users/' +  user_id + '/events', vm.addEventInfo)
+        .then(function(response){
+            vm.addEventInfo = response.data.event;
+            vm.editing = false;
+            console.log(vm.addEventInfo)
+        });
+    }
    
    // Get one event from that user
     vm.eventInfo = {};
     vm.updatedEventInfo = {};
     
-    function getEventApi(user_id, event_id){
+    function getEventAPI(user_id, event_id){
      $http
         .get('http://localhost:3000/api/users/' + user_id + '/events/' + event_id)
         .then(function(response){
