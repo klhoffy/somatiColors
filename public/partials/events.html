@@ -1,23 +1,23 @@
 <section class="row">
     <div class="col-md-12">
-<<<<<<< HEAD
         <!--Filter Events-->
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
+            <input type="text" placeholder="Search for..." ng-model="search">
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Go!</button>
             </span>
         </div>
-        <!--<new-event-form></new-event-form>-->
-        <!--<edit-event-form></edit-event-form>-->
-=======
-        <one-event></one-event>
+        
+        <!--New Event-->
         <new-event-form></new-event-form>
-    <div ng-show="eventsCtrl.editing" >
-        <edit-event-form></edit-event-form>
-    </div>
->>>>>>> 03016d15dfcf08cbb11ed660995915da46df6fa8
+        
+        <!--Timeline of Events-->        
         <all-events></all-events>
+        
+        <!--Edit Event-->
+        <div ng-show="eventsCtrl.editing" >
+            <edit-event-form></edit-event-form>
+        </div>
     </div>
 </section>
 

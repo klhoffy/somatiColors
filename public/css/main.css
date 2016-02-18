@@ -38,7 +38,7 @@ strong {
     height: 400px;
 }
 
-.red, .yellow, .green, .blue{
+.red, .orange, .yellow, .green, .blue{
     color: #fff;
     padding: 5%;
     height: 300px;
@@ -47,14 +47,15 @@ strong {
 .red {
     background-color: #e55c4c;
 }
+orange {
+    background-color: #e55c4c;
+}
 .yellow {
     background-color: #ffc548;
 }
-
 .green {
     background-color: #22a57b;
 }
-
 .blue {
     background-color: #41b1bf;
 }
@@ -72,20 +73,40 @@ strong {
 
 /* Forms */
 
-label {
-    font-family: 'Open Sans', sans-serif;
-    margin: 15px 0 5px 0;
-    font-weight: 600;
+.left {
+    float: left;
+    width: 40%;
 }
 
-input[type=text], textarea, select, input[type=textarea], input[type=email] {
+.right {
+    float: right;
+    width: 50%;
+}
+
+label {
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;    
+    font-weight: 700;
+    color: #555;
+}
+
+.bottom-padding{
+    margin-bottom:30px;
+}
+
+input[type=text], input[type=email], input[type=datetime], input[type=color], select {
+    width: 100%;
+    background: none;
+    border-width: 0 0 1px 0;
+    border-color: #d1d1d1;
+    font-family: 'Kalam', cursive;
+    padding: 2px;
+}
+
+textarea, input[type=text-area] {
+    width: 100%;
+    background: white;
+    border-width: 0 1px 1px 0;
+    border-color: white;
     font-family: 'Kalam', cursive;
 }
-
-button, textarea {
-
-}
-
-
-input[type=color] {background-color: pink}
-
