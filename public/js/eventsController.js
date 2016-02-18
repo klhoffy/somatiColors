@@ -10,6 +10,7 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
     vm.getEventsAPI = getEventsAPI;
     vm.getEventAPI = getEventAPI;
     vm.addEventAPI = addEventAPI;
+    vm.putEventAPI = putEventAPI;
 
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id){
@@ -35,6 +36,7 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
             vm.addEventInfo = response.data.event;
             vm.editing = false;
             console.log(vm.addEventInfo)
+            getEventsAPI(vm.params)
         });
     }
    
