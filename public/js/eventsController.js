@@ -49,6 +49,7 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
             vm.eventInfo = response.data.event;
             vm.updatedEventInfo = response.data.event;
         });
+        
     }
     
     // Update one event for that user

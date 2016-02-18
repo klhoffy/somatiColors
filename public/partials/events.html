@@ -2,7 +2,9 @@
     <div class="col-md-12">
         <one-event></one-event>
         <new-event-form></new-event-form>
+    <div ng-show="eventsCtrl.editing" >
         <edit-event-form></edit-event-form>
+    </div>
         <all-events></all-events>
     </div>
 </section>
