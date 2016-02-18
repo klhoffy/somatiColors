@@ -1,9 +1,7 @@
 angular.module('SomatiColors')
     .directive('navTop', navTop)
     .directive('footerBottom', footerBottom)
-   
-    // .directive('signUp', signUp) 
-    // .directive('logIn', logIn)
+
     .directive('oneUser', oneUser)
     .directive('editUserForm', editUserForm)
 
@@ -31,25 +29,6 @@ function footerBottom (){
   return directive;
 }
 
-// // User Directives //'A' == attribute, 'E' == element, 'C' == class
-// function signUp (){
-//   var directive = {
-//   restrict: 'E',
-//   replace: true,
-//   templateUrl:  "../partials/_signup.html"
-//   };
-//   return directive;
-// }
-
-// function logIn (){
-//   var directive = {
-//   restrict: 'E',
-//   replace: true,
-//   templateUrl:  "../partials/_login.html"
-//   };
-//   return directive;
-// }
-
 function oneUser (){
   var directive = {
   restrict: 'E',
@@ -68,7 +47,6 @@ function editUserForm (){
   return directive;
 }
 
-// Event Directives //'A' == attribute, 'E' == element, 'C' == class
 function allEvents (){
   var directive = {
   restrict: 'E',

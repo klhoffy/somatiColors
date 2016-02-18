@@ -2,109 +2,109 @@ var User = require('../models/user');
 var jwt = require('jsonwebtoken');
 var mySpecialSecret = "pizza";
 
-function index(req, res){
+function index(require, response){
   // get all the users -- index
   User.find(function(err, users){
-    if(err) res.send(err)
-    res.json(users)
+    if(err) response.send(err)
+    response.json(users)
   })
 }
 
-function create(req, res){
+function create(require, response){
   // make a single user -- create
   console.log("Creating a user")
   var user = new User()
 
-  user.name = req.body.name;
-  user.username = req.body.username;
-  user.password = req.body.password;
-  user.first_name = req.body.first_name;
-  user.last_name = req.body.last_name;
-  user.mental_health_physician = req.body.mental_health_physician;
-  user.physician_email = req.body.physician_email;
-  user.joy = req.body.joy;   
-  user.acceptance = req.body.acceptance;
-  user.fear = req.body.fear;
-  user.surprise = req.body.surprise;
-  user.sadness = req.body.sadness; 
-  user.disgust = req.body.disgust;   
-  user.anger = req.body.anger; 
-  user.anticipation = req.body.anticipation;
+  user.name = require.body.name;
+  user.username = require.body.username;
+  user.password = require.body.password;
+  user.first_name = require.body.first_name;
+  user.last_name = require.body.last_name;
+  user.mental_health_physician = require.body.mental_health_physician;
+  user.physician_email = require.body.physician_email;
+  user.joy = require.body.joy;   
+  user.acceptance = require.body.acceptance;
+  user.fear = require.body.fear;
+  user.surprise = require.body.surprise;
+  user.sadness = require.body.sadness; 
+  user.disgust = require.body.disgust;   
+  user.anger = require.body.anger; 
+  user.anticipation = require.body.anticipation;
 
   user.save(function(err){
     if(err){
       if(err.code == 11000){
-        return res.json({success: false, message: "username already exists" })
+        return response.json({success: false, message: "username already exists" })
       } else {
-        res.send(err)
+        response.send(err)
       }
     }
-    res.json({success: true, message: "User created, Wahey!"})
+    response.json({success: true, message: "User created, Wahey!"})
   })
 }
 
-function show(req, res){
+function show(require, response){
   //get a single user -- show
-  User.findById(req.params.user_id, function(err, user){
-    if(err) res.send(err)
-    res.json(user)
+  User.findById(require.params.user_id, function(err, user){
+    if(err) response.send(err)
+    response.json(user)
   })
 }
 
-function update(req, res){
+function update(require, response){
   // update a single user -- update
-  User.findById(req.params.user_id, function(err, user){
-    if(err) res.send(err)
+  User.findById(require.params.user_id, function(err, user){
+    if(err) response.send(err)
 
-    if(req.body.name) user.name = req.body.name;
-    if(req.body.username) user.username = req.body.username;
-    if(req.body.password) user.password = req.body.password;
-    if(req.body.first_name) user.first_name = req.body.first_name;
-    if(req.body.last_name) user.last_name = req.body.last_name;
-    if(req.body.mental_health_physician) user.mental_health_physician = req.body.mental_health_physician;
-    if(req.body.physician_email) user.physician_email = req.body.physician_email;
-    if(req.body.joy) user.joy = req.body.joy;   
-    if(req.body.acceptance) user.acceptance = req.body.acceptance;
-    if(req.body.fear) user.fear = req.body.fear;
-    if(req.body.surprise) user.surprise = req.body.surprise;
-    if(req.body.sadness) user.sadness = req.body.sadness; 
-    if(req.body.disgust) user.disgust = req.body.disgust;   
-    if(req.body.anger) user.anger = req.body.anger; 
-    if(req.body.anticipation) user.anticipation = req.body.anticipation;
+    if(require.body.name) user.name = require.body.name;
+    if(require.body.username) user.username = require.body.username;
+    if(require.body.password) user.password = require.body.password;
+    if(require.body.first_name) user.first_name = require.body.first_name;
+    if(require.body.last_name) user.last_name = require.body.last_name;
+    if(require.body.mental_health_physician) user.mental_health_physician = require.body.mental_health_physician;
+    if(require.body.physician_email) user.physician_email = require.body.physician_email;
+    if(require.body.joy) user.joy = require.body.joy;   
+    if(require.body.acceptance) user.acceptance = require.body.acceptance;
+    if(require.body.fear) user.fear = require.body.fear;
+    if(require.body.surprise) user.surprise = require.body.surprise;
+    if(require.body.sadness) user.sadness = require.body.sadness; 
+    if(require.body.disgust) user.disgust = require.body.disgust;   
+    if(require.body.anger) user.anger = require.body.anger; 
+    if(require.body.anticipation) user.anticipation = require.body.anticipation;
 
     user.save(function(err){
-      if(err) res.send(err)
-      res.json(user)
+      if(err) response.send(err)
+      response.json(user)
     })
   })
 }
 
-function destroy(req, res){
+function destroy(require, response){
   // delete a single user -- destroy
   User.remove({
-    _id: req.params.user_id
+    _id: require.params.user_id
   }, function(err, user){
-    if(err) res.send(err)
-    res.json({success: true, message: "YOU HAVE BEEN TERMINATED!"})
+    if(err) response.send(err)
+    response.json({success: true, message: "YOU HAVE BEEN TERMINATED!"})
   })
 }
 
 
 //code for apiRouter.route('/authenticate')
-function authenticateUser(req, res) {
+function authenticateUser(require, response) {
   console.log('trying to generate a JWT')
   // 1 - find the user in our db
   User.findOne({
-    username: req.body.username
+    username: require.body.username
   }).select('name username password').exec(function(err, user){
     if(err) throw err
     if(!user){
-      res.json({success: false, message: "No such user"})
+      response.json({success: false, message: "No such user"})
     } else if(user){
       // check passwords
-      var validPassword = user.comparePassword(req.body.password)
+      var validPassword = user.comparePassword(require.body.password)
       if(!validPassword){
-        res.json({success: false, message: "Invalid password"})
+        response.json({success: false, message: "Invalid password"})
       } else {
         // password is good!
         var token = jwt.sign({
@@ -112,31 +112,31 @@ function authenticateUser(req, res) {
           username: user.username,
           user_id: user._id
         }, mySpecialSecret, {
-          expiresInMinutes: 1440
+          expiresponseInMinutes: 1440
         })
         // now let's actually give it to them!
         console.log("logged in")
-        res.json({ success: true, message: "enjoy your token!", token: token})
+        response.json({ success: true, message: "enjoy your token!", token: token})
       }
     }
   })
 }
 
-function checkUser(req, res, next){
+function checkUser(require, response, next){
   // let's check everywhere for the JWT!
-  var token = req.body.token || req.param('token') || req.headers['x-access-token']
+  var token = require.body.token || require.param('token') || require.headers['x-access-token']
   // if we find the token, let's use mySpecialSecret to try and decode it.
   if(token){
     jwt.verify(token, mySpecialSecret, function(err, decoded){
       if(err){
-        res.status(403).send({success: false, message: "forbidden, token can't be decoded"})
+        response.status(403).send({success: false, message: "forbidden, token can't be decoded"})
       } else {
-        req.decoded = decoded
+        require.decoded = decoded
         next()
       }
     })
   } else {
-    res.status(403).send({success: false, message: "no token. You're not even trying"})
+    response.status(403).send({success: false, message: "no token. You're not even trying"})
   }
   // this is going to run EVERY time our API is hit
   // we want to check if the user is logged in here

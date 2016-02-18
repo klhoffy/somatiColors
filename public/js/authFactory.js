@@ -23,8 +23,10 @@ function authTokenFactory($window){
 // ================================================
 
 angular.module('SomatiColors')
-.factory('authInterceptorFactory', authInterceptorFactory)
+    .factory('authInterceptorFactory', authInterceptorFactory)
+
 authInterceptorFactory.$inject = ['$q', '$location', 'authTokenFactory']
+
 function authInterceptorFactory($q, $location, authTokenFactory){
     var authInterceptorFactory = {}
     // attach the token to every request
@@ -48,8 +50,10 @@ function authInterceptorFactory($q, $location, authTokenFactory){
 // ==============================================
 
 angular.module('SomatiColors')
-.factory('authFactory', authFactory)
+    .factory('authFactory', authFactory)
+    
 authFactory.$inject = ['$http', '$q', 'authTokenFactory', '$window']
+
 function authFactory($http, $q, authTokenFactory, $window){
     var authFactory = {}
     authFactory.index = function(){

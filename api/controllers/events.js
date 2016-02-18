@@ -55,7 +55,7 @@ function update(request, response) {
   var id = request.params.id;
 
   Event.findById({ _id: id }, function (error, event){
-    if(error) response.json({ message: "putEvent ERROR:" + error });
+    if(error) response.send(error);
 
     if(request.body.title) event.title = request.body.title;
     if(request.body.location) event.location = request.body.location;
