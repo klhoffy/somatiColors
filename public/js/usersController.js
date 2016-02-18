@@ -28,6 +28,7 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 	function logout(){
 		$state.go('loggedOut')
 		authFactory.logout();
+        console.log("logging out!");
 		$window.location.reload();
 	}
 
@@ -97,14 +98,15 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     }
   
     
-    // Delete One User    
+      // Delete One User    
     vm.deleteUserApi = deleteUserApi;
     function deleteUserApi(user_id){
-    $http
-        .put('http://localhost:3000/api/users/' +  user_id)
+    return $http
+        .delete('http://localhost:3000/api/users/' +  user_id)
         .then(function(response){
-            var index = vm.all.indexOf(user_id);
-            vm.all.splice(index, 1);
+            console.log(response);
+            logout();
+            $location.path('/');
         });
     }
 

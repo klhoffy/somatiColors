@@ -1,10 +1,12 @@
 angular.module('SomatiColors')
 	.controller('EventsController', EventsController)
 
-EventsController.$inject=['eventsFactory','$stateParams','$location']
+EventsController.$inject=['$stateParams','$location', '$http']
 
-function EventsController(eventsFactory,$stateParams,$location){
+function EventsController($stateParams,$location, $http){
 	var vm = this
-    vm.params = $stateParams.user_id	
+	vm.params = $stateParams.user_id	
+
+
 
 }
