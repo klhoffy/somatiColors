@@ -34,13 +34,14 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
    getEventsAPI(vm.params);
    
    vm.addEventInfo = {};
-   
+   vm.newEvent = false;
    function addEventAPI(user_id){
        eventsFactory.postEvent(user_id, vm.addEventInfo)
         .then(function(response){
             vm.addEventInfo = response.data.event;
             vm.editing = false;
             getEventsAPI(vm.params)
+            vm.newEvent = false;
         });
     }
    
