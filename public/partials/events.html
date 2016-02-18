@@ -1,5 +1,6 @@
 <section class="row">
     <div class="col-md-12">
+<<<<<<< HEAD
         <!--Filter Events-->
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Search for..." ng-model="search">
@@ -9,6 +10,13 @@
         </div>
         <!--<new-event-form></new-event-form>-->
         <!--<edit-event-form></edit-event-form>-->
+=======
+        <one-event></one-event>
+        <new-event-form></new-event-form>
+    <div ng-show="eventsCtrl.editing" >
+        <edit-event-form></edit-event-form>
+    </div>
+>>>>>>> 03016d15dfcf08cbb11ed660995915da46df6fa8
         <all-events></all-events>
     </div>
 </section>
