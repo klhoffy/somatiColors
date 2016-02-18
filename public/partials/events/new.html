@@ -5,7 +5,7 @@
         <div class="cbp_tmlabel">
             
             <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
-            
+            {{ eventsCtrl.userInfo.joy }}
                 <label for="title">Title</label>
                 <input class="form-control" type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
 
@@ -35,7 +35,7 @@
 
                 <label for="emotion">Emotion Involved</label>
                 <select name="emotion">
-                    <option value="joy">Joy</option>
+                    <option value="joy" ng-style="{ 'background-color': eventsCtrl.userInfo.joy }">Joy</option>
                     <option value="acceptance">Acceptance</option>
                     <option value="fear">Fear</option>
                     <option value="surprise">Surprise</option>

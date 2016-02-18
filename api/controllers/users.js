@@ -4,9 +4,12 @@ var mySpecialSecret = "pizza";
 
 function index(require, response){
   // get all the users -- index
-  User.find(function(err, users){
-    if(err) response.send(err)
-    response.json(users)
+  User.find(function(error, users){
+    if(error) {
+          response.json({ message: "getUsers ERROR:" + error });
+      } else {
+          response.json({ users: users });
+      }
   })
 }
 
@@ -31,12 +34,12 @@ function create(require, response){
   user.anger = require.body.anger; 
   user.anticipation = require.body.anticipation;
 
-  user.save(function(err){
-    if(err){
-      if(err.code == 11000){
+  user.save(function(error){
+    if(error){
+      if(error.code == 11000){
         return response.json({success: false, message: "username already exists" })
       } else {
-        response.send(err)
+        response.send(error)
       }
     }
     response.json({success: true, message: "User created, Wahey!"})
@@ -45,16 +48,19 @@ function create(require, response){
 
 function show(require, response){
   //get a single user -- show
-  User.findById(require.params.user_id, function(err, user){
-    if(err) response.send(err)
-    response.json(user)
+  User.findById(require.params.user_id, function(error, user){
+    if(error) {
+          response.json({ message: "showUsers ERROR:" + error });
+      } else {
+          response.json(user);
+      }
   })
 }
 
 function update(require, response){
   // update a single user -- update
-  User.findById(require.params.user_id, function(err, user){
-    if(err) response.send(err)
+  User.findById(require.params.user_id, function(error, user){
+    if(error) response.send(error)
 
     if(require.body.name) user.name = require.body.name;
     if(require.body.username) user.username = require.body.username;
@@ -72,8 +78,8 @@ function update(require, response){
     if(require.body.anger) user.anger = require.body.anger; 
     if(require.body.anticipation) user.anticipation = require.body.anticipation;
 
-    user.save(function(err){
-      if(err) response.send(err)
+    user.save(function(error){
+      if(error) response.send(error)
       response.json(user)
     })
   })
@@ -83,9 +89,12 @@ function destroy(require, response){
   // delete a single user -- destroy
   User.remove({
     _id: require.params.user_id
-  }, function(err, user){
-    if(err) response.send(err)
-    response.json({success: true, message: "YOU HAVE BEEN TERMINATED!"})
+  }, function(error, user){
+    if(error) {
+        response.send(error)
+    } else {
+        response.json({success: true, message: "YOU HAVE BEEN TERMINATED!"})
+    }
   })
 }
 
@@ -96,14 +105,14 @@ function authenticateUser(require, response) {
   // 1 - find the user in our db
   User.findOne({
     username: require.body.username
-  }).select('name username password').exec(function(err, user){
-    if(err) throw err
-    if(!user){
+  }).select('name username password').exec(function(error, user){
+    if(error) throw error
+    if(!user) {
       response.json({success: false, message: "No such user"})
-    } else if(user){
+    } else if(user) {
       // check passwords
       var validPassword = user.comparePassword(require.body.password)
-      if(!validPassword){
+      if(!validPassword) {
         response.json({success: false, message: "Invalid password"})
       } else {
         // password is good!
@@ -127,8 +136,8 @@ function checkUser(require, response, next){
   var token = require.body.token || require.param('token') || require.headers['x-access-token']
   // if we find the token, let's use mySpecialSecret to try and decode it.
   if(token){
-    jwt.verify(token, mySpecialSecret, function(err, decoded){
-      if(err){
+    jwt.verify(token, mySpecialSecret, function(error, decoded){
+      if(error) {
         response.status(403).send({success: false, message: "forbidden, token can't be decoded"})
       } else {
         require.decoded = decoded
