@@ -62,12 +62,15 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
     return $http
         .put('http://localhost:3000/api/users/' + user_id + '/events/' + event_id, vm.updatedEventInfo)
         .then(function(response){
-            vm.eventInfo = response.data.event;
-            console.log(vm.eventInfo)
+            // vm.eventInfo = response.data.event;
+            // console.log(vm.eventInfo)
+            console.log(event_id)
             vm.updatedEventInfo = response.data.event;
+            
             console.log(vm.updatedEventInfo)
             vm.editing = false;
             console.log(response)
+            getEventsAPI(vm.params)
         });
     }
 }
