@@ -94,6 +94,7 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     // Delete One User from the front end to the API   
     vm.deleteUserApi = deleteUserApi;
     function deleteUserApi(user_id){
+        window.alert("Are you sure?")
     return $http
         .delete('http://localhost:3000/api/users/' +  user_id)
         .then(function(response){
