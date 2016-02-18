@@ -6,6 +6,7 @@ EventsController.$inject=['eventsFactory','$stateParams','$location', '$http']
 function EventsController(eventsFactory, $stateParams, $location, $http){
 	var vm = this
     vm.params = $stateParams.user_id
+    vm.user_emotion = $stateParams.user_id._id
     vm.events = [];
     vm.getEventsAPI = getEventsAPI;
     vm.getEventAPI = getEventAPI;
@@ -20,6 +21,7 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
         ('http://localhost:3000/api/users/' + user_id + '/events')
         .then(function(response){
            vm.events = response.data.events;
+           
        });
    }
    
@@ -35,6 +37,7 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
             vm.addEventInfo = response.data.event;
             vm.editing = false;
             getEventsAPI(vm.params)
+            console.log(vm.addEventInfo)
         });
     }
    
@@ -48,6 +51,7 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
         .then(function(response){
             vm.eventInfo = response.data.event;
             vm.updatedEventInfo = response.data.event;
+            console.log(vm.eventInfo.user_id.joy)
         });
         
     }
