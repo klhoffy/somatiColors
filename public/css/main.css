@@ -83,6 +83,10 @@ orange {
     width: 50%;
 }
 
+.right img {
+    width: 100% auto;
+}
+
 label {
     font-size: 12px;
     font-family: 'Open Sans', sans-serif;    

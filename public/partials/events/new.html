@@ -19,44 +19,47 @@
                     <label for="location" class="bottom-padding">Location</label>
 
 
-                    <input type="text" id="people_involved" placeholder="people" ng-model="eventsCtrl.event.people_involved">
+                    <input type="text" id="people_involved" placeholder="people" ng-model="eventsCtrl.addEventInfo.people_involved">
                     <label for="people_involved" class="bottom-padding">People Involved</label><br>
 
                     <label for="situation">Situation</label>
-                    <textarea type="text-area" class="bottom-padding" id="situation" placeholder="situation" ng-model="eventsCtrl.event.situation"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="situation" placeholder="situation" ng-model="eventsCtrl.addEventInfo.situation"></textarea>
 
                     <label for="triggers">Triggers</label>
-                    <textarea type="text-area" class="bottom-padding" id="triggers" placeholder="triggers" ng-model="eventsCtrl.event.triggers"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="triggers" placeholder="triggers" ng-model="eventsCtrl.addEventInfo.triggers"></textarea>
 
                     <label for="automatic_thoughts">Automatic Thoughts Involved</label>
-                    <textarea type="text-area" class="bottom-padding" id="automatic_thoughts" placeholder="automatic thoughts" ng-model="eventsCtrl.event.automatic_thoughts"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="automatic_thoughts" placeholder="automatic thoughts" ng-model="eventsCtrl.addEventInfo.automatic_thoughts"></textarea>
 
                     <label for="rational_response">Rational Response Involved</label>
-                    <textarea type="text-area" class="bottom-padding" id="rational_response" placeholder="rational response" ng-model="eventsCtrl.event.rational_response"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="rational_response" placeholder="rational response" ng-model="eventsCtrl.addEventInfo.rational_response"></textarea>
 
                     <!--<label for="behaviors">Behaviors Involved</label>
-                    <textarea type="text-area" id="behaviors" placeholder="behaviors" ng-model="eventsCtrl.event.behaviors"></textarea>
+                    <textarea type="text-area" id="behaviors" placeholder="behaviors" ng-model="eventsCtrl.addEventInfo.behaviors"></textarea>
 
                     <label for="consequences">Consequences Involved</label>
-                    <textarea type="text-area" id="consequences" placeholder="consequences" ng-model="eventsCtrl.event.consequences"></textarea>-->
+                    <textarea type="text-area" id="consequences" placeholder="consequences" ng-model="eventsCtrl.addEventInfo.consequences"></textarea>-->
 
                     <label for="challenged_beliefs">Challenged Beliefs Involved</label>
-                    <textarea type="text-area" class="bottom-padding" id="challenged_beliefs" placeholder="challenged beliefs" ng-model="eventsCtrl.event.challenged_beliefs"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="challenged_beliefs" placeholder="challenged beliefs" ng-model="eventsCtrl.addEventInfo.challenged_beliefs"></textarea>
                     
-                    <input type="text-area" id="lesson" placeholder="lesson" ng-model="eventsCtrl.event.lesson">
+                    <input type="text-area" id="lesson" placeholder="lesson" ng-model="eventsCtrl.addEventInfo.lesson">
                     <label for="lesson" class="bottom-padding">Lesson in 140 char (Twitter-ified)</label><br>
                     
                     <label for="old_perspective">Old Perspective</label>
-                    <textarea type="text-area" class="bottom-padding" id="old_perspective" placeholder="old perspective" ng-model="eventsCtrl.event.old_perspective"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="old_perspective" placeholder="old perspective" ng-model="eventsCtrl.addEventInfo.old_perspective"></textarea>
 
                     <label for="new_perspective">New Perspective</label>
-                    <textarea type="text-area" class="bottom-padding" id="new_perspective" placeholder="new perspective" ng-model="eventsCtrl.event.new_perspective"></textarea>
+                    <textarea type="text-area" class="bottom-padding" id="new_perspective" placeholder="new perspective" ng-model="eventsCtrl.addEventInfo.new_perspective"></textarea>
 
                     <label for="coping_strategies">Coping Strategies</label>
-                    <textarea type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.event.coping_strategies"></textarea>
+                    <textarea type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.addEventInfo.coping_strategies"></textarea>
                 </div>
                 
                 <div class="right">
+                    
+                    <img src="../../assets/body.png" alt="">
+                    
                     <label>Bodily Sensations Involved</label>
                     <fieldset ng-model="bodily_sensations">
                         <input type="checkbox" id="chronic_headaches" value="chronic_headaches"><label for="chronic_headaches">Chronic Headaches</label><br>
