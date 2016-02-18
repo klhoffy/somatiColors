@@ -12,17 +12,18 @@ function EventsController(eventsFactory,$stateParams,$location,$http){
 
     function getEventsApi(user_id){
        $http
-        .get('http://localhost:3000/api/users/' +  user_id + '/events')
+        .get
+        ('http://localhost:3000/api/users/' + user_id + '/events')
         .then(function(response){
            vm.events = response.data.events;
-           console.log( response.data.events)
+           console.log( response.data)
            console.log('hello')
-           getEventApi()
+        //    getEventApi()
         //    console.log(vm.params)
        });
    }
    
-   getEventsApi();
+   getEventsApi(vm.params);
    
    // Get One Event Info
     vm.eventInfo = {};
