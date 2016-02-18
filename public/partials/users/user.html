@@ -3,9 +3,9 @@
             <h2>Account Information</h2>
             
             <!--<p>{{ usersCtrl }}</p>-->
-            <!--<button ng-click="usersCtrl.getUserApi(usersCtrl.params)"></button>-->
+            
             <p>{{ usersCtrl.params }}</p>
-            <div ng-if="!usersCtrl.info.username">{{ usersCtrl.getUserApi(usersCtrl.params) }}</div>
+           
             
             <hr>
             
@@ -28,7 +28,7 @@
             <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anger }" ><strong>anger</strong></div>
             <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anticipation }" ><strong>anticipation</strong></div>
             
-            <button ng-click="">Edit</button>
+            <div ng-if="usersCtrl.editing" ><button ng-click="usersCtrl.editing = !usersCtrl.editing">Edit</button>
             <button ng-click="usersCtrl.deleteUser(usersCtrl.info._id)">Delete</button>
     </div>
 </section>
