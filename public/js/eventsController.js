@@ -1,9 +1,9 @@
 angular.module('SomatiColors')
 	.controller('EventsController', EventsController)
 
-EventsController.$inject=['eventsFactory','$stateParams','$location', '$http']
+EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http']
 
-function EventsController(eventsFactory, $stateParams, $location, $http){
+function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http){
 	var vm = this
     vm.params = $stateParams.user_id
     vm.user_emotion = $stateParams.user_id._id
@@ -13,7 +13,13 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
     vm.addEventAPI = addEventAPI;
     vm.putEventAPI = putEventAPI;
     vm.deleteEventAPI = deleteEventAPI;
-
+    
+    vm.userInfo = {};
+    vm.updatedUserInfo = {};
+    vm.getUserEventAPI = getUserEventAPI;
+    
+    
+    
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id){
        $http
@@ -44,14 +50,27 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
    // Get one event from that user
     vm.eventInfo = {};
     vm.updatedEventInfo = {};
+    vm.userInfo = {};
+    
+    function getUserEventAPI(user_id){
+        usersFactory.showUser(user_id)
+        .then(function(response){
+            vm.userInfo = response.data;
+            vm.updatedUserInfo = response.data;
+            console.log(user_id)
+            console.log(vm.userInfo)
+        });
+    }
     
     function getEventAPI(user_id, event_id){
+       getUserEventAPI(user_id)
+       console.log(user_id)
      $http
         .get('http://localhost:3000/api/users/' + user_id + '/events/' + event_id)
         .then(function(response){
             vm.eventInfo = response.data.event;
             vm.updatedEventInfo = response.data.event;
-            console.log(vm.eventInfo.user_id.joy)
+            console.log(vm.userInfo.joy)
         });
         
     }
