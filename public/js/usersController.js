@@ -6,6 +6,8 @@ UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$h
 function UsersController($state, authFactory, $rootScope, $window, $http, $location, $scope, $stateParams) {
 	var vm = this
     vm.params = $stateParams.user_id
+    
+
 
     // User Auth Stuff    
 	vm.user = {}
@@ -20,6 +22,7 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 		vm.loggedIn = authFactory.isLoggedIn();	
 		vm.getUser()
 		vm.error = null
+        console.log('State changing!')
 	});	
 
 	function logout(){
@@ -35,8 +38,10 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
             vm.user_id = response.data.user_id
             console.log( response.data )
             console.log( 'getUser' + vm.user_id )
+            getUserApi(vm.user_id)
 		})
 	}
+    getUser()
 
 	function signup(){
 		authFactory.signup(vm.user.username, vm.user.password)
@@ -66,23 +71,28 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
     vm.updatedInfo = {};
     vm.getUserApi = getUserApi;
     function getUserApi(user_id){
-    $http
+    return $http
         .get('http://localhost:3000/api/users/' +  user_id)
         .then(function(response){
+            
             vm.info = response.data;
             vm.updatedInfo = response.data;
+            console.log(response)
         });
     }
     
     
     // Put One User's Info
+    vm.editing = false
     vm.putUserAPI = putUserAPI;
     function putUserAPI(user_id){
-    $http
+    return $http
         .put('http://localhost:3000/api/users/' +  user_id, vm.updatedInfo)
         .then(function(response){
             vm.info = response.data;
             vm.updatedInfo = response.data;
+            vm.editing = false;
+            console.log(response)
         });
     }
   

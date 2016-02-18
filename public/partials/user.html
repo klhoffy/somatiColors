@@ -1,2 +1,7 @@
+<div ng-hide="usersCtrl.editing">
 <one-user></one-user>
-<edit-user-form></edit-user-form>
+</div>
+
+<div ng-show="usersCtrl.editing">
+    <edit-user-form></edit-user-form>
+</div>
