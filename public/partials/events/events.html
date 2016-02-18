@@ -1,5 +1,5 @@
 <ul class="cbp_tmtimeline">
-    <li ng-repeat="event in eventsCtrl.events">
+    <li ng-repeat="event in eventsCtrl.events | filter: search">
         <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
