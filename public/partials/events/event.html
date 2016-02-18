@@ -1,9 +1,13 @@
 <section class="row">
     <div class="col-md-8 col-md-offset-2">
-            <h2>Account Information</h2>
+            <h2>Event</h2>
+            
+            <p><strong>title:</strong> {{ eventsCtrl.eventInfo.title }}</p>
+           
+            
             <hr>
             
-            <p><strong>name:</strong> {{ usersCtrl.info.first_name }} {{ usersCtrl.info.last_name }}</p>
+            <!--<p><strong>name:</strong> {{ usersCtrl.info.first_name }} {{ usersCtrl.info.last_name }}</p>
             <p><strong>email:</strong> {{ usersCtrl.info.username }}</p>
             
             <hr>
@@ -22,9 +26,7 @@
             <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anger }" ><strong>anger</strong></div>
             <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anticipation }" ><strong>anticipation</strong></div>
             
-            <button ng-click="usersCtrl.editing = !usersCtrl.editing">Edit</button>
-            
-            <button ng-click="usersCtrl.deleteUserApi(usersCtrl.params)">Delete User</button>
+            <button ng-click="usersCtrl.editing = !usersCtrl.editing">Edit</button>-->
 
     </div>
 </section>

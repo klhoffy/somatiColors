@@ -6,10 +6,8 @@ UsersController.$inject = ['$state', 'authFactory', '$rootScope', '$window', '$h
 function UsersController($state, authFactory, $rootScope, $window, $http, $location, $scope, $stateParams) {
 	var vm = this
     vm.params = $stateParams.user_id
-    
-
-
-    // User Auth Stuff    
+ 
+    // Sign up and login one user
 	vm.user = {}
 	vm.loggedIn = authFactory.isLoggedIn()
 	vm.signup = signup
@@ -22,7 +20,6 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 		vm.loggedIn = authFactory.isLoggedIn();	
 		vm.getUser()
 		vm.error = null
-        console.log('State changing!')
 	});	
 
 	function logout(){
@@ -32,16 +29,16 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 		$window.location.reload();
 	}
 
+    // Find the user that's logged in
 	function getUser(){
 		authFactory.getUser()
 		.then(function(response){
 			vm.user = response.data
             vm.user_id = response.data.user_id
-            console.log( response.data )
-            console.log( 'getUser' + vm.user_id )
-            getUserApi(vm.user_id)
+            getUserAPI(vm.user_id)
 		})
 	}
+    
     getUser()
 
 	function signup(){
@@ -67,23 +64,21 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
 	}
     
     
-    // Get One User's Info
+    // Get One User's Info from API
     vm.info = {};
     vm.updatedInfo = {};
-    vm.getUserApi = getUserApi;
-    function getUserApi(user_id){
+    vm.getUserAPI = getUserAPI;
+    
+    function getUserAPI(user_id){
     return $http
         .get('http://localhost:3000/api/users/' +  user_id)
         .then(function(response){
-            
             vm.info = response.data;
             vm.updatedInfo = response.data;
-            console.log(response)
         });
     }
     
-    
-    // Put One User's Info
+    // Update One User's Info from front end to API
     vm.editing = false
     vm.putUserAPI = putUserAPI;
     function putUserAPI(user_id){
@@ -93,12 +88,10 @@ function UsersController($state, authFactory, $rootScope, $window, $http, $locat
             vm.info = response.data;
             vm.updatedInfo = response.data;
             vm.editing = false;
-            console.log(response)
         });
     }
-  
-    
-      // Delete One User    
+ 
+    // Delete One User from the front end to the API   
     vm.deleteUserApi = deleteUserApi;
     function deleteUserApi(user_id){
     return $http

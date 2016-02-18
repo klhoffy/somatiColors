@@ -4,18 +4,18 @@
         <div class="cbp_tmicon cbp_tmicon-screen"></div>
         <div class="cbp_tmlabel">
             
-            <form id="new-event-form" ng-submit="eventsCtrl.addEvent(eventsCtrl.newEvent.title,eventssCtrl.newEvent.date,eventsCtrl.newEvent.location,eventsCtrl.newEvent.people_involved,eventsCtrl.newEvent.situation,eventsCtrl.newEvent.triggers,eventsCtrl.newEvent.bodily_sensations,eventsCtrl.newEvent.emotion,eventsCtrl.newEvent.automatic_thoughts,eventsCtrl.newEvent.rational_thoughts,eventsCtrl.newEvent.rational_response,eventsCtrl.newEvent.behaviors,eventsCtrl.newEvent.consequences,eventsCtrl.newEvent.challenged_beliefs,eventsCtrl.newEvent.lesson,eventsCtrl.newEvent.old_perspective,eventsCtrl.newEvent.new_perspective,eventsCtrl.newEvent.coping_strategies,eventsCtrl.newEvent.user_id)">
+            <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
             
                 <label for="title">Title</label>
-                <input class="form-control" type="text" id="title" placeholder="title" ng-model="eventsCtrl.event.title">
+                <input class="form-control" type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
 
                 <label for="date">Date</label>
-                <input class="form-control" type="datetime" id="date" ng-model="eventsCtrl.event.date">
+                <input class="form-control" type="datetime" id="date" ng-model="eventsCtrl.addEventInfo.date">
 
                 <label for="location">Location</label>
-                <input class="form-control" type="text" id="location" placeholder="location" ng-model="eventsCtrl.event.location">
+                <input class="form-control" type="text" id="location" placeholder="location" ng-model="eventsCtrl.addEventInfo.location">
 
-                <label for="people_involved">People Involved</label>
+                <!--<label for="people_involved">People Involved</label>
                 <textarea class="form-control" type="text-area" id="people_involved" placeholder="people" ng-model="eventsCtrl.event.people_involved"></textarea>
 
                 <label for="situation">Situation</label>
@@ -71,7 +71,7 @@
                 <textarea class="form-control" type="text-area" id="new_perspective" placeholder="new perspective" ng-model="eventsCtrl.event.new_perspective"></textarea>
 
                 <label for="coping_strategies">Coping Strategies Involved</label>
-                <textarea class="form-control" type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.event.coping_strategies"></textarea>
+                <textarea class="form-control" type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.event.coping_strategies"></textarea>-->
 
                 <button type="submit">Submit</button>
             </form> 
