@@ -28,7 +28,6 @@ function EventsController(eventsFactory,$stateParams,$location,$http){
    // Get One Event Info
     vm.eventInfo = {};
     vm.updatedEventInfo = {};
-    vm.event_id = event._id
     
     function getEventApi(user_id, event_id){
      $http
@@ -36,9 +35,7 @@ function EventsController(eventsFactory,$stateParams,$location,$http){
         .then(function(response){
             vm.eventInfo = response.data.event;
             vm.updatedEventInfo = response.data.event;
-            console.log(user_id)
             console.log(vm.eventInfo)
-            console.log('heelo')
         });
     }
     
