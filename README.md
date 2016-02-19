@@ -16,7 +16,8 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 * Express
 * MongoDB + Mongoose
 * AngularJS
-* Nodemailer
+* JSON Web Token
+* BCrypt
 * Gulp
 * Bootstrap + Angular UI + Custom CSS
 * Adobe Creative Cloud (Photoshop & Illustrator)
@@ -52,13 +53,21 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 #### ERD
 
-![ SomatiColors ERD ](public/assets/erd.jpg)
+![ SomatiColors ERD ](public/assets/SomatiColors_ERD.png)
 
 ##### User Model
 ``` username, password, first_name, last_name, email, mental_health_physician, physician_email```
 
 ##### Event Model
 ``` title, date, location, people_involved, situation, triggers, bodily_sensations, emotion, automatic_thoughts, rational_response, behaviors, consequences, challenged_beliefs, lesson, old_perspective, new_perspective, coping_strategies, user_id ```
+
+-
+
+### Future Goals
+* Ionic App
+* Add Mailer
+* Change radio buttons on ailments to checkboxes
+* interactive "body" image for ailments
 
 -
 
