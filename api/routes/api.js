@@ -18,8 +18,8 @@ apiRouter.route('/authenticate')
 apiRouter.use(usersController.checkUser)
 // logged in user detail
 apiRouter.route('/me')
-	.get(function(req, res){
-		res.send(req.decoded)
+	.get(function(request, response){
+		response.send(request.decoded)
 	})
 
 
