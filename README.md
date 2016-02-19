@@ -63,6 +63,14 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 -
 
+### Future Goals
+* Ionic App
+* Add Mailer
+* Change radio buttons on ailments to checkboxes
+* interactive "body" image for ailments
+
+-
+
 #### Wireframes
 
 ![ SomatiColors Wireframe ](public/assets/SomatiColors_Home.png)
