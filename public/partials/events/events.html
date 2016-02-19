@@ -78,7 +78,8 @@
             <div class="cbp_tmlabel">
                 <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
                     <h2>Edit "{{ eventsCtrl.updatedEventInfo.title }}"</h2><br>               
-                    <div class="left">                
+                    <div class="left">  
+                        <p>{{ event._id }}</p>              
                         <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.updatedEventInfo.title">
                         <label for="title" class="bottom-padding">Title</label>
 
