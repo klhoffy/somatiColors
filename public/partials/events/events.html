@@ -4,7 +4,7 @@
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
         
         <div ng-if="event.emotion == 'joy'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">( {{ event.emotion }} )</span></time>
         </div>
         
         <div ng-if="event.emotion == 'acceptance'">
@@ -58,7 +58,8 @@
             
             <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
             
-            <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
-            <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
+            <button class="blue-button left-half" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+            <button class="red-button right-half" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
+            <div style="clear:both;"></div>
         </div>
     </li>

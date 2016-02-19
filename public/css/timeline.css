@@ -35,6 +35,7 @@
 	width: 25%;
 	padding-right: 100px;
 	position: absolute;
+    font-family: 'Kalam', cursive;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span {
@@ -44,11 +45,12 @@
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
-	font-size: 0.9em;
+	font-size: 2em;    
+
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-	font-size: 2.9em;
+	font-size: 1.5em;
 }
 
 /* Right content */

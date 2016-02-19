@@ -190,18 +190,17 @@ textarea, input[type=text-area] {
 button {
     width: 100%;
     background:none;
+    border-width: 2px;
+    border-style: solid;
     border-radius:5px;
-    border-width: 0px;
     padding: 10px;
-    
     font-size: 15px;
     font-weight: 500;
+    margin-top: 15px;
 }
 
 .blue-button{
     color:#41b1bf;
-    border-width: 2px;
-    border-style: solid;
     border-color:#41b1bf;
 }
 
@@ -219,6 +218,15 @@ button {
     border-color:#22a57b;
 }
 
+.left-half {
+    float: left;
+    width: 49%;
+}
+
+.right-half {
+    float: right;
+    width: 49%;
+}
 
 
 
