@@ -186,3 +186,39 @@ textarea, input[type=text-area] {
     font-size: 22px;
     padding: 15px;
 }
+
+button {
+    width: 100%;
+    background:none;
+    border-radius:5px;
+    border-width: 0px;
+    padding: 10px;
+    
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.blue-button{
+    color:#41b1bf;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#41b1bf;
+}
+
+.red-button{
+    color:#e55c4c;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#e55c4c;
+}
+
+.green-button{
+    color:#22a57b;
+    border-width: 2px;
+    border-style: solid;
+    border-color:#22a57b;
+}
+
+
+
+
