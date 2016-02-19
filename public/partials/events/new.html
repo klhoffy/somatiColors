@@ -1,22 +1,20 @@
 <ul class="cbp_tmtimeline">
     <li>
-        <time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
+        <time class="cbp_tmtime"><span></span> <span></span></time>
         <div class="cbp_tmicon cbp_tmicon-screen"></div>
         <div class="cbp_tmlabel">
             
             <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
+                <h2>Create a New Event</h2>
                 <div class="left">
                     <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
                     <label for="title" class="bottom-padding">Title</label>
 
-
                     <input type="date" id="date" ng-model="eventsCtrl.addEventInfo.date">
                     <label for="date" class="bottom-padding">Date</label>
                     
-                    
                     <input type="text" id="location" placeholder="location" ng-model="eventsCtrl.addEventInfo.location">
                     <label for="location" class="bottom-padding">Location</label>
-
 
                     <input type="text" id="people_involved" placeholder="people" ng-model="eventsCtrl.addEventInfo.people_involved">
                     <label for="people_involved" class="bottom-padding">People Involved</label><br>
@@ -91,7 +89,6 @@
                 
                 <div style="clear:both;"></div>
                 <button type="submit">Submit</button>
-                
             </form> 
         </div>
     </li>
