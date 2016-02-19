@@ -17,14 +17,6 @@ footer.row {
     background-color: #f5f5f5;
 }
 
-header {
-    background-image: url("../assets/hero.jpeg");
-    background-position: center center;
-    background-size: 100% auto;
-    height: 400px;
-    padding-top: 100px;
-}
-
 nav {
     padding: 15px 30px;
 }
@@ -71,6 +63,15 @@ strong {
 }
 
 /* Landing */
+
+header {
+    background-image: url("../assets/hero.jpeg");
+    background-position: center center;
+    background-size: 100% auto;
+    height: 400px;
+    padding-top: 100px;
+}
+
 .landing h2 {
     font-size: 25px;
     color: #41b1bf;
@@ -151,7 +152,6 @@ strong {
 }
 
 /* Forms */
-
 .left {
     float: left;
     width: 60%;
@@ -189,8 +189,8 @@ input[type=text], input[type=password], input[type=email], input[type=date], inp
     border-width: 0 0 1px 0;
     border-color: #d1d1d1;
     font-family: 'Kalam', cursive;
-    font-size: 15px;
-    padding: 2px 0;
+    font-size: 16px;
+    padding: 3px 0;
 }
 
 textarea, input[type=text-area] {
