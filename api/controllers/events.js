@@ -74,7 +74,7 @@ function update(request, response) {
     if(request.body.situation) event.situation = request.body.situation;
     if(request.body.triggers) event.triggers = request.body.triggers;
     if(request.body.bodily_sensations) event.bodily_sensations = request.body.bodily_sensations;
-    if(request.body.emotion) event.emotion = request.body.emotions;
+    if(request.body.emotion) event.emotion = request.body.emotion;
     if(request.body.automatic_thoughts) event.automatic_thoughts = request.body.automatic_thoughts;
     if(request.body.rational_response) event.rational_response = request.body.rational_response;
     if(request.body.behaviors) event.behaviors = request.body.behaviors;
@@ -89,7 +89,7 @@ function update(request, response) {
       if (error) {
           response.json({ message: "putEvent SAVE ERROR:" + error });
       } else {
-        response.json({ message: "putEvent confirmation" });
+        response.json({ message: "putEvent confirmation" , data : event});
       }
     });
   });
