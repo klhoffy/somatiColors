@@ -33,7 +33,7 @@
         
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
-            <div ng-if="!eventsCtrl.editing">
+            <!--<div ng-if="!eventsCtrl.editing">-->
                 <h3>{{ event.title }}</h3>
 
                 <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
@@ -61,9 +61,9 @@
                 
                 <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
                 <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
-            </div>
+            <!--</div>-->
         
-            <div ng-if="eventsCtrl.editing">
+            <!--<div ng-if="eventsCtrl.editing">-->
                 <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
                     <h2>Edit "{{ eventsCtrl.updatedEventInfo.title }}"</h2><br>               
                     <div class="left">                
@@ -150,7 +150,7 @@
                     <div style="clear:both;"></div>
                     <button type="submit">Edit Event</button>
                 </form> 
-            </div>
+            <!--</div>-->
          </div>
     </li>
 </ul>
