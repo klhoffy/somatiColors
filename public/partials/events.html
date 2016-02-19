@@ -7,7 +7,9 @@
         </div>
         
         <!--New Event-->
-        <new-event-form></new-event-form>
+        <div ng-show="eventsCtrl.newEvent" >
+            <new-event-form></new-event-form>
+        </div>
         
         <!--Timeline of Events-->        
         <all-events></all-events>
