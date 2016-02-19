@@ -5,75 +5,89 @@
         <div class="cbp_tmlabel">
             
             <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
+                <h2>Edit "{{eventsCtrl.updatedEventInfo.title}}"</h2><br>               
+                <div class="left">                
+                    <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.updatedEventInfo.title">
+                    <label for="title" class="bottom-padding">Title</label>
+
+                    <input type="date" id="date" ng-model="eventsCtrl.updatedEventInfo.date">
+                    <label for="date" class="bottom-padding">Date</label>
+                    
+                    <input type="text" id="location" placeholder="location" ng-model="eventsCtrl.updatedEventInfo.location">
+                    <label for="location" class="bottom-padding">Location</label>
+
+                    <input type="text" id="people_involved" placeholder="people" ng-model="eventsCtrl.updatedEventInfo.people_involved">
+                    <label for="people_involved" class="bottom-padding">People Involved</label><br>
+
+                    <label for="situation">Situation</label>
+                    <textarea type="text-area" class="bottom-padding" id="situation" placeholder="situation" ng-model="eventsCtrl.updatedEventInfo.situation"></textarea>
+
+                    <label for="emotion">Emotion</label>
+                    <select name="emotion" class="bottom-padding" ng-model="eventsCtrl.updatedEventInfo.emotion">
+                        <option value="joy">Joy</option>
+                        <option value="acceptance">Acceptance</option>
+                        <option value="fear">Fear</option>
+                        <option value="surprise">Surprise</option>
+                        <option value="sadness">Sadness</option>
+                        <option value="disgust">Disgust</option>
+                        <option value="anger">Anger</option>
+                        <option value="anticipation">Anticipation</option>
+                    </select>
+                    
+                    <label for="triggers">Triggers</label>
+                    <textarea type="text-area" class="bottom-padding" id="triggers" placeholder="triggers" ng-model="eventsCtrl.updatedEventInfo.triggers"></textarea>
+
+                    <label for="automatic_thoughts">Automatic Thoughts</label>
+                    <textarea type="text-area" class="bottom-padding" id="automatic_thoughts" placeholder="automatic thoughts" ng-model="eventsCtrl.updatedEventInfo.automatic_thoughts"></textarea>
+
+                    <label for="rational_response">Rational Response</label>
+                    <textarea type="text-area" class="bottom-padding" id="rational_response" placeholder="rational response" ng-model="eventsCtrl.updatedEventInfo.rational_response"></textarea>
+
+                    <!--<label for="behaviors">Behaviors</label>
+                    <textarea type="text-area" id="behaviors" placeholder="behaviors" ng-model="eventsCtrl.updatedEventInfo.behaviors"></textarea>
+
+                    <label for="consequences">Consequences</label>
+                    <textarea type="text-area" id="consequences" placeholder="consequences" ng-model="eventsCtrl.updatedEventInfo.consequences"></textarea>-->
+
+                    <label for="challenged_beliefs">Challenged Beliefs Involved</label>
+                    <textarea type="text-area" class="bottom-padding" id="challenged_beliefs" placeholder="challenged beliefs" ng-model="eventsCtrl.updatedEventInfo.challenged_beliefs"></textarea>
+                    
+                    <input type="text" id="lesson" placeholder="lesson" ng-model="eventsCtrl.updatedEventInfo.lesson">
+                    <label for="lesson" class="bottom-padding">Lesson in 140 char (Twitter-ified)</label><br>
+                    
+                    <label for="old_perspective">Old Perspective</label>
+                    <textarea type="text-area" class="bottom-padding" id="old_perspective" placeholder="old perspective" ng-model="eventsCtrl.updatedEventInfo.old_perspective"></textarea>
+
+                    <label for="new_perspective">New Perspective</label>
+                    <textarea type="text-area" class="bottom-padding" id="new_perspective" placeholder="new perspective" ng-model="eventsCtrl.updatedEventInfo.new_perspective"></textarea>
+
+                    <label for="coping_strategies">Coping Strategies</label>
+                    <textarea type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.updatedEventInfo.coping_strategies"></textarea>
+                </div>
                 
-            
-                <label for="title">Title</label>
-                <input class="form-control" type="text" id="title" value="{{ eventsCtrl.eventInfo.title }}" ng-model="eventsCtrl.updatedEventInfo.title">
-
-                <label for="date">Date</label>
-                <input class="form-control" type="datetime" id="date" value="{{ eventsCtrl.eventInfo.date }}" ng-model="eventsCtrl.updatedEventInfo.date">
-
-                <label for="location">Location</label>
-                <input class="form-control" type="text" id="location" value="{{ eventsCtrl.eventInfo.location }}" ng-model="eventsCtrl.updatedEventInfo.location">
-
-                <!--<label for="people_involved">People Involved</label>
-                <textarea class="form-control" type="text-area" id="people_involved" placeholder="people" ng-model="eventsCtrl.event.people_involved"></textarea>
-
-                <label for="situation">Situation</label>
-                <textarea class="form-control" type="text-area" id="situation" placeholder="situation" ng-model="eventsCtrl.event.situation"></textarea>
-
-                <label for="triggers">Triggers</label>
-                <textarea class="form-control" type="text-area" id="triggers" placeholder="triggers" ng-model="eventsCtrl.event.triggers"></textarea>
-
-                <label>Bodily Sensations Involved</label>
-                <fieldset ng-model="bodily_sensations">
-                    <input type="checkbox" id="chronic_headaches" value="chronic_headaches"><label for="chronic_headaches">Chronic Headaches</label><br>
-                    <input type="checkbox" id="back_problems" value="back_problems"><label for="back_problems">Back Problems</label><br>
-                    <input type="checkbox" id="arthritis" value="arthritis"><label for="arthritis">Arthritis</label><br>
-                    <input type="checkbox" id="muscle_aches_and_cramps" value="muscle_aches_and_cramps"><label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
-                    <input type="checkbox" id="pelvic_pain" value="pelvic_pain"><label for="pelvic_pain">Pelvic Pain</label><br>
-                </fieldset>
-
-                <label for="emotion">Emotion Involved</label>
-                <select name="emotion">
-                    <option value="joy">Joy</option>
-                    <option value="acceptance">Acceptance</option>
-                    <option value="fear">Fear</option>
-                    <option value="surprise">Surprise</option>
-                    <option value="sadness">Sadness</option>
-                    <option value="disgust">Disgust</option>
-                    <option value="anger">Anger</option>
-                    <option value="anticipation">Anticipation</option>
-                </select>
-                <br>
-
-                <label for="automatic_thoughts">Automatic Thoughts Involved</label>
-                <textarea class="form-control" type="text-area" id="automatic_thoughts" placeholder="automatic thoughts" ng-model="eventsCtrl.event.automatic_thoughts"></textarea>
-
-                <label for="rational_response">Rational Response Involved</label>
-                <textarea class="form-control" type="text-area" id="rational_response" placeholder="rational response" ng-model="eventsCtrl.event.rational_response"></textarea>
-
-                <label for="behaviors">Behaviors Involved</label>
-                <textarea class="form-control" type="text-area" id="behaviors" placeholder="behaviors" ng-model="eventsCtrl.event.behaviors"></textarea>
-
-                <label for="consequences">Consequences Involved</label>
-                <textarea class="form-control" type="text-area" id="consequences" placeholder="consequences" ng-model="eventsCtrl.event.consequences"></textarea>
-
-                <label for="challenged_beliefs">Challenged Beliefs Involved</label>
-                <textarea class="form-control" type="text-area" id="challenged_beliefs" placeholder="challenged beliefs" ng-model="eventsCtrl.event.challenged_beliefs"></textarea>
-
-                <label for="lesson">Lesson Involved</label>
-                <textarea class="form-control" type="text-area" id="lesson" placeholder="lesson" ng-model="eventsCtrl.event.lesson"></textarea>
-
-                <label for="old_perspective">Old Perspective Involved</label>
-                <textarea class="form-control" type="text-area" id="old_perspective" placeholder="old perspective" ng-model="eventsCtrl.event.old_perspective"></textarea>
-
-                <label for="new_perspective">New Perspective Involved</label>
-                <textarea class="form-control" type="text-area" id="new_perspective" placeholder="new perspective" ng-model="eventsCtrl.event.new_perspective"></textarea>
-
-                <label for="coping_strategies">Coping Strategies Involved</label>
-                <textarea class="form-control" type="text-area" id="coping_strategies" placeholder="coping strategies" ng-model="eventsCtrl.event.coping_strategies"></textarea>-->
-
+                <div class="right">
+                    <img src="../../assets/body.png" alt="">
+                    
+                    <!--<label>Bodily Sensations Involved</label>-->
+                    <fieldset ng-model="bodily_sensations">
+                        <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                        <label for="chronic_headaches">Chronic Headaches</label><br>
+                        
+                        <input type="radio" id="back_problems" value="Back Problems" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                        <label for="back_problems">Back Problems</label><br>
+                        
+                        <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                        <label for="arthritis">Arthritis</label><br>
+                        
+                        <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                        <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
+                        
+                        <input type="radio" id="pelvic_pain" value="pelvic_pain" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                        <label for="pelvic_pain">Pelvic Pain</label><br>
+                    </fieldset>
+                </div>
+                
+                <div style="clear:both;"></div>
                 <button type="submit">Edit Event</button>
             </form> 
         </div>
