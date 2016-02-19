@@ -52,12 +52,12 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     function getUserEventAPI(user_id) {
         usersFactory.showUser(user_id)
         .then(function(response){
-            vm.userInfo = response.data.user;
-            vm.updatedUserInfo = response.data.user;
-            console.log(response.data.user);
+            vm.userInfo = response.data;
+            vm.updatedUserInfo = response.data;
+            console.log(response.data);
         });
     };
-    
+     
     function getEventAPI(user_id, event_id) {  
        eventsFactory.showEvent(user_id, event_id)
         .then(function(response) {
