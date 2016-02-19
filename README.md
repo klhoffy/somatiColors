@@ -16,7 +16,8 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 * Express
 * MongoDB + Mongoose
 * AngularJS
-* Nodemailer
+* JSON Web Token
+* BCrypt
 * Gulp
 * Bootstrap + Angular UI + Custom CSS
 * Adobe Creative Cloud (Photoshop & Illustrator)
