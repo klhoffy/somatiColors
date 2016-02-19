@@ -52,10 +52,10 @@ function show(require, response) {
     if(error) {
           response.json({ message: "showUsers ERROR:" + error });
       } else {
-          response.json(user);
-      };
-  });
-};
+          response.json({user: user});
+      }
+  })
+}
 
 function update(require, response) {
   // update a single user -- update

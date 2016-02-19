@@ -51,9 +51,10 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     
     function getUserEventAPI(user_id) {
         usersFactory.showUser(user_id)
-        .then(function(response) {
-            vm.userInfo = response.data;
-            vm.updatedUserInfo = response.data;
+        .then(function(response){
+            vm.userInfo = response.data.user;
+            vm.updatedUserInfo = response.data.user;
+            console.log(response.data.user);
         });
     };
     
@@ -73,8 +74,8 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     
     function putEventAPI(user_id, event_id) {
         eventsFactory.putEvent(user_id, event_id, vm.updatedEventInfo)
-        .then(function(response) {
-            vm.updatedEventInfo = response.data.event;
+        .then(function(response){
+            vm.updatedEventInfo = response.data.data;
             vm.editing = false;
             vm.editingEventId = null;
             getEventsAPI(vm.params)
