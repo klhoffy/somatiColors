@@ -1,79 +1,88 @@
-<button class="green-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+<div ng-hide="eventsCtrl.newEvent">
+    <button class="green-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+</div>
 
 <ul class="cbp_tmtimeline">
+
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
             
-            <div ng-if="event.emotion == 'joy'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
+        <div ng-if="event.emotion == 'joyful'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">( {{ event.emotion }} )</span></time>
+        </div>
+        
+        <div ng-if="event.emotion == 'accepted'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.emotion }}</span></time>
+        </div>
+        
+        <div ng-if="event.emotion == 'fearful'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.emotion }}</span></time>
+        </div>
+        
+        <div ng-if="event.emotion == 'surprised'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span></time>
+        </div>
+        
+        <div ng-if="event.emotion == 'sad'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.emotion }}</span></time>
+        </div>
+        
+        <div ng-if="event.emotion == 'disgusted'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.date | date: 'MMM d, yyyy' }}</span><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.emotion }}</span></time>
+        </div>
+        
+        <div ng-if="event.emotion == 'angry'">
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span></time>
+        </div>
+
+        <div class="cbp_tmicon cbp_tmicon-phone"></div>
+        <div class="cbp_tmlabel">
+            <h3><strong>{{ event.title }}</strong></h3>
             
-            <div ng-if="event.emotion == 'acceptance'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
-            
-            <div ng-if="event.emotion == 'fear'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
-            
-            <div ng-if="event.emotion == 'surprise'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
-            
-            <div ng-if="event.emotion == 'sadness'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
-            
-            <div ng-if="event.emotion == 'disgust'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
-            
-            <div ng-if="event.emotion == 'anger'">
-                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-            </div>
-            
-            <div ng-if="!eventsCtrl.editing || eventsCtrl.editingEventId != event._id">
-            
-                <div class="cbp_tmicon cbp_tmicon-phone"></div>
-                <div class="cbp_tmlabel">
+            <div class="left"> 
+                <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
                 
-                    <h3>{{ event.title }}</h3>
+                <p>{{ event.situation }}</p>    
+                
+                <p>I felt <strong>{{ event.emotion }}</strong>.</p>
 
-                    <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
-                    
-                    <p>{{ event.situation }}</p>    
-                    
-                    <p>I felt <strong>{{ event.emotion }}</strong>.</p>
+                <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
+                
+                <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
+                But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
+                
+                <p><strong>{{ event.behaviors }} </strong></p>
+                <p><strong>{{ event.consequences }}</strong></p>
+                <p><strong>{{ event.challenged_beliefs }}</strong></p>
 
-                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
-                    
-                    <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
-                    But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
-                    
-                    <p><strong>{{ event.behaviors }} </strong></p>
-                    <p><strong>{{ event.consequences }}</strong></p>
-                    <p><strong>{{ event.challenged_beliefs }}</strong></p>
+                <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
 
-                    <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
-
-                    <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
-                    
-                    <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
-                    
-                    <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
-                    
-                    <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing; eventsCtrl.editEventId(event._id)">Edit</button>
-                    <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
+                <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
+                
+                <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
+                
+                <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
             </div>
-         
-         </div>
-         <div ng-if="eventsCtrl.editing && eventsCtrl.editingEventId == event._id">
+            
+            <div class="right">
+                <span class="favorite"><img src="../../assets/body.png"/></span><br><br><br>
+            </div>
+            
+            <div style="clear:both;"></div>
+
+        <button class="blue-button left-half" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing; eventsCtrl.editEventId(event._id)">Edit</button>
+        <button class="red-button right-half" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
+        
+        <div style="clear:both;"></div>
+
+        </div>
+        
+        <div ng-if="eventsCtrl.editing && eventsCtrl.editingEventId == event._id">
             
             <div class="cbp_tmicon cbp_tmicon-phone"></div>
             <div class="cbp_tmlabel">
                 <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
-                    <h2>Edit "{{ eventsCtrl.updatedEventInfo.title }}"</h2><br>               
-                    <div class="left">  
-                        <p>{{ event._id }}</p>              
+                    <h2>Edit "{{eventsCtrl.updatedEventInfo.title}}"</h2><br>             
+                    <div class="left">                
                         <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.updatedEventInfo.title">
                         <label for="title" class="bottom-padding">Title</label>
 
@@ -91,13 +100,13 @@
 
                         <label for="emotion">Emotion</label>
                         <select name="emotion" class="bottom-padding" ng-model="eventsCtrl.updatedEventInfo.emotion">
-                            <option value="joy">Joy</option>
-                            <option value="acceptance">Acceptance</option>
-                            <option value="fear">Fear</option>
-                            <option value="surprise">Surprise</option>
-                            <option value="sadness">Sadness</option>
-                            <option value="disgust">Disgust</option>
-                            <option value="anger">Anger</option>
+                            <option value="joyful">Joyful</option>
+                            <option value="accepted">Accepted</option>
+                            <option value="fearful">Fearful</option>
+                            <option value="surprised">Surprised</option>
+                            <option value="sad">Sad</option>
+                            <option value="disgusted">Disgusted</option>
+                            <option value="angry">Angry</option>
                             <option value="anticipation">Anticipation</option>
                         </select>
                         
@@ -135,32 +144,49 @@
                     <div class="right">
                         <img src="../../assets/body.png" alt="">
                         
-                        <!--<label>Bodily Sensations Involved</label>-->
                         <fieldset ng-model="bodily_sensations">
-                            <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                            <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                             <label for="chronic_headaches">Chronic Headaches</label><br>
                             
-                            <input type="radio" id="back_problems" value="Back Problems" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
-                            <label for="back_problems">Back Problems</label><br>
+                            <input type="radio" id="back_pain" value="Back Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="back_pain">Back Pain</label><br>
                             
-                            <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                            <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                             <label for="arthritis">Arthritis</label><br>
                             
-                            <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                            <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                             <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
                             
-                            <input type="radio" id="pelvic_pain" value="pelvic_pain" ng-model="eventsCtrl.updatedEventInfo.bodily_sensations">
+                            <input type="radio" id="pelvic_pain" value="Pelvic Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                             <label for="pelvic_pain">Pelvic Pain</label><br>
+                            
+                            <input type="radio" id="Tightness_in_the_chest" value="Tightness in the Chest" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="Tightness_in_the_chest">Tightness in the Chest</label><br>
+                            
+                            <input type="radio" id="dizziness" value="Dizziness" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="dizziness">Dizziness</label><br>
+                            
+                            <input type="radio" id="appetite_change" value="Appetite Change" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="appetite_change">Appetite Change</label><br>                        
+                            
+                            <input type="radio" id="difficulty_sleeping" value="Difficulty Sleeping" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="difficulty_sleeping">Difficulty Sleeping</label><br>
+                            
+                            <input type="radio" id="stomach_or_bowel_problems" value="Stomach or Bowel Problems" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="stomach_or_bowel_problems">Stomach or Bowel Problems</label><br>
+
+                            <input type="radio" id="low_energy" value="Low Energy" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="low_energy">Low Energy</label><br>
+                            
+                            <input type="radio" id="shortness_of_breath" value="Shortness of Breath" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                            <label for="shortness_of_breath">Shortness of Breath</label><br>
                         </fieldset>
                     </div>
                     
                     <div style="clear:both;"></div>
-                    <button type="submit">Edit Event</button>
+                    <button class="green-button" type="submit">Edit Event</button>
                 </form> 
             </div>
-             </div>
          </div>
     </li>
 </ul>
-
-
