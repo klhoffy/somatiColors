@@ -66,26 +66,36 @@ strong {
 
 header {
     background-image: url("../assets/hero.jpg");
-    background-position: center -100px;
+    background-position: center center;
     background-size: 100% auto;
     height: 450px;
     padding-top: 100px;
-    text-shadow: 1px 1px #777;
 }
 
 .landing h2 {
     font-size: 30px;
     color: #41b1bf;
     text-align: center;
-
+    font-weight: 500;
+    /*text-shadow:
+        -1px -1px 50px white,  
+        1px -1px 50px white,
+        -1px 1px 50px white,
+        1px 1px 50px white;*/
 }
 
 .landing h3 {
     font-size: 16px;
     color: #ffc548;
     text-align: center;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.4;
+    /*text-shadow:
+        -1px -1px 1px #f5f5f5,  
+        1px -1px 1px #f5f5f5,
+        -1px 1px 1px #f5f5f5,
+        1px 1px 1px #f5f5f5;
+        background-color: #f5f5f5;*/
 }
 
 .landing h4 {
@@ -116,14 +126,15 @@ header {
 }
 
 .landing img {
-    display: inline;
+    height: 150px;
+    margin: 15px 0;  
 }
 
 .image-background {
     background-image: url("../assets/hero.jpg");
     background-position: center bottom;
     background-size: 100% auto;
-    text-shadow: 1px 1px #777;
+    /*text-shadow: 1px 1px #777;*/
 }
 
 .red {
