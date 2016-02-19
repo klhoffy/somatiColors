@@ -2,11 +2,11 @@ angular.module('SomatiColors')
     .config(MainRouter)
     .config(interceptor)
 
-function interceptor($httpProvider){
+function interceptor($httpProvider) {
  $httpProvider.interceptors.push('authInterceptorFactory')
-}
+};
         
-function MainRouter ($stateProvider, $urlRouterProvider){
+function MainRouter ($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise('/')  
     
@@ -45,5 +45,4 @@ function MainRouter ($stateProvider, $urlRouterProvider){
             templateUrl: '../partials/events.html',
             controller: 'EventsController as eventsCtrl'
         })
- 
-}
+};

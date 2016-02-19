@@ -9,7 +9,7 @@ function index(request, response) {
           response.json({ message: "getEvents ERROR:" + error });
       } else {
           response.json({ events: events });
-      }
+      };
   }).select('-__v');
 };
 
@@ -42,7 +42,7 @@ function create(request, response) {
         response.json({ message: "postEvent ERROR:" + error });
     } else {
         response.json({ message: "postEvent confirmation" });
-    }
+    };
   });
 };
 
@@ -50,12 +50,12 @@ function create(request, response) {
 function show(request, response) {
   var id = request.params.id;
 
-  Event.findById({ _id: id }, function (error, event){
+  Event.findById({ _id: id }, function (error, event) {
     if(error) {
         response.json({ message: "getEvent ERROR:" + error });
     } else {
         response.json({ event: event });
-    }
+    };
   }).select('-__v');
 };
 
@@ -63,7 +63,7 @@ function show(request, response) {
 function update(request, response) {
   var id = request.params.id;
 
-  Event.findById({ _id: id }, function (error, event){
+  Event.findById({ _id: id }, function (error, event) {
     if(error) response.send(error);
 
     if(request.body.title) event.title = request.body.title;
@@ -85,12 +85,12 @@ function update(request, response) {
     if(request.body.new_perspective) event.new_perspective = request.body.new_perspective;
     if(request.body.coping_strategies) event.coping_strategies = request.body.coping_strategies;
         
-    event.save( function (error, event){
+    event.save( function (error, event) {
       if (error) {
           response.json({ message: "putEvent SAVE ERROR:" + error });
       } else {
         response.json({ message: "putEvent confirmation" });
-      }
+      };
     });
   });
 };
@@ -103,8 +103,8 @@ function destroy(request, response) {
     if(error) {
         response.json({ message: "deleteEvent ERROR:" + error });
     } else {
-            response.json({ message: "deleteEvent confirmation" });
-    }
+        response.json({ message: "deleteEvent confirmation" });
+    };
   });
 };
 

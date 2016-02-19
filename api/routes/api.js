@@ -1,7 +1,7 @@
-var express = require('express')
-var apiRouter = express.Router()
-var usersController = require('../controllers/users.js')
-var eventsController = require('../controllers/events.js')
+var express = require('express');
+var apiRouter = express.Router();
+var usersController = require('../controllers/users.js');
+var eventsController = require('../controllers/events.js');
 
 
 // Non-Authenticated
@@ -18,8 +18,8 @@ apiRouter.route('/authenticate')
 apiRouter.use(usersController.checkUser)
 // logged in user detail
 apiRouter.route('/me')
-	.get(function(request, response){
-		response.send(request.decoded)
+	.get(function(request, response) {
+		response.send(request.decoded);
 	})
 
 
@@ -37,7 +37,6 @@ apiRouter.route('/users/:user_id/events')
 	.post(eventsController.create)
 
 apiRouter.route('/users/:user_id/events/:id')
-	.get(eventsController.show)
 	.delete(eventsController.destroy)
 	.put(eventsController.update)
 

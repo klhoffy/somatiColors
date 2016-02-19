@@ -63,7 +63,6 @@
                 <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
             </div>
         
-        
             <div ng-if="eventsCtrl.editing">
                 <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
                     <h2>Edit "{{eventsCtrl.updatedEventInfo.title}}"</h2><br>               
