@@ -1,6 +1,38 @@
 <button class="green-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
 
 <ul class="cbp_tmtimeline">
+<<<<<<< HEAD
+     <div ng-hide="eventsCtrl.newEvent">
+         <button ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+    </div>
+    <li ng-repeat="event in eventsCtrl.events">
+        <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
+        <div class="cbp_tmicon cbp_tmicon-phone"></div>
+        <div class="cbp_tmlabel">
+            <h2>{{ event.title }}</h2>
+            <p>{{ event.user_id }}</p>
+            <p>{{ event._id }}</p>
+            <p>{{ event.location }}<br>
+            <!--{{ event.people_involved }}<br>
+            {{ event.situation }}<br>
+            {{ event.triggers }}<br>
+            {{ event.bodily_sensations }}<br>-->
+            {{ event.emotion }}<br>
+             <!--{{ event.automatic_thoughts }}<br>
+            {{ event.rational_thoughts }}<br>
+            {{ event.behaviors }}<br>
+            {{ event.consequences }}<br>
+            {{ event.challenged_beliefs }}<br>
+            {{ event.lesson }}<br>
+            {{ event.old_perspective }}<br>
+            {{ event.new_perspective }}<br>
+            {{ event.coping_strategies }}</p>-->
+            
+            <button ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+           
+            
+            <button ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">delete</button>
+=======
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
         
         <div ng-if="event.emotion == 'joy'">
@@ -17,6 +49,7 @@
         
         <div ng-if="event.emotion == 'surprise'">
             <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+>>>>>>> d27ec8a18adcaf5e96538b6209a7e20675275edc
         </div>
         
         <div ng-if="event.emotion == 'sadness'">
