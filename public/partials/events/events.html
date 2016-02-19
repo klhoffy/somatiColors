@@ -3,8 +3,7 @@
 </div>
 
 <ul class="cbp_tmtimeline">
-    <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
-        
+    <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">    
         <div ng-if="event.emotion == 'joyful'">
             <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">( {{ event.emotion }} )</span></time>
         </div>
@@ -32,36 +31,45 @@
         <div ng-if="event.emotion == 'angry'">
             <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span></time>
         </div>
-        
+
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
-            <h3><strong>{{ event.title }}</strong></h3>
+            <div class="left"> 
+                <h3><strong>{{ event.title }}</strong></h3>
 
-            <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
-            
-            <p>{{ event.situation }}</p>    
-            
-            <p>I felt <strong>{{ event.emotion }}</strong>.</p>
+                <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
+                
+                <p>{{ event.situation }}</p>    
+                
+                <p>I felt <strong>{{ event.emotion }}</strong>.</p>
 
-            <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
-            
-            <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
-            But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
-            
-            <p><strong>{{ event.behaviors }} </strong></p>
-            <p><strong>{{ event.consequences }}</strong></p>
-            <p><strong>{{ event.challenged_beliefs }}</strong></p>
+                <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
+                
+                <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
+                But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
+                
+                <p><strong>{{ event.behaviors }} </strong></p>
+                <p><strong>{{ event.consequences }}</strong></p>
+                <p><strong>{{ event.challenged_beliefs }}</strong></p>
 
-            <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
+                <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
 
-            <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
+                <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
+                
+                <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
+                
+                <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
+            </div>
             
-            <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
+            <div class="right">
+                    <span class="favorite"><img src="../../assets/body.png"/></span><br><br><br>
+            </div>
             
-            <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
-            
-            <button class="blue-button left-half" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
-            <button class="red-button right-half" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
             <div style="clear:both;"></div>
+        
+        <button class="blue-button left-half" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+        <button class="red-button right-half" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
+        <div style="clear:both;"></div>
         </div>
     </li>
+</ul>
