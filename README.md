@@ -20,7 +20,7 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 * Gulp
 * Bootstrap + Angular UI + Custom CSS
 * Adobe Creative Cloud (Photoshop & Illustrator)
-* OmniGraffle
+* Sketch
 
 -
 
@@ -46,7 +46,7 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 | User | visualize event/situation emotions by creating a color stripe to the left of each timeline entry |
 | User | visualize event/situation bodily sensations by marking an image of a body based on checkbox values |
 | User | download the mobile app in order to read through my timeline during therapy |
-| Visitor | learn more about SomatiColors on the about page |
+| Visitor | learn more about SomatiColors on the landing page |
 
 -
 
