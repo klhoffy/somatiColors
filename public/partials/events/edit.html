@@ -5,7 +5,7 @@
         <div class="cbp_tmlabel">
             
             <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
-                <h2>Edit "{{eventsCtrl.updatedEventInfo.title}}"</h2><br>               
+                <h2>Edit "{{eventsCtrl.updatedEventInfo.title}}"</h2><br>             
                 <div class="left">                
                     <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.updatedEventInfo.title">
                     <label for="title" class="bottom-padding">Title</label>
@@ -24,13 +24,13 @@
 
                     <label for="emotion">Emotion</label>
                     <select name="emotion" class="bottom-padding" ng-model="eventsCtrl.updatedEventInfo.emotion">
-                        <option value="joy">Joy</option>
-                        <option value="acceptance">Acceptance</option>
-                        <option value="fear">Fear</option>
-                        <option value="surprise">Surprise</option>
-                        <option value="sadness">Sadness</option>
-                        <option value="disgust">Disgust</option>
-                        <option value="anger">Anger</option>
+                        <option value="joyful">Joyful</option>
+                        <option value="accepted">Accepted</option>
+                        <option value="fearful">Fearful</option>
+                        <option value="surprised">Surprised</option>
+                        <option value="sad">Sad</option>
+                        <option value="disgusted">Disgusted</option>
+                        <option value="angry">Angry</option>
                         <option value="anticipation">Anticipation</option>
                     </select>
                     

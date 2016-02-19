@@ -4,12 +4,12 @@
 
 <ul class="cbp_tmtimeline">
     <li>
-        <time class="cbp_tmtime"><span></span> <span></span></time>
+        <time class="cbp_tmtime"><span></span><span></span></time>
         <div class="cbp_tmicon cbp_tmicon-screen"></div>
         <div class="cbp_tmlabel">
             
             <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
-                <h2>Create a New Event</h2>
+                <h2>Create a New Event</h2><br>
                 <div class="left">
                     <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
                     <label for="title" class="bottom-padding">Title</label>
@@ -70,15 +70,16 @@
                 </div>
                 
                 <div class="right">
-                    <img src="../../assets/body.png" alt="">
+                    
+                    <span class="favorite"><img src="../../assets/body.png"/></span>
                     
                     <!--<label>Bodily Sensations Involved</label>-->
                     <fieldset ng-model="bodily_sensations">
                         <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="chronic_headaches">Chronic Headaches</label><br>
                         
-                        <input type="radio" id="back_problems" value="Back Problems" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="back_problems">Back Problems</label><br>
+                        <input type="radio" id="back_pain" value="Back Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="back_pain">Back Pain</label><br>
                         
                         <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="arthritis">Arthritis</label><br>
@@ -86,8 +87,29 @@
                         <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
                         
-                        <input type="radio" id="pelvic_pain" value="pelvic_pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <input type="radio" id="pelvic_pain" value="Pelvic Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="pelvic_pain">Pelvic Pain</label><br>
+                        
+                        <input type="radio" id="Tightness_in_the_chest" value="Tightness in the Chest" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="Tightness_in_the_chest">Tightness in the Chest</label><br>
+                        
+                        <input type="radio" id="dizziness" value="Dizziness" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="dizziness">Dizziness</label><br>
+                        
+                        <input type="radio" id="appetite_change" value="Appetite Change" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="appetite_change">Appetite Change</label><br>                        
+                        
+                        <input type="radio" id="difficulty_sleeping" value="Difficulty Sleeping" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="difficulty_sleeping">Difficulty Sleeping</label><br>
+                        
+                        <input type="radio" id="stomach_or_bowel_problems" value="Stomach or Bowel Problems" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="stomach_or_bowel_problems">Stomach or Bowel Problems</label><br>
+
+                        <input type="radio" id="low_energy" value="Low Energy" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="low_energy">Low Energy</label><br>
+                        
+                        <input type="radio" id="shortness_of_breath" value="Shortness of Breath" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
+                        <label for="shortness_of_breath">Shortness of Breath</label><br>
                     </fieldset>
                 </div>
                 
