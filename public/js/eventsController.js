@@ -82,7 +82,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
      // Delete One Event from the front end to the API using a Factory 
     vm.deleteEventAPI = deleteEventAPI;
     function deleteEventAPI(user_id, event_id) {
-        window.alert("Are you sure?")
+        window.confirm("Are you sure?")
     eventsFactory.removeEvent(user_id, event_id)
         .then(function(response) {
             $location.path("/user/" + vm.params + "/events");
