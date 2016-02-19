@@ -1,10 +1,11 @@
 <ul class="cbp_tmtimeline">
      <button ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
-    <li ng-repeat="event in eventsCtrl.events">
-        <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
+    
+    <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
+        <time class="cbp_tmtime"><span>{{ event.emotion }}</span> <span>{{ event.date | date: 'MMM d, yyyy' }}</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
-            <h2>{{ event.title }}</h2>
+            <h3>{{ event.title }}</h3>
             <p>{{ event.user_id }}</p>
             <p>{{ event._id }}</p>
             <p>{{ event.location }}<br>
@@ -36,32 +37,32 @@
         <div class="cbp_tmlabel">
             <h3>title</h3>
             <p><strong>location</strong> w/ <strong>people</strong></p>
-            
-            <p>situation Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>    
-            
-            <p>I felt <strong>emotion</strong>.</p>
 
-            <p><strong>bodily_sensations</strong> were triggered by <strong>triggers</strong>.</p>
+            <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
             
-            <p> At first, I thought: <strong>automatic_thoughts</strong>
-            But when I had a chance to think about what had happened I realized: <strong>rational_thoughts</strong></p>
+            <p>{{ event.situation }}</p>    
             
-            <p><strong>behaviors</strong></p>
-            <p><strong>consequences</strong></p>
-            <p><strong>challenged_beliefs</strong></p>
+            <p>I felt <strong>{{ event.emotion }}</strong>.</p>
 
-            <p>What did I take away from this experience? <strong>lesson</strong></p>
+            <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
+            
+            <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
+            But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
+            
+            <p><strong>{{ event.behaviors }} </strong></p>
+            <p><strong>{{ event.consequences }}</strong></p>
+            <p><strong>{{ event.challenged_beliefs }}</strong></p>
 
-            <p>My old perspective: <strong>old_perspective</strong></p>
-            
-            <p>My new perspective: <strong>new_perspective</strong></p>
-            
-            <p>Next time use the following coping strategies: <strong>coping_strategies</strong></p>
-            
-            
-            <button>edit</button>
-            <button>delete</button>
+            <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
 
+            <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
+            
+            <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
+            
+            <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
+
+            <button ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+            <button ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">delete</button>
         </div>
-    </li>-->
+    </li>
 </ul>

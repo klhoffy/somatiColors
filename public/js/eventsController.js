@@ -17,9 +17,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     vm.userInfo = {};
     vm.updatedUserInfo = {};
     vm.getUserEventAPI = getUserEventAPI;
-    
-    
-    
+
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id){
        getUserEventAPI(user_id)
@@ -35,6 +33,7 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
    
    vm.addEventInfo = {};
    vm.newEvent = false;
+
    function addEventAPI(user_id){
        eventsFactory.postEvent(user_id, vm.addEventInfo)
         .then(function(response){

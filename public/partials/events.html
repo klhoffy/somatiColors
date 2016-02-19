@@ -1,15 +1,22 @@
-<section class="row white">
+<section class="row">
     <div class="col-md-12">
-        <one-event></one-event>
-        <div ng-show="eventsCtrl.newEvent">
-            <new-event-form></new-event-form>
+        
+        <!--Filter Events-->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for..." ng-model="search">
         </div>
-        <div ng-show="eventsCtrl.editing">
+        
+        <!--New Event-->
+        <new-event-form></new-event-form>
+        
+        <!--Timeline of Events-->        
+        <all-events></all-events>
+        
+        <!--Edit Event-->
+        <div ng-show="eventsCtrl.editing" >
             <edit-event-form></edit-event-form>
         </div>
-        <div ng-hide="eventsCtrl.editing">
-            <all-events></all-events>
-        </div>
+        
     </div>
 </section>
 

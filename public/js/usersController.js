@@ -26,7 +26,7 @@ function UsersController($state, authFactory, usersFactory, $rootScope, $window,
 		$state.go('loggedOut')
 		authFactory.logout();
         console.log("logging out!");
-		$window.location.reload();
+        vm.loggedIn = authFactory.isLoggedIn()
 	}
 
     // Find the user that's logged in
