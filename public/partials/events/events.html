@@ -65,7 +65,7 @@
         
             <div ng-if="eventsCtrl.editing">
                 <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
-                    <h2>Edit "{{eventsCtrl.updatedEventInfo.title}}"</h2><br>               
+                    <h2>Edit "{{ eventsCtrl.updatedEventInfo.title }}"</h2><br>               
                     <div class="left">                
                         <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.updatedEventInfo.title">
                         <label for="title" class="bottom-padding">Title</label>

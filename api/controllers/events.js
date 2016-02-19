@@ -63,8 +63,8 @@ function show(request, response) {
 function update(request, response) {
   var id = request.params.id;
 
-  Event.findById({ _id: id }, function (error, event) {
-    if(error) response.send(error);
+  Event.findById({ _id: id }, function(error, event) {
+    if(error) response.send(error)
 
     if(request.body.title) event.title = request.body.title;
     if(request.body.location) event.location = request.body.location;
@@ -85,12 +85,12 @@ function update(request, response) {
     if(request.body.new_perspective) event.new_perspective = request.body.new_perspective;
     if(request.body.coping_strategies) event.coping_strategies = request.body.coping_strategies;
         
-    event.save( function (error, event) {
-      if (error) {
+    event.save( function(error) {
+      if(error) {
           response.json({ message: "putEvent SAVE ERROR:" + error });
       } else {
         response.json({ message: "putEvent confirmation" });
-      };
+      }
     });
   });
 };
