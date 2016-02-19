@@ -36,6 +36,7 @@
 	width: 25%;
 	padding-right: 100px;
 	position: absolute;
+    font-family: 'Kalam', cursive;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span {
@@ -45,11 +46,12 @@
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
-	font-size: 0.9em;
+	font-size: 2em;    
+
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-	font-size: 2.9em;
+	font-size: 1.5em;
 }
 
 /* Right content */
@@ -64,14 +66,13 @@
 	border-radius: 5px;
 }
 
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+/*.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
 	background: #f8f8f8;
-}
+}*/
 
 .cbp_tmtimeline > li .cbp_tmlabel h3 { 
 	margin-top: 0px;
 	padding: 0 0 10px 0;
-	border-bottom: 1px solid rgba(255,255,255,0.5);
 }
 
 /* The triangle */
@@ -83,14 +84,14 @@
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-	border-right-color: #f8f8f8;
+	border-right-color: #f5f5f5;
 	border-width: 10px;
 	top: 10px;
 }
 
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+/*.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
 	border-right-color: #f8f8f8;
-}
+}*/
 
 /* The icons */
 .cbp_tmtimeline > li .cbp_tmicon {
@@ -107,7 +108,7 @@
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
 	color: #fff;
-	background: #46a4da;
+	background: #f5f5f5;
 	border-radius: 50%;
 	box-shadow: 0 0 0 8px #f8f8f8;
 	text-align: center;
@@ -116,7 +117,7 @@
 	margin: 0 0 0 -25px;
 }
 
-.cbp_tmicon-phone:before {
+/*.cbp_tmicon-phone:before {
 	content: "\e000";
 }
 
@@ -130,7 +131,7 @@
 
 .cbp_tmicon-earth:before {
 	content: "\e003";
-}
+}*/
 
 /* Example Media Queries */
 @media screen and (max-width: 65.375em) {

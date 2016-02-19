@@ -8,10 +8,10 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         <li ng-if="usersCtrl.loggedIn"><a ui-sref="events({user_id: usersCtrl.user.user_id})">Timeline</a></li> 
-                        <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account Settings</a></li> 
+                        <li ng-if="usersCtrl.loggedIn"><a ui-sref="user({user_id: usersCtrl.user.user_id})">Account</a></li> 
                         <li ng-if="usersCtrl.loggedIn"><a ng-click="usersCtrl.logout()">Log Out</a></li>
                         
-                        <li ng-if="!usersCtrl.loggedIn">
+                        <!--<li ng-if="!usersCtrl.loggedIn">
                             <div id="navbar" class="navbar-collapse collapse">
                             <form ng-submit="usersCtrl.login()" class="navbar-form navbar-right">
                                 <div class="form-group">
@@ -33,9 +33,9 @@
                                 </button>
                             </form>
                             </div>
-                        </li>
-
-                        <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign up </a></li> 
+                        </li>-->
+                        <li ng-if="!usersCtrl.loggedIn"><a ui-sref="login">Log In</a></li> 
+                        <li ng-if="!usersCtrl.loggedIn"><a ui-sref="signup">Sign Up</a></li> 
                     </ul>
                 </div>
             </nav>
