@@ -1,5 +1,7 @@
 <ul class="cbp_tmtimeline">
-     <button ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+     <div ng-hide="eventsCtrl.newEvent">
+         <button ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
+    </div>
     <li ng-repeat="event in eventsCtrl.events">
         <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>{{ event.date }}</span> <span>18:30</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
