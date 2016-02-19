@@ -93,7 +93,7 @@ function authFactory($http, $q, authTokenFactory, $window){
         var token = $window.localStorage.getItem('token')
         if(authTokenFactory.getToken()){
             console.log(token)
-            return $http.get('https://somaticolors.herokuapp.com/me?token=' + $window.localStorage.getItem('token') )
+            return $http.get('https://somaticolors.herokuapp.com/api/me?token=' + $window.localStorage.getItem('token') )
         } else {
             return $q.reject({message: 'User has no token'})
         }
