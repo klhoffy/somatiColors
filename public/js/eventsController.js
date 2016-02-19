@@ -13,6 +13,14 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
     vm.putEventAPI = putEventAPI;
     vm.deleteEventAPI = deleteEventAPI;
 
+
+
+
+  
+  
+  
+  
+  
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id){
        $http
@@ -27,7 +35,8 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
    getEventsAPI(vm.params);
    
    vm.addEventInfo = {};
-   
+    
+       
    function addEventAPI(user_id){
     return $http
         .post('http://localhost:3000/api/users/' +  user_id + '/events', vm.addEventInfo)
