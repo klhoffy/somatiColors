@@ -40,16 +40,15 @@
 .cbp_tmtimeline > li .cbp_tmtime span {
 	display: block;
 	text-align: right;
+    color: #777;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
 	font-size: 0.9em;
-	color: green;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
 	font-size: 2.9em;
-	color: blue;
 }
 
 /* Right content */
