@@ -37,6 +37,7 @@ apiRouter.route('/users/:user_id/events')
 	.post(eventsController.create)
 
 apiRouter.route('/users/:user_id/events/:id')
+    .get(eventsController.show)
 	.delete(eventsController.destroy)
 	.put(eventsController.update)
 
