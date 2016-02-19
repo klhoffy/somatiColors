@@ -62,7 +62,6 @@ footer p {
 }
 
 /* Type */
-
 p {
     font-size: 14px;
 }
@@ -202,6 +201,11 @@ textarea, input[type=text-area] {
     font-family: 'Kalam', cursive;
     padding: 7px;
     border-radius: 0 0 5px 5px;
+}
+
+input[type=color] {
+    height:60px;
+    border-width: 0;
 }
 
 .search-bar {
