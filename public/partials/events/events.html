@@ -3,67 +3,100 @@
 <ul class="cbp_tmtimeline">
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
 
-        <div ng-if="event.emotion == 'joy'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'acceptance'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'fear'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'surprise'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'sadness'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'disgust'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div ng-if="event.emotion == 'anger'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
-        </div>
-        
-        <div class="cbp_tmicon cbp_tmicon-phone"></div>
-        <div class="cbp_tmlabel">
-            <!--<div ng-if="!eventsCtrl.editing">-->
-                <h3>{{ event.title }}</h3>
+        <div ng-if="!eventsCtrl.editing">
+            
+            <div ng-if="event.emotion == 'joy'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'acceptance'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'fear'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'surprise'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'sadness'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'disgust'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'anger'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+            <div class="cbp_tmlabel">
+                
+                    <h3>{{ event.title }}</h3>
 
-                <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
-                
-                <p>{{ event.situation }}</p>    
-                
-                <p>I felt <strong>{{ event.emotion }}</strong>.</p>
+                    <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
+                    
+                    <p>{{ event.situation }}</p>    
+                    
+                    <p>I felt <strong>{{ event.emotion }}</strong>.</p>
 
-                <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
-                
-                <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
-                But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
-                
-                <p><strong>{{ event.behaviors }} </strong></p>
-                <p><strong>{{ event.consequences }}</strong></p>
-                <p><strong>{{ event.challenged_beliefs }}</strong></p>
+                    <p><strong>{{ event.bodily_sensations }}</strong> were triggered by <strong>{{ event.triggers }}</strong>.</p>
+                    
+                    <p> At first, I thought: <strong>{{ event.automatic_thoughts }}</strong>
+                    But when I had a chance to think about what had happened I realized: <strong>{{ event.rational_thoughts }}</strong></p>
+                    
+                    <p><strong>{{ event.behaviors }} </strong></p>
+                    <p><strong>{{ event.consequences }}</strong></p>
+                    <p><strong>{{ event.challenged_beliefs }}</strong></p>
 
-                <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
+                    <p>What did I take away from this experience? <strong>{{ event.lesson }}</strong></p>
 
-                <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
-                
-                <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
-                
-                <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
-                
-                <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
-                <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
-            <!--</div>-->
-        
-            <!--<div ng-if="eventsCtrl.editing">-->
+                    <p>My old perspective: <strong>{{ event.old_perspective }}</strong></p>
+                    
+                    <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
+                    
+                    <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
+                    
+                    <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+                    <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
+            </div>
+         
+         </div>
+         <div ng-if="eventsCtrl.editing">
+             <div ng-if="event.emotion == 'joy'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'acceptance'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.acceptance }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'fear'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.fear }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'surprise'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.surprise }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'sadness'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.sadness }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'disgust'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.disgust }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div ng-if="event.emotion == 'anger'">
+                <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.anger }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+            </div>
+            
+            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+            <div class="cbp_tmlabel">
                 <form id="edit-event-form" ng-submit="eventsCtrl.putEventAPI(eventsCtrl.params, eventsCtrl.eventInfo._id)">
                     <h2>Edit "{{ eventsCtrl.updatedEventInfo.title }}"</h2><br>               
                     <div class="left">                
@@ -150,7 +183,7 @@
                     <div style="clear:both;"></div>
                     <button type="submit">Edit Event</button>
                 </form> 
-            <!--</div>-->
+            </div>
          </div>
     </li>
 </ul>
