@@ -53,7 +53,7 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 #### ERD
 
-![ SomatiColors ERD ](public/assets/erd.jpg)
+![ SomatiColors ERD ](public/assets/SomatiColors_ERD.png)
 
 ##### User Model
 ``` username, password, first_name, last_name, email, mental_health_physician, physician_email```
