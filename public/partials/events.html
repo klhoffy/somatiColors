@@ -1,12 +1,15 @@
 <section class="row">
     <div class="col-md-12">
+        
         <!--Filter Events-->
         <div class="search-bar">
             <input type="text" placeholder="Search for..." ng-model="search">
         </div>
         
         <!--New Event-->
-        <new-event-form></new-event-form>
+        <div ng-show="eventsCtrl.newEvent" >
+            <new-event-form></new-event-form>
+        </div>
         
         <!--Timeline of Events-->        
         <all-events></all-events>
@@ -15,6 +18,7 @@
         <div ng-show="eventsCtrl.editing" >
             <edit-event-form></edit-event-form>
         </div>
+        
     </div>
 </section>
 

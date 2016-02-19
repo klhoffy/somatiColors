@@ -1,10 +1,10 @@
 <ul class="cbp_tmtimeline">
+    <button ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
         <time class="cbp_tmtime"><span>{{ event.emotion }}</span> <span>{{ event.date | date: 'MMM d, yyyy' }}</span></time>
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
             <h3>{{ event.title }}</h3>
-            <p>{{ event.user_id }}</p>
 
             <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
             
@@ -28,9 +28,9 @@
             <p>My new perspective: <strong>{{ event.new_perspective }}</strong></p>
             
             <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
-
+            
             <button ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+         
             <button ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">delete</button>
         </div>
     </li>
-</ul>

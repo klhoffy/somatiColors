@@ -1,33 +1,30 @@
 angular.module('SomatiColors')
 	.controller('EventsController', EventsController)
 
-EventsController.$inject=['eventsFactory','$stateParams','$location', '$http']
+EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http', '$window']
 
-function EventsController(eventsFactory, $stateParams, $location, $http){
+function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http, $window){
 	var vm = this
     vm.params = $stateParams.user_id
+    vm.user_emotion = $stateParams.user_id._id
     vm.events = [];
     vm.getEventsAPI = getEventsAPI;
     vm.getEventAPI = getEventAPI;
     vm.addEventAPI = addEventAPI;
     vm.putEventAPI = putEventAPI;
     vm.deleteEventAPI = deleteEventAPI;
+    
+    vm.userInfo = {};
+    vm.updatedUserInfo = {};
+    vm.getUserEventAPI = getUserEventAPI;
 
-
-
-
-  
-  
-  
-  
-  
     // Get the list of all events for that user from the API
     function getEventsAPI(user_id){
-       $http
-        .get
-        ('http://localhost:3000/api/users/' + user_id + '/events')
+       getUserEventAPI(user_id)
+       eventsFactory.showEvents(user_id)
         .then(function(response){
            vm.events = response.data.events;
+           
        });
    }
    
@@ -35,25 +32,33 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
    getEventsAPI(vm.params);
    
    vm.addEventInfo = {};
-    
-       
+   vm.newEvent = false;
+
    function addEventAPI(user_id){
-    return $http
-        .post('http://localhost:3000/api/users/' +  user_id + '/events', vm.addEventInfo)
+       eventsFactory.postEvent(user_id, vm.addEventInfo)
         .then(function(response){
             vm.addEventInfo = response.data.event;
             vm.editing = false;
             getEventsAPI(vm.params)
+            vm.newEvent = false;
         });
     }
    
    // Get one event from that user
     vm.eventInfo = {};
     vm.updatedEventInfo = {};
+    vm.userInfo = {};
     
-    function getEventAPI(user_id, event_id){
-     $http
-        .get('http://localhost:3000/api/users/' + user_id + '/events/' + event_id)
+    function getUserEventAPI(user_id){
+        usersFactory.showUser(user_id)
+        .then(function(response){
+            vm.userInfo = response.data;
+            vm.updatedUserInfo = response.data;
+        });
+    }
+    
+    function getEventAPI(user_id, event_id){  
+       eventsFactory.showEvent(user_id, event_id)
         .then(function(response){
             vm.eventInfo = response.data.event;
             vm.updatedEventInfo = response.data.event;
@@ -65,23 +70,29 @@ function EventsController(eventsFactory, $stateParams, $location, $http){
     vm.editing = false
     vm.putEventAPI = putEventAPI;
     function putEventAPI(user_id, event_id){
-    return $http
-        .put('http://localhost:3000/api/users/' + user_id + '/events/' + event_id, vm.updatedEventInfo)
+        eventsFactory.putEvent(user_id, event_id, vm.updatedEventInfo)
         .then(function(response){
             vm.updatedEventInfo = response.data.event;
             vm.editing = false;
             getEventsAPI(vm.params)
         });
     }
-    
-    // Deletes the one event from that user
-    function deleteEventAPI(user_id, event_id){
-    $http
-        .delete('http://localhost:3000/api/users/' +  user_id + '/events/' + event_id)
-        .then(function(response){
-            var index = vm.events.indexOf(event_id);
-            vm.events.splice(index, 1);
-            getEventAPI(vm.params)
+      
+     // Delete One Event from the front end to the API using a Factory 
+    vm.deleteEventAPI = deleteEventAPI;
+    function deleteEventAPI(user_id, event_id) {
+        if (window.confirm("Are you sure?") ) {
+    eventsFactory.removeEvent(user_id, event_id)
+        .then(function(response) {
+            $location.path("/user/" + vm.params + "/events");
+            $window.location.reload()
         });
+        } else {
+            console.log("not deleting event!")
+        }
     }
+    
+    
+    
+    
 }

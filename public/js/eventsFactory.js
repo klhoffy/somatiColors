@@ -9,11 +9,15 @@ function eventsFactory($http, $stateParams){
 	var events = {}
 
     events.showEvents = function(user_id){
-		return $http.get(eventsUrl + user_id + '/events/')
+		return $http.get(eventsUrl + user_id + '/events')
 	}
-
+    
+    events.showEvent = function(user_id, event_id){
+		return $http.get(eventsUrl + user_id + '/events/' + event_id)
+	}
+    
     events.postEvent = function(user_id, data){
-		return $http.post(eventsUrl + user_id + '/events/')
+		return $http.post(eventsUrl + user_id + '/events', data)
 	}
 
     events.putEvent = function(user_id, event_id,data){
