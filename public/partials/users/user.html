@@ -22,9 +22,10 @@
             <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anger }" ><strong>anger</strong></div>
             <div class="colors" ng-style="{ 'background-color': usersCtrl.info.anticipation }" ><strong>anticipation</strong></div>
             
-            <button ng-click="usersCtrl.editing = !usersCtrl.editing">Edit</button>
+            <button class="blue-button left-half" ng-click="usersCtrl.editing = !usersCtrl.editing">Edit</button>
+            <button class="red-button right-half" ng-click="usersCtrl.deleteUserApi(usersCtrl.params)">Delete User</button>
             
-            <button ng-click="usersCtrl.deleteUserApi(usersCtrl.params)">Delete User</button>
+            <div style="clear:both;"></div>
 
     </div>
 </section>
