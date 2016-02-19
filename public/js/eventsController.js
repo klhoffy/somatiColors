@@ -11,7 +11,6 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     vm.getEventsAPI = getEventsAPI;
     vm.getEventAPI = getEventAPI;
     vm.addEventAPI = addEventAPI;
-    vm.putEventAPI = putEventAPI;
     vm.deleteEventAPI = deleteEventAPI;
     
     vm.userInfo = {};
@@ -63,18 +62,19 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
         .then(function(response) {
             vm.eventInfo = response.data.event;
             vm.updatedEventInfo = response.data.event;
-        });  
+        }); 
     };
     
     // Update one event for that user
     vm.editing = false;
+    vm.putEventAPI = putEventAPI;
     
     function putEventAPI(user_id, event_id) {
         eventsFactory.putEvent(user_id, event_id, vm.updatedEventInfo)
         .then(function(response) {
             vm.updatedEventInfo = response.data.event;
             vm.editing = false;
-            getEventsAPI(vm.params);
+            getEventsAPI(vm.params)
         });
     };
       
@@ -83,8 +83,8 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
         if (window.confirm("Are you sure?") ) {
             eventsFactory.removeEvent(user_id, event_id)
             .then(function(response) {
-                $location.path("/user/" + vm.params + "/events");
-                $window.location.reload();
+                $location.path("/user/" + vm.params + "/events")
+                $window.location.reload()
             });
         } else {
             console.log("not deleting event!")
