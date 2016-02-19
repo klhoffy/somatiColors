@@ -44,16 +44,12 @@
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
 	font-size: 0.9em;
-	color: #bdd0db;
+	color: green;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
 	font-size: 2.9em;
-	color: #f8f8f8;
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-	color: #6cbfee;
+	color: blue;
 }
 
 /* Right content */

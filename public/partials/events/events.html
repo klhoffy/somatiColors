@@ -1,10 +1,16 @@
 <ul class="cbp_tmtimeline">
     <button ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Make a New Event</button>
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
-        <time class="cbp_tmtime"><span>{{ event.emotion }}</span> <span>{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+        
+        
+        
+        <time class="cbp_tmtime"><span>{{ event.emotion }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span></time>
+        
+        
         <div class="cbp_tmicon cbp_tmicon-phone"></div>
         <div class="cbp_tmlabel">
             <h3>{{ event.title }}</h3>
+            {{eventsCtrl.userInfo.joy}}
 
             <p><strong>{{ event.location }}</strong> w/ <strong>{{ event.people_involved }}</strong></p>
             
