@@ -94,12 +94,15 @@ function UsersController($state, authFactory, usersFactory, $rootScope, $window,
     // Delete One User from the front end to the API using a Factory 
     vm.deleteUserApi = deleteUserApi;
     function deleteUserApi(user_id) {
-        window.alert("Are you sure?")
-    usersFactory.removeUser(user_id)
-        .then(function(response) {
-            logout();
-            $location.path('/');
-        });
+        if (window.confirm("Are you sure?") ){
+        usersFactory.removeUser(user_id)
+            .then(function(response) {
+                logout();
+                $location.path('/');
+            });
+        } else {
+            console.log("not deleting user!")
+        }
     }
 
 }
