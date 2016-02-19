@@ -68,15 +68,22 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
     // Update one event for that user
     vm.editing = false;
     vm.putEventAPI = putEventAPI;
+    vm.editingEventId = null;
+    vm.editEventId = editEventId;
     
     function putEventAPI(user_id, event_id) {
         eventsFactory.putEvent(user_id, event_id, vm.updatedEventInfo)
         .then(function(response) {
             vm.updatedEventInfo = response.data.event;
             vm.editing = false;
+            vm.editingEventId = null;
             getEventsAPI(vm.params)
         });
     };
+    
+    function editEventId(event_id) {
+        vm.editingEventId = event_id
+    }
       
      // Delete One Event from the front end to the API using a Factory
     function deleteEventAPI(user_id, event_id) {

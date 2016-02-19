@@ -64,13 +64,13 @@
                     
                     <p>Next time use the following coping strategies: <strong>{{ event.coping_strategies }}</strong></p>
                     
-                    <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing">Edit</button>
+                    <button class="blue-button" ng-click="eventsCtrl.getEventAPI(eventsCtrl.params, event._id); eventsCtrl.editing=!eventsCtrl.editing; eventsCtrl.editEventId(event._id)">Edit</button>
                     <button class="red-button" ng-click="eventsCtrl.deleteEventAPI(eventsCtrl.params, event._id)">Delete</button>
             </div>
          
          </div>
          <!--<div ng-if="{{event._id}}">-->
-         <div ng-if="eventsCtrl.editing">
+         <div ng-if="eventsCtrl.editing && eventsCtrl.editingEventId == event._id">
              
              <p>{{ event._id }}</p>
             
