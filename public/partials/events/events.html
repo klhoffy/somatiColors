@@ -7,7 +7,7 @@
     <li ng-repeat="event in eventsCtrl.events | filter: search | orderBy: '-date'">
             
         <div ng-if="event.emotion == 'joyful'">
-            <time class="cbp_tmtime" ><span ng-style="{ 'color': eventsCtrl.userInfo.joy }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': eventsCtrl.userInfo.joy }">( {{ event.emotion }} )</span></time>
+            <time class="cbp_tmtime" ><span ng-style="{ 'color': blue }">{{ event.date | date: 'MMM d, yyyy' }}</span> <span ng-style="{ 'color': blue }">( {{ event.emotion }} )</span></time>
         </div>
         
         <div ng-if="event.emotion == 'accepted'">
