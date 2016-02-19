@@ -1,0 +1,90 @@
+body{
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.25;
+}
+
+section {
+    border: 1px solid #fff;
+    padding: 30px;
+}
+
+
+nav {
+    
+}
+
+footer {
+    text-align: center;
+}
+
+
+/* Type */
+
+p {
+    font-size: 14px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* Landing */
+.hero {
+    background-image: url("../assets/hero.jpeg");
+    background-position: center center;
+    background-size: 100% auto;
+    height: 400px;
+}
+
+.red, .yellow, .green, .blue{
+    color: #fff;
+    padding: 5%;
+    height: 300px;
+}
+
+.red {
+    background-color: #e55c4c;
+}
+.yellow {
+    background-color: #ffc548;
+}
+
+.green {
+    background-color: #22a57b;
+}
+
+.blue {
+    background-color: #41b1bf;
+}
+
+
+/* Color Palette */
+.colors {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    background: #eee;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Forms */
+
+label {
+    font-family: 'Open Sans', sans-serif;
+    margin: 15px 0 5px 0;
+    font-weight: 600;
+}
+
+input[type=text], textarea, select, input[type=textarea], input[type=email] {
+    font-family: 'Kalam', cursive;
+}
+
+button, textarea {
+
+}
+
+
+input[type=color] {background-color: pink}
+
