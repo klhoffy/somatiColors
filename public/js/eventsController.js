@@ -1,9 +1,9 @@
 angular.module('SomatiColors')
 	.controller('EventsController', EventsController)
 
-EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http']
+EventsController.$inject=['eventsFactory', 'usersFactory', '$stateParams','$location', '$http', '$window']
 
-function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http){
+function EventsController(eventsFactory, usersFactory, $stateParams, $location, $http, $window){
 	var vm = this
     vm.params = $stateParams.user_id
     vm.user_emotion = $stateParams.user_id._id
@@ -78,14 +78,15 @@ function EventsController(eventsFactory, usersFactory, $stateParams, $location, 
             getEventsAPI(vm.params)
         });
     }
-    
-    // Deletes the one event from that user
-    function deleteEventAPI(user_id, event_id){
-        eventsFactory.removeEvent(user_id, event_id)
-        .then(function(response){
-            var index = vm.events.indexOf(event_id);
-            vm.events.splice(index, 1);
-            getEventAPI(vm.params)
+      
+     // Delete One Event from the front end to the API using a Factory 
+    vm.deleteEventAPI = deleteEventAPI;
+    function deleteEventAPI(user_id, event_id) {
+        window.alert("Are you sure?")
+    eventsFactory.removeEvent(user_id, event_id)
+        .then(function(response) {
+            $location.path("/user/" + vm.params + "/events");
+            $window.location.reload()
         });
     }
 }
