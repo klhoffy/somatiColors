@@ -52,7 +52,7 @@ function show(require, response) {
     if(error) {
           response.json({ message: "showUsers ERROR:" + error });
       } else {
-          response.json(user, {user: user});
+          response.json(user);
       }
   })
 }
