@@ -5,8 +5,6 @@ eventsFactory.$inject = ['$http', '$stateParams']
 
 function eventsFactory($http, $stateParams) {
 	var eventsUrl = "https://somaticolors.herokuapp.com/api/users/"
-    // var eventsUrl = "http://localhost:3000/api/users/"
-    
 	var events = {};
 
     events.showEvents = function(user_id) {

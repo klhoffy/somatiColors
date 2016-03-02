@@ -1,15 +1,15 @@
 <div ng-show="eventsCtrl.newEvent">
-    <button class="red-button" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Nevermind!</button>
+    <button class="red-button no-margin" ng-click="eventsCtrl.newEvent=!eventsCtrl.newEvent">Nevermind!</button>
 </div>
 
 <ul class="cbp_tmtimeline">
     <li>
         <time class="cbp_tmtime"><span></span><span></span></time>
-        <div class="cbp_tmicon cbp_tmicon-screen"></div>
+        <div class="cbp_tmicon"></div>
         <div class="cbp_tmlabel">
             
             <form id="new-event-form" ng-submit="eventsCtrl.addEventAPI(eventsCtrl.params)">
-                <h2>Create a New Event</h2><br>
+                <h2>Create a New Event</h2><hr>
                 <div class="left">
                     <input type="text" id="title" placeholder="title" ng-model="eventsCtrl.addEventInfo.title">
                     <label for="title" class="bottom-padding">Title</label>
@@ -64,8 +64,100 @@
                 </div>
                 
                 <div class="right">
-                
-                    <span class="favorite"><img src="../../assets/body.png"/></span><br><br><br>
+                    <!--Undefined-->
+                    <div ng-if="!eventsCtrl.userInfo.gender">
+                        <span><p>Please specify your gender in your account settings to make use of this visual representation.</p><hr></span>
+                    </div>
+                    
+                    <!--Female-->
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && !eventsCtrl.addEventInfo.bodily_sensations">
+                        <span><img src="../../assets/female/body.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Chronic Headaches'">
+                        <span><img src="../../assets/female/chronic-headaches.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Back Pain'">
+                        <span><img src="../../assets/female/back-pain.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Muscle Aches and Cramps'">
+                        <span><img src="../../assets/female/muscle-aches-and-cramps.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Tightness in the Chest'">
+                        <span><img src="../../assets/female/tightness-in-the-chest.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Dizziness'">
+                        <span><img src="../../assets/female/dizziness.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Appetite Change'">
+                        <span><img src="../../assets/female/appetite-change.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Difficulty Sleeping'">
+                        <span><img src="../../assets/female/difficulty-sleeping.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Stomach or Bowel Problems'">
+                        <span><img src="../../assets/female/stomach-or-bowel-problems.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Low Energy'">
+                        <span><img src="../../assets/female/low-energy.png"/></span><hr>
+                    </div>
+                   
+                    <div ng-if="eventsCtrl.userInfo.gender == 'female' && eventsCtrl.addEventInfo.bodily_sensations == 'Shortness of Breath'">
+                        <span><img src="../../assets/female/shortness-of-breath.png"/></span><hr>
+                    </div>
+                    
+                    <!--Male-->
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && !eventsCtrl.addEventInfo.bodily_sensations">
+                        <span><img src="../../assets/male/body.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Chronic Headaches'">
+                        <span><img src="../../assets/male/chronic-headaches.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Back Pain'">
+                        <span><img src="../../assets/male/back-pain.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Muscle Aches and Cramps'">
+                        <span><img src="../../assets/male/muscle-aches-and-cramps.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Tightness in the Chest'">
+                        <span><img src="../../assets/male/tightness-in-the-chest.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Dizziness'">
+                        <span><img src="../../assets/male/dizziness.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Appetite Change'">
+                        <span><img src="../../assets/male/appetite-change.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Difficulty Sleeping'">
+                        <span><img src="../../assets/male/difficulty-sleeping.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Stomach or Bowel Problems'">
+                        <span><img src="../../assets/male/stomach-or-bowel-problems.png"/></span><hr>
+                    </div>
+                    
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Low Energy'">
+                        <span><img src="../../assets/male/low-energy.png"/></span><hr>
+                    </div>
+                   
+                    <div ng-if="eventsCtrl.userInfo.gender == 'male' && eventsCtrl.addEventInfo.bodily_sensations == 'Shortness of Breath'">
+                        <span><img src="../../assets/male/shortness-of-breath.png"/></span><hr>
+                    </div>
                     
                     <fieldset ng-model="bodily_sensations">
                         <input type="radio" id="chronic_headaches" value="Chronic Headaches" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
@@ -74,14 +166,8 @@
                         <input type="radio" id="back_pain" value="Back Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="back_pain">Back Pain</label><br>
                         
-                        <input type="radio" id="arthritis" value="Arthritis" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="arthritis">Arthritis</label><br>
-                        
                         <input type="radio" id="muscle_aches_and_cramps" value="Muscle Aches and Cramps" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>
-                        
-                        <input type="radio" id="pelvic_pain" value="Pelvic Pain" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
-                        <label for="pelvic_pain">Pelvic Pain</label><br>
+                        <label for="muscle_aches_and_cramps">Muscle Aches and Cramps</label><br>  
                         
                         <input type="radio" id="Tightness_in_the_chest" value="Tightness in the Chest" ng-model="eventsCtrl.addEventInfo.bodily_sensations">
                         <label for="Tightness_in_the_chest">Tightness in the Chest</label><br>

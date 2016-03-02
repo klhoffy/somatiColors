@@ -8,7 +8,7 @@
 		url('../fonts/timelineicons/ecoico.svg#ecoico') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
+} 
 
 .cbp_tmtimeline {
 	margin: 30px 0 0 0;
@@ -24,39 +24,20 @@
 	top: 0;
 	bottom: 0;
 	width: 10px;
-	background: #f8f8f8;
-	left: 20%;
+	background: #f5f5f5;
+	left: 4%;
 	margin-left: -10px;
 }
 
-/* The date/time */
-.cbp_tmtimeline > li .cbp_tmtime {
-	display: block;
-	width: 25%;
-	padding-right: 100px;
-	position: absolute;
-    font-family: 'Kalam', cursive;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span {
-	display: block;
-	text-align: right;
-    color: #777;
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span:first-child {
-	font-size: 2em;    
-
-}
-
-.cbp_tmtimeline > li .cbp_tmtime span:last-child {
-	font-size: 1.5em;
+.cbp_tmtimeline > li {
+	position: relative;
 }
 
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
-	margin: 0 0 15px 25%;
+	margin: 0 0 15px 10%;
 	background: #f5f5f5;
+	color: #777;
 	padding: 2em;
 	font-size: 1.2em;
 	font-weight: 300;
@@ -65,13 +46,8 @@
 	border-radius: 5px;
 }
 
-/*.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-	background: #f8f8f8;
-}*/
-
-.cbp_tmtimeline > li .cbp_tmlabel h3 { 
-	margin-top: 0px;
-	padding: 0 0 10px 0;
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+	background: #f5f5f5;
 }
 
 /* The triangle */
@@ -88,9 +64,9 @@
 	top: 10px;
 }
 
-/*.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-	border-right-color: #f8f8f8;
-}*/
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+	border-right-color: #f5f5f5;
+}
 
 /* The icons */
 .cbp_tmtimeline > li .cbp_tmicon {
@@ -107,27 +83,30 @@
 	-webkit-font-smoothing: antialiased;
 	position: absolute;
 	color: #fff;
-	background: #f5f5f5;
+	background: #46a4da;
 	border-radius: 50%;
-	box-shadow: 0 0 0 8px #f8f8f8;
+	box-shadow: 0 0 0 8px #f5f5f5;
 	text-align: center;
-	left: 20%;
+	left: 4%;
 	top: 0;
 	margin: 0 0 0 -25px;
 }
 
-/*.cbp_tmicon-phone:before {
+.cbp_tmicon-phone:before {
 	content: "\e000";
 }
+
 .cbp_tmicon-screen:before {
 	content: "\e001";
 }
+
 .cbp_tmicon-mail:before {
 	content: "\e002";
 }
+
 .cbp_tmicon-earth:before {
 	content: "\e003";
-}*/
+}
 
 /* Example Media Queries */
 @media screen and (max-width: 65.375em) {
@@ -163,7 +142,7 @@
 		right: auto;
 		left: 20px;
 		border-right-color: transparent;
-		border-bottom-color: #f8f8f8;
+		border-bottom-color: #3594cb;
 		top: -20px;
 	}
 

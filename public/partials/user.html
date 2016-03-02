@@ -1,7 +1,19 @@
+<!--User-Bar-->
+<section class="row user-bar">
+    <div class="col-md-12">
+        <div class="">
+            <h2>Account Settings</h2>
+        </div>
+    </div>
+</section> 
+
+
+<!--User-->
 <div ng-hide="usersCtrl.editing">
-	<one-user></one-user>
+    <one-user></one-user>
 </div>
 
+<!--Edit-->
 <div ng-show="usersCtrl.editing">
     <edit-user-form></edit-user-form>
-</div>
+</div>   
