@@ -29,7 +29,8 @@ If you fork this repo, you must run `npm install`, `mongod`, `mongo`, and `gulp`
 
 ![ SomatiColors Screenshot ](public/assets/landing.png)
 ![ SomatiColors Screenshot ](public/assets/timeline.png)
-![ SomatiColors Screenshot ](public/assets/colors.png)
+![ SomatiColors Screenshot ](public/assets/account.png)
+![ SomatiColors Screenshot ](public/assets/about.png)
 
 -
 
