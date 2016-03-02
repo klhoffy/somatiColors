@@ -5,7 +5,6 @@ usersFactory.$inject = ['$http', '$stateParams']
 
 function usersFactory($http, $stateParams){
 	var usersUrl = "https://somaticolors.herokuapp.com/api/"
-    // var usersUrl = "http://localhost:3000/api/"
     
 	var users = {};
 
