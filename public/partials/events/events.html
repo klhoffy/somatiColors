@@ -32,6 +32,10 @@
             <div ng-if="event.emotion == 'angry'">
                 <div class="cbp_tmicon" ng-style="{ 'background-color': eventsCtrl.userInfo.anger }"></div>
             </div>
+            
+            <div ng-if="event.emotion == 'anticipation'">
+                <div class="cbp_tmicon" ng-style="{ 'background-color': eventsCtrl.userInfo.anticipation }"></div>
+            </div>
         
             <div class="cbp_tmlabel">
                 <h3>{{ event.title }} <span>( {{ event.emotion }} )</span></h3>
